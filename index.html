@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Classics 2026 — Training Plan</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #141414;
+            --card-hover: #1a1a1a;
+            --accent: #e8e8e8;
+            --muted: #666;
+            --green: #22c55e;
+            --blue: #3b82f6;
+            --orange: #f59e0b;
+            --red: #ef4444;
+            --purple: #a855f7;
+            --border: #222;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--accent);
+            min-height: 100vh;
+            padding: 0 16px;
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 24px 0 80px; }
+
+        header {
+            text-align: center;
+            padding: 32px 0 24px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+        header p { color: var(--muted); font-size: 0.875rem; margin-top: 4px; }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .countdown-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .countdown-card .race-name {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .countdown-card .days {
+            font-size: 2rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-card .days-label {
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+
+        .countdown-card .race-info {
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .countdown-card.palava .days { color: var(--green); }
+        .countdown-card.vysocina .days { color: var(--orange); }
+        .countdown-card.jested .days { color: var(--red); }
+
+        .week-nav {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .week-btn {
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card);
+            color: var(--muted);
+            font-size: 0.8rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .week-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .week-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+        .week-btn.current { border-color: var(--green); color: var(--green); }
+
+        .today-banner {
+            background: linear-gradient(135deg, #1a2a1a, #141414);
+            border: 1px solid #2a3a2a;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .today-banner .dot {
+            width: 10px; height: 10px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .today-banner .info { flex: 1; }
+        .today-banner .info .label { font-size: 0.75rem; color: var(--green); }
+        .today-banner .info .title { font-size: 1rem; font-weight: 600; }
+        .today-banner .arrow { color: var(--muted); font-size: 1.2rem; }
+
+        .day-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .day-card.today { border-color: var(--green); }
+        .day-card.past { opacity: 0.5; }
+
+        .day-header {
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .day-header:hover { background: var(--card-hover); }
+
+        .day-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .day-dot.rest { background: var(--muted); }
+        .day-dot.bike { background: var(--green); }
+        .day-dot.strength { background: var(--purple); }
+        .day-dot.mobility { background: var(--blue); }
+        .day-dot.race { background: var(--red); }
+
+        .day-meta { flex: 1; }
+        .day-date { font-size: 0.75rem; color: var(--muted); }
+        .day-title { font-size: 0.95rem; font-weight: 600; }
+        .day-duration {
+            font-size: 0.75rem;
+            color: var(--muted);
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .day-expand { color: var(--muted); transition: transform 0.2s; }
+        .day-card.open .day-expand { transform: rotate(180deg); }
+
+        .day-body {
+            display: none;
+            padding: 0 16px 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .day-card.open .day-body { display: block; padding-top: 16px; }
+
+        .exercise {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .exercise:last-child { border-bottom: none; }
+
+        .exercise-info { flex: 1; }
+        .exercise-name { font-size: 0.9rem; font-weight: 500; }
+        .exercise-detail { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+        .exercise-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: var(--blue);
+            text-decoration: none;
+            margin-top: 4px;
+            padding: 2px 0;
+        }
+
+        .exercise-video:hover { text-decoration: underline; }
+
+        .workout-note {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .zone-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+
+        .zone-badge.z1 { background: #1a2a1a; color: #4ade80; }
+        .zone-badge.z2 { background: #1a2a1a; color: #22c55e; }
+        .zone-badge.z3 { background: #2a2a1a; color: #f59e0b; }
+        .zone-badge.z4 { background: #2a1a1a; color: #ef4444; }
+
+        .phase-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin: 24px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .saddle-note {
+            background: linear-gradient(135deg, #1a1a2a, #141414);
+            border: 1px solid #2a2a3a;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .saddle-note strong { color: var(--blue); }
+
+        @media (max-width: 480px) {
+            .countdown-card .days { font-size: 1.6rem; }
+            .container { padding: 16px 0 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Road Classics 2026</h1>
+            <p>Pálava — Vysočina — Ještěd</p>
+        </header>
+
+        <div class="countdown-grid">
+            <div class="countdown-card palava">
+                <div class="race-name">Pálava</div>
+                <div class="days" id="cd-palava">—</div>
+                <div class="days-label">dní</div>
+                <div class="race-info">16.5. · 125 km · 1 450 m</div>
+            </div>
+            <div class="countdown-card vysocina">
+                <div class="race-name">Vysočina</div>
+                <div class="days" id="cd-vysocina">—</div>
+                <div class="days-label">dní</div>
+                <div class="race-info">18.7. · 102 km · 1 750 m</div>
+            </div>
+            <div class="countdown-card jested">
+                <div class="race-name">Ještěd</div>
+                <div class="days" id="cd-jested">—</div>
+                <div class="days-label">dní</div>
+                <div class="race-info">19.9. · 106 km · 2 200 m</div>
+            </div>
+        </div>
+
+        <div id="today-banner"></div>
+
+        <div class="saddle-note" id="saddle-note">
+            <strong>Sedlo:</strong> Aktuálne 700mm. Progresie: +5mm každé 2 týždne → cieľ 710-720mm do Pálavy.
+        </div>
+
+        <div class="week-nav" id="week-nav"></div>
+        <div id="training-days"></div>
+    </div>
+
+<script>
+const RACES = {
+    palava: new Date(2026, 4, 16),
+    vysocina: new Date(2026, 6, 18),
+    jested: new Date(2026, 8, 19)
+};
+
+const EXERCISES = {
+    kb_deadlift: {
+        name: "KB Deadlift (2×)",
+        video: "https://www.youtube.com/watch?v=bR9VWqe2GW4",
+        note: "Neutrálny grip, hip hinge, rovný chrbát"
+    },
+    kb_swing: {
+        name: "KB Swing",
+        video: "https://www.youtube.com/watch?v=YSxHifyI6s8",
+        note: "Explozívna sila pre šliapanie — hip extension"
+    },
+    kb_goblet_squat: {
+        name: "KB Goblet Squat",
+        video: "https://www.youtube.com/watch?v=MeIiIdhvXT4",
+        note: "KB pri hrudi, hlboký drep, kolená von"
+    },
+    kb_bulgarian: {
+        name: "KB Bulgarian Split Squat",
+        video: "https://www.youtube.com/watch?v=2C-uNgKwPLE",
+        note: "Zadná noha na stoličke/lavici"
+    },
+    kb_step_up: {
+        name: "KB Step-ups",
+        video: "https://www.youtube.com/watch?v=dQqApCGd5Ss",
+        note: "Na stoličku/lavicu — simuluje stúpanie"
+    },
+    kb_rdl: {
+        name: "KB Romanian Deadlift",
+        video: "https://www.youtube.com/watch?v=UY65gQj8wbE",
+        note: "Pomalý eccentric, cítiť hamstringy"
+    },
+    plank: {
+        name: "Plank na predlaktiach",
+        video: "https://www.youtube.com/watch?v=ASdvN_XEl_c",
+        note: "NIE na rukách (zápästie!) — tuhý core"
+    },
+    bird_dog: {
+        name: "Bird Dog",
+        video: "https://www.youtube.com/watch?v=wiFNA3sqjCA",
+        note: "Protiľahlá ruka + noha, stabilizácia"
+    },
+    dead_bug: {
+        name: "Dead Bug",
+        video: "https://www.youtube.com/watch?v=jtsoxEQoaYc",
+        note: "Spodný chrbát prilepený k podlahe"
+    },
+    glute_bridge: {
+        name: "Single Leg Glute Bridge",
+        video: "https://www.youtube.com/watch?v=AVAXhy6pl7o",
+        note: "Aktivácia gluteov, jedna noha hore"
+    },
+    pallof: {
+        name: "Expandér: Pallof Press",
+        video: "https://www.youtube.com/watch?v=AH_QZLm_0-s",
+        note: "Anti-rotácia, core stabilita"
+    },
+    band_pull: {
+        name: "Expandér: Band Pull-Apart",
+        video: "https://www.youtube.com/watch?v=JObYtU7Y7ag",
+        note: "Korekcia desk postury, lopatky"
+    },
+    open_books: {
+        name: "Open Books",
+        video: "https://www.youtube.com/watch?v=0dMSRMFxFRg",
+        note: "Thoracic mobilita — 10× / strana"
+    },
+    hip_90_90: {
+        name: "90/90 Hips",
+        video: "https://www.youtube.com/watch?v=8bGCEdiRXgc",
+        note: "Rotácia bedrových kĺbov"
+    },
+    cat_cow: {
+        name: "Cat-Cow",
+        video: "https://www.youtube.com/watch?v=kqnua4rHVVA",
+        note: "Chrbtový stĺp — sync s dychom, 2 min"
+    },
+    hip_flexor: {
+        name: "Hip Flexor Stretch",
+        video: "https://www.youtube.com/watch?v=YQmpO9VT2X4",
+        note: "Skrátené z desk — 30s/strana"
+    },
+    wall_angels: {
+        name: "Wall Angels",
+        video: "https://www.youtube.com/watch?v=M_ooIhKYs7c",
+        note: "Chrbát + lakte + ruky na stene — 10×"
+    }
+};
+
+const PLAN = [
+    // WEEK 1
+    { date: "2026-03-23", type: "bike", title: "Bike dorazil — SETUP", duration: "—",
+      desc: "Montáž: pedále, bottle cages, LOAD bag, Garmin mount, sedlo na 700mm",
+      exercises: [] },
+    { date: "2026-03-24", type: "strength", title: "Sila — Intro", duration: "30 min",
+      desc: "Prvý silový. Ľahké váhy, naučiť formu.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "3 × 8", weight: "2×7 kg" },
+        { ...EXERCISES.kb_swing, sets: "3 × 10", weight: "1×7 kg" },
+        { ...EXERCISES.plank, sets: "3 × 45s", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "2 × 12/strana", weight: "" },
+        { ...EXERCISES.glute_bridge, sets: "3 × 15", weight: "bodyweight" }
+      ]},
+    { date: "2026-03-25", type: "bike", title: "PRVÁ JAZDA!", duration: "45 min",
+      desc: "Z1-Z2, kadencia 85-95 RPM, flat terén. Užívaj si!",
+      zones: ["z1", "z2"],
+      exercises: [],
+      bikeNote: "Plynulé šliapanie, skúšaj prevody. Žiadne kopce. Cesta von a späť." },
+    { date: "2026-03-26", type: "bike", title: "Bike Easy", duration: "40 min",
+      desc: "Z2, plynulé šliapanie, skúšaj prevody, rôzne pozície na riadidlách.",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Rovnaký typ jazdy ako včera. Cítiť bike pod sebou." },
+    { date: "2026-03-27", type: "mobility", title: "Mobilita — Desk Reset", duration: "20 min",
+      desc: "Uvoľnenie po prvých jazdách. Focus: bedrá, chrbtový stĺp, ramená.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.wall_angels, sets: "10×", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
+      ]},
+    { date: "2026-03-28", type: "bike", title: "Long Ride #1", duration: "75 min",
+      desc: "Z2, bez kopov. Cesta na kávu a späť.",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Prvá dlhšia jazda. Konstantné tempo, rozprávaš sa pri tom. Piť každých 20 min." },
+    { date: "2026-03-29", type: "bike", title: "Family Ride", duration: "45 min",
+      desc: "Flat pedále, tenisky, deti, zmrzlina.",
+      zones: ["z1"],
+      exercises: [],
+      bikeNote: "Žiadny tréning — užívaj si s rodinou. Flat strana PD-EH500." },
+
+    // WEEK 2
+    { date: "2026-03-30", type: "rest", title: "REST", duration: "—",
+      desc: "Regenerácia. Spánok 7,5h. Ľahká prechádzka OK.", exercises: [] },
+    { date: "2026-03-31", type: "strength", title: "Sila — Build", duration: "35 min",
+      desc: "Pridávame váhu a KB Swing progresiu.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "3 × 8", weight: "2×11 kg" },
+        { ...EXERCISES.kb_bulgarian, sets: "3 × 8/strana", weight: "1×11 kg" },
+        { ...EXERCISES.kb_swing, sets: "3 × 15", weight: "1×14 kg" },
+        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "2 × 12/strana", weight: "" }
+      ]},
+    { date: "2026-04-01", type: "bike", title: "Kadencia Drills", duration: "50 min",
+      desc: "Z2 base + 4×2 min drill na 95+ RPM (3 min odpočinok).",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "15 min warmup Z2 → 4×2 min vysoká kadencia (95+ RPM, ľahký prevod) → 3 min easy medzi → 10 min cooldown." },
+    { date: "2026-04-02", type: "bike", title: "Steady State", duration: "50 min",
+      desc: "Z2, plynulé konštantné tempo.",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Rovnomerné šliapanie. Ak máš Garmin, sleduj HR — zostať v Z2." },
+    { date: "2026-04-03", type: "strength", title: "Sila B + Mobilita", duration: "35 min",
+      desc: "Unilateral focus + desk reset.",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×14 kg" },
+        { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×7 kg" },
+        { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" },
+        { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "stredný odpor" },
+        { ...EXERCISES.band_pull, sets: "3 × 15", weight: "ľahký odpor" }
+      ]},
+    { date: "2026-04-04", type: "bike", title: "Long Ride #2", duration: "90 min",
+      desc: "Z2 + jemný kopec (200m prevýšenie).",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Prvý kontakt s kopcom. Ľahký prevod, kadencia 80+ hore. Piť každých 15 min." },
+    { date: "2026-04-05", type: "rest", title: "Active Recovery", duration: "30 min",
+      desc: "Prechádzka s deťmi alebo family ride.", exercises: [] },
+
+    // WEEK 3
+    { date: "2026-04-06", type: "rest", title: "REST", duration: "—",
+      desc: "Regenerácia.", exercises: [] },
+    { date: "2026-04-07", type: "strength", title: "Sila A — Progres", duration: "40 min",
+      desc: "Zvýšené váhy, KB Swing 14-18 kg.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "4 × 8", weight: "2×14 kg" },
+        { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×14 kg" },
+        { ...EXERCISES.kb_swing, sets: "4 × 15", weight: "1×18 kg" },
+        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
+        { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-04-08", type: "bike", title: "Sweet Spot #1", duration: "55 min",
+      desc: "Prvé sweet spot intervaly — pod prahom, vysoký ROI.",
+      zones: ["z2", "z3"],
+      exercises: [],
+      bikeNote: "15 min WU Z2 → 2×10 min Z3-Z4 (5 min easy medzi) → 10 min CD Z1. Sweet spot = ťažšie ako tempo, ľahšie ako prah. Rozprávaš len po krátkych vetách." },
+    { date: "2026-04-09", type: "bike", title: "Steady State", duration: "55 min",
+      desc: "Z2, konštantné tempo.", zones: ["z2"], exercises: [],
+      bikeNote: "Recovery ride po včerajších intervaloch. Easy." },
+    { date: "2026-04-10", type: "strength", title: "Sila B", duration: "40 min",
+      desc: "Unilateral + core.",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×18 kg" },
+        { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×11 kg" },
+        { ...EXERCISES.glute_bridge, sets: "3 × 12/strana", weight: "" },
+        { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "stredný odpor" },
+        { ...EXERCISES.band_pull, sets: "3 × 15", weight: "ľahký odpor" }
+      ]},
+    { date: "2026-04-11", type: "bike", title: "Long Ride #3", duration: "2h",
+      desc: "Z2, cieľ: 300m prevýšenie. Prvý 2-hodinový ride.",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Najdlhšia jazda doteraz. Vezmi fľašu s Enervit Isotonic Drink. Piť každých 15 min. Ak >90 min, 1 gél po 60. min." },
+    { date: "2026-04-12", type: "rest", title: "Family Ride / Rest", duration: "30-45 min",
+      desc: "S deťmi alebo prechádzka.", exercises: [] },
+
+    // WEEK 4 (DELOAD)
+    { date: "2026-04-13", type: "rest", title: "REST — Deload Week", duration: "—",
+      desc: "Deload týždeň. Znížený objem, žiadna intenzita. Telo sa adaptuje.", exercises: [] },
+    { date: "2026-04-14", type: "strength", title: "Sila — Light", duration: "30 min",
+      desc: "Rovnaké cviky, znížená váha o 20-30%.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "3 × 8", weight: "2×11 kg" },
+        { ...EXERCISES.kb_swing, sets: "3 × 12", weight: "1×14 kg" },
+        { ...EXERCISES.plank, sets: "2 × 45s", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "2 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-04-15", type: "bike", title: "Easy Spin", duration: "45 min",
+      desc: "Z1-Z2, žiadne intervaly. Regenerácia.",
+      zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Ľahké šliapanie. Toto NIE je tréning — je to aktívna regenerácia." },
+    { date: "2026-04-16", type: "bike", title: "Easy Spin", duration: "40 min",
+      desc: "Z1-Z2, plynulé.", zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Pokračujeme v regenerácii." },
+    { date: "2026-04-17", type: "mobility", title: "Mobilita", duration: "20 min",
+      desc: "Full body mobilita.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" },
+        { ...EXERCISES.wall_angels, sets: "10×", weight: "" }
+      ]},
+    { date: "2026-04-18", type: "bike", title: "Long Ride — Easy", duration: "90 min",
+      desc: "Z2, flat, žiadne kopce. Regeneračný long ride.",
+      zones: ["z2"], exercises: [],
+      bikeNote: "Deload long ride. Konštantné ľahké tempo. Piť." },
+    { date: "2026-04-19", type: "rest", title: "REST", duration: "—",
+      desc: "Plný odpočinok.", exercises: [] },
+
+    // WEEK 5
+    { date: "2026-04-20", type: "rest", title: "REST", duration: "—",
+      desc: "Nový build blok začína.", exercises: [] },
+    { date: "2026-04-21", type: "strength", title: "Sila A — Heavy", duration: "40 min",
+      desc: "Max váhy. Progres!",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "4 × 6", weight: "2×18 kg" },
+        { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×18 kg" },
+        { ...EXERCISES.kb_swing, sets: "4 × 15", weight: "1×22 kg" },
+        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
+        { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-04-22", type: "bike", title: "Sweet Spot #2", duration: "65 min",
+      desc: "Progres: 3×10 min Z3-Z4.",
+      zones: ["z2", "z3", "z4"],
+      exercises: [],
+      bikeNote: "15 min WU Z2 → 3×10 min Z3-Z4 (4 min easy medzi) → 10 min CD Z1. Dlhšie intervaly, kratšie pauzy." },
+    { date: "2026-04-23", type: "bike", title: "Steady State", duration: "60 min",
+      desc: "Z2, konštantné tempo.", zones: ["z2"], exercises: [],
+      bikeNote: "Recovery po intervaloch." },
+    { date: "2026-04-24", type: "strength", title: "Sila B", duration: "40 min",
+      desc: "Unilateral + core.",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×22 kg" },
+        { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×14 kg" },
+        { ...EXERCISES.glute_bridge, sets: "3 × 12/strana", weight: "" },
+        { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "ťažký odpor" },
+        { ...EXERCISES.band_pull, sets: "3 × 15", weight: "stredný odpor" }
+      ]},
+    { date: "2026-04-25", type: "bike", title: "Long Ride #4", duration: "2.5h",
+      desc: "Z2, cieľ: 500m prevýšenie.",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Prvý 2,5h ride. Výživa: Enervit Isotonic Drink vo fľaši, gél po 60. a 90. min. Piť každých 15 min." },
+    { date: "2026-04-26", type: "rest", title: "Active Recovery", duration: "30 min",
+      desc: "Family ride alebo prechádzka.", exercises: [] },
+
+    // WEEK 6
+    { date: "2026-04-27", type: "rest", title: "REST", duration: "—",
+      desc: "Posledný ťažký build týždeň pred Pálavou.", exercises: [] },
+    { date: "2026-04-28", type: "strength", title: "Sila A — Maintain", duration: "40 min",
+      desc: "Udržať silu, nepridávať objem.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "4 × 6", weight: "2×18 kg" },
+        { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×18 kg" },
+        { ...EXERCISES.kb_swing, sets: "4 × 15", weight: "1×22 kg" },
+        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
+        { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-04-29", type: "bike", title: "Threshold Intervaly", duration: "65 min",
+      desc: "Prahové intervaly: 3×8 min Z4.",
+      zones: ["z2", "z4"],
+      exercises: [],
+      bikeNote: "15 min WU Z2 → 3×8 min Z4 (5 min easy medzi) → 10 min CD Z1. Z4 = nepríjemné, len pár slov. Toto je nové!" },
+    { date: "2026-04-30", type: "bike", title: "Steady State", duration: "60 min",
+      desc: "Z2, konštantné tempo.", zones: ["z2"], exercises: [],
+      bikeNote: "Recovery." },
+    { date: "2026-05-01", type: "strength", title: "Sila B", duration: "35 min",
+      desc: "Unilateral + core.",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×22 kg" },
+        { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×14 kg" },
+        { ...EXERCISES.glute_bridge, sets: "3 × 12/strana", weight: "" },
+        { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "ťažký odpor" }
+      ]},
+    { date: "2026-05-02", type: "bike", title: "Long Ride #5", duration: "3h",
+      desc: "Z2, cieľ: 700m D+. Nacvič výživu!",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "3-hodinový ride! Simulácia race výživy: Enervit Isotonic vo fľašiach, gél každých 30 min po prvej hodine. Cieľ: 60g sacharidov/h." },
+    { date: "2026-05-03", type: "rest", title: "REST", duration: "—",
+      desc: "Regenerácia po najťažšom týždni.", exercises: [] },
+
+    // WEEK 7 (PEAK)
+    { date: "2026-05-04", type: "rest", title: "REST — Peak Week", duration: "—",
+      desc: "Peak týždeň. Posledný tvrdý long ride.", exercises: [] },
+    { date: "2026-05-05", type: "strength", title: "Sila — Posledná", duration: "30 min",
+      desc: "Ľahká sila, udržiavacie.",
+      exercises: [
+        { ...EXERCISES.kb_swing, sets: "3 × 12", weight: "1×18 kg" },
+        { ...EXERCISES.kb_goblet_squat, sets: "2 × 10", weight: "1×14 kg" },
+        { ...EXERCISES.plank, sets: "2 × 45s", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "2 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-05-06", type: "bike", title: "Threshold Sharp", duration: "60 min",
+      desc: "4×6 min Z4 — krátke, ostré.",
+      zones: ["z2", "z4"],
+      exercises: [],
+      bikeNote: "15 min WU → 4×6 min Z4 (4 min easy) → 10 min CD. Udržať ostrosť." },
+    { date: "2026-05-07", type: "bike", title: "Easy Spin", duration: "45 min",
+      desc: "Z1-Z2, regenerácia.", zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Ľahké šliapanie." },
+    { date: "2026-05-08", type: "mobility", title: "Mobilita", duration: "20 min",
+      desc: "Uvoľnenie pred long ride.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
+      ]},
+    { date: "2026-05-09", type: "bike", title: "Long Ride #6 — MAX", duration: "3.5h",
+      desc: "Z2, cieľ: 1 000m D+. Posledný dlhý pred Pálavou!",
+      zones: ["z2", "z3"],
+      exercises: [],
+      bikeNote: "Simulácia Pálavy. 3,5h s 1 000m D+. Full race výživa. Po tomto už len taper." },
+    { date: "2026-05-10", type: "rest", title: "REST", duration: "—",
+      desc: "Začína taper. Odpočívaj.", exercises: [] },
+
+    // WEEK 8 (TAPER + RACE)
+    { date: "2026-05-11", type: "rest", title: "REST — Taper Week", duration: "—",
+      desc: "Závodný týždeň! Menej je viac.", exercises: [] },
+    { date: "2026-05-12", type: "bike", title: "Easy Spin", duration: "40 min",
+      desc: "Z1-Z2, otvorenie nôh.", zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Ľahké šliapanie, žiadna záťaž. Hydratácia." },
+    { date: "2026-05-13", type: "bike", title: "Openers", duration: "45 min",
+      desc: "WU + 3×5 min Z4 — krátke, ostré openers.",
+      zones: ["z2", "z4"],
+      exercises: [],
+      bikeNote: "15 min WU Z2 → 3×5 min Z4 (3 min easy) → 10 min CD. Posledné ostré intervaly. Neunavuj sa!" },
+    { date: "2026-05-14", type: "bike", title: "Easy Spin", duration: "30 min",
+      desc: "Z1, flush nohy.", zones: ["z1"], exercises: [],
+      bikeNote: "Ultra ľahké. Flush laktát z nôh." },
+    { date: "2026-05-15", type: "rest", title: "REST + Carb Load", duration: "—",
+      desc: "ŽIADNY tréning. Carb loading: 8-10g/kg sacharidov. Ryža, cestoviny, med. Príprava výbavy.",
+      exercises: [] },
+    { date: "2026-05-16", type: "race", title: "🏁 PÁLAVA — 125 km / 1 450 m", duration: "5-6h",
+      desc: "ZÁVODNÝ DEŇ! Raňajky 3h pred štartom. Enervit gély každých 30 min od 1. hodiny. Užívaj si!",
+      exercises: [],
+      bikeNote: "Raňajky: ovsená kaša + med + banán. Enervit Pre Sport. Fľaše: Enervit Isotonic C2:1. Gély: 8-10 ks. Kofeínové géle na 2. polovicu. UŽÍVAJ SI TO!" }
+];
+
+function daysUntil(target) {
+    const now = new Date();
+    now.setHours(0,0,0,0);
+    const diff = Math.ceil((target - now) / (1000*60*60*24));
+    return diff;
+}
+
+function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    const days = ['Ne','Po','Ut','St','Št','Pi','So'];
+    const months = ['jan','feb','mar','apr','máj','jún','júl','aug','sep','okt','nov','dec'];
+    return `${days[d.getDay()]} ${d.getDate()}. ${months[d.getMonth()]}`;
+}
+
+function getWeekNum(dateStr) {
+    const start = new Date("2026-03-23");
+    const d = new Date(dateStr);
+    return Math.floor((d - start) / (7*24*60*60*1000)) + 1;
+}
+
+function isToday(dateStr) {
+    const today = new Date();
+    const d = new Date(dateStr);
+    return today.toDateString() === d.toDateString();
+}
+
+function isPast(dateStr) {
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    return new Date(dateStr) < today;
+}
+
+function renderCountdowns() {
+    document.getElementById('cd-palava').textContent = Math.max(0, daysUntil(RACES.palava));
+    document.getElementById('cd-vysocina').textContent = Math.max(0, daysUntil(RACES.vysocina));
+    document.getElementById('cd-jested').textContent = Math.max(0, daysUntil(RACES.jested));
+}
+
+function renderWeekNav(activeWeek) {
+    const nav = document.getElementById('week-nav');
+    const weeks = [...new Set(PLAN.map(d => getWeekNum(d.date)))];
+    const todayEntry = PLAN.find(d => isToday(d.date));
+    const currentWeek = todayEntry ? getWeekNum(todayEntry.date) : 1;
+
+    nav.innerHTML = weeks.map(w => {
+        const labels = {4: 'Deload', 7: 'Peak', 8: 'Taper/Race'};
+        const label = labels[w] || `W${w}`;
+        const cls = [
+            'week-btn',
+            w === activeWeek ? 'active' : '',
+            w === currentWeek && w !== activeWeek ? 'current' : ''
+        ].filter(Boolean).join(' ');
+        return `<button class="${cls}" onclick="showWeek(${w})">${label}</button>`;
+    }).join('');
+}
+
+function renderDays(weekNum) {
+    const container = document.getElementById('training-days');
+    const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
+
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase II — Base & Threshold',4:'Phase II — Deload',5:'Phase II — Base & Threshold',6:'Phase II — Base & Threshold',7:'Phase III — Peak',8:'Phase III — Taper → PÁLAVA'};
+    const phase = phaseLabels[weekNum] || '';
+
+    let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
+
+    days.forEach((day, i) => {
+        const today = isToday(day.date);
+        const past = isPast(day.date);
+        const cls = ['day-card', today ? 'today' : '', past && !today ? 'past' : ''].filter(Boolean).join(' ');
+
+        let exercisesHtml = '';
+        if (day.exercises && day.exercises.length > 0) {
+            exercisesHtml = day.exercises.map(ex => `
+                <div class="exercise">
+                    <div class="exercise-info">
+                        <div class="exercise-name">${ex.name}</div>
+                        <div class="exercise-detail">${ex.sets}${ex.weight ? ' · ' + ex.weight : ''}</div>
+                        <div class="exercise-detail">${ex.note}</div>
+                        <a href="${ex.video}" target="_blank" class="exercise-video">▶ Video ukážka</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        let zonesHtml = '';
+        if (day.zones) {
+            zonesHtml = day.zones.map(z => `<span class="zone-badge ${z}">${z.toUpperCase()}</span>`).join(' ');
+        }
+
+        let noteHtml = '';
+        if (day.bikeNote) {
+            noteHtml = `<div class="workout-note">${day.bikeNote}</div>`;
+        }
+
+        html += `
+            <div class="${cls}" id="day-${day.date}">
+                <div class="day-header" onclick="toggleDay('${day.date}')">
+                    <div class="day-dot ${day.type}"></div>
+                    <div class="day-meta">
+                        <div class="day-date">${formatDate(day.date)}</div>
+                        <div class="day-title">${day.title} ${zonesHtml}</div>
+                    </div>
+                    <div class="day-duration">${day.duration}</div>
+                    <div class="day-expand">▼</div>
+                </div>
+                <div class="day-body">
+                    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:12px">${day.desc}</p>
+                    ${exercisesHtml}
+                    ${noteHtml}
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+}
+
+function renderTodayBanner() {
+    const banner = document.getElementById('today-banner');
+    const todayEntry = PLAN.find(d => isToday(d.date));
+
+    if (todayEntry) {
+        banner.innerHTML = `
+            <div class="today-banner" onclick="showWeek(${getWeekNum(todayEntry.date)}); setTimeout(() => { const el = document.getElementById('day-${todayEntry.date}'); if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'})} }, 100)">
+                <div class="dot"></div>
+                <div class="info">
+                    <div class="label">DNES</div>
+                    <div class="title">${todayEntry.title}</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+        `;
+    } else {
+        banner.innerHTML = '';
+    }
+}
+
+function toggleDay(date) {
+    const el = document.getElementById('day-' + date);
+    el.classList.toggle('open');
+}
+
+function showWeek(weekNum) {
+    renderWeekNav(weekNum);
+    renderDays(weekNum);
+}
+
+function init() {
+    renderCountdowns();
+    renderTodayBanner();
+
+    const todayEntry = PLAN.find(d => isToday(d.date));
+    const currentWeek = todayEntry ? getWeekNum(todayEntry.date) : 1;
+
+    showWeek(currentWeek);
+}
+
+init();
+setInterval(renderCountdowns, 60000);
+</script>
+</body>
+</html>
