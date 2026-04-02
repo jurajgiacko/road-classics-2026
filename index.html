@@ -767,9 +767,10 @@ function renderDays(weekNum) {
             noteHtml = `<div class="workout-note">${day.bikeNote}</div>`;
         }
 
+        const uid = day.date + '-' + i;
         html += `
-            <div class="${cls}" id="day-${day.date}">
-                <div class="day-header" onclick="toggleDay('${day.date}')">
+            <div class="${cls}" id="day-${uid}">
+                <div class="day-header" onclick="toggleDay('${uid}')">
                     <div class="day-dot ${day.type}"></div>
                     <div class="day-meta">
                         <div class="day-date">${formatDate(day.date)}</div>
@@ -792,11 +793,15 @@ function renderDays(weekNum) {
 
 function renderTodayBanner() {
     const banner = document.getElementById('today-banner');
-    const todayEntry = PLAN.find(d => isToday(d.date));
+    const todayIdx = PLAN.findIndex(d => isToday(d.date));
+    const todayEntry = todayIdx >= 0 ? PLAN[todayIdx] : null;
+    const todayWeekDays = todayEntry ? PLAN.filter(d => getWeekNum(d.date) === getWeekNum(todayEntry.date)) : [];
+    const todayLocalIdx = todayWeekDays.indexOf(todayEntry);
+    const todayUid = todayEntry ? todayEntry.date + '-' + todayLocalIdx : '';
 
     if (todayEntry) {
         banner.innerHTML = `
-            <div class="today-banner" onclick="showWeek(${getWeekNum(todayEntry.date)}); setTimeout(() => { const el = document.getElementById('day-${todayEntry.date}'); if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'})} }, 100)">
+            <div class="today-banner" onclick="showWeek(${getWeekNum(todayEntry.date)}); setTimeout(() => { const el = document.getElementById('day-${todayUid}'); if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'})} }, 100)">`;
                 <div class="dot"></div>
                 <div class="info">
                     <div class="label">DNES</div>
