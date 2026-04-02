@@ -801,7 +801,7 @@ function renderTodayBanner() {
 
     if (todayEntry) {
         banner.innerHTML = `
-            <div class="today-banner" onclick="showWeek(${getWeekNum(todayEntry.date)}); setTimeout(() => { const el = document.getElementById('day-${todayUid}'); if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'})} }, 100)">`;
+            <div class="today-banner" onclick="showWeek(${getWeekNum(todayEntry.date)}); setTimeout(() => { const el = document.getElementById('day-${todayUid}'); if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'})} }, 100)">
                 <div class="dot"></div>
                 <div class="info">
                     <div class="label">DNES</div>
