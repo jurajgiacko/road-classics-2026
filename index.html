@@ -471,11 +471,17 @@ const PLAN = [
     { date: "2026-04-05", type: "rest", title: "REST — Veľká noc", duration: "—",
       desc: "Veľkonočný rodinný deň. Plný odpočinok.", exercises: [] },
 
-    // WEEK 3
-    { date: "2026-04-06", type: "rest", title: "REST", duration: "—",
-      desc: "Regenerácia.", exercises: [] },
-    { date: "2026-04-07", type: "strength", title: "Sila A — Progres", duration: "40 min",
-      desc: "Zvýšené váhy, KB Swing 14-18 kg.",
+    // WEEK 3 — Bike v servise St-Pi
+    { date: "2026-04-06", type: "bike", title: "Bike Z2 — Base", duration: "50 min",
+      desc: "Z2, budovanie objemu. Konzistencia!",
+      zones: ["z2"], exercises: [],
+      bikeNote: "Ľahká Z2 jazda. Kadencia 85-95 RPM. Užívaj si." },
+    { date: "2026-04-07", type: "bike", title: "Bike Z2 + Servis Drop-off", duration: "50 min",
+      desc: "Ranná Z2 jazda, potom bike do servisu (prvý záručný).",
+      zones: ["z2"], exercises: [],
+      bikeNote: "Posledná jazda pred servisom. Z2 easy. Po jazde bike odovzdať do servisu." },
+    { date: "2026-04-08", type: "strength", title: "Sila A — Progres", duration: "40 min",
+      desc: "Bike v servise. Zvýšené váhy, KB Swing 14-18 kg.",
       exercises: [
         { ...EXERCISES.kb_deadlift, sets: "4 × 8", weight: "2×14 kg" },
         { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×14 kg" },
@@ -483,16 +489,16 @@ const PLAN = [
         { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
         { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
       ]},
-    { date: "2026-04-08", type: "bike", title: "Sweet Spot #1", duration: "55 min",
-      desc: "Prvé sweet spot intervaly — pod prahom, vysoký ROI.",
-      zones: ["z2", "z3"],
-      exercises: [],
-      bikeNote: "15 min WU Z2 → 2×10 min Z3-Z4 (5 min easy medzi) → 10 min CD Z1. Sweet spot = ťažšie ako tempo, ľahšie ako prah. Rozprávaš len po krátkych vetách." },
-    { date: "2026-04-09", type: "bike", title: "Steady State", duration: "55 min",
-      desc: "Z2, konštantné tempo.", zones: ["z2"], exercises: [],
-      bikeNote: "Recovery ride po včerajších intervaloch. Easy." },
+    { date: "2026-04-09", type: "mobility", title: "Mobilita — Travel Day", duration: "15-20 min",
+      desc: "Praha → Zlín → Praha + Paralympic Gala. Len strečing kdekoľvek stihneš.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
+      ]},
     { date: "2026-04-10", type: "strength", title: "Sila B", duration: "40 min",
-      desc: "Unilateral + core.",
+      desc: "Bike v servise. Unilateral + core.",
       exercises: [
         { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×18 kg" },
         { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×11 kg" },
@@ -500,13 +506,13 @@ const PLAN = [
         { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "stredný odpor" },
         { ...EXERCISES.band_pull, sets: "3 × 15", weight: "ľahký odpor" }
       ]},
-    { date: "2026-04-11", type: "bike", title: "Long Ride #3", duration: "2h",
-      desc: "Z2, cieľ: 300m prevýšenie. Prvý 2-hodinový ride.",
+    { date: "2026-04-11", type: "bike", title: "Long Ride #3 — Z2", duration: "90 min",
+      desc: "Bike späť zo servisu! Prvý 90-minútový ride. Z2 celú dobu.",
       zones: ["z2"],
       exercises: [],
-      bikeNote: "Najdlhšia jazda doteraz. Vezmi fľašu s Enervit Isotonic Drink. Piť každých 15 min. Ak >90 min, 1 gél po 60. min." },
-    { date: "2026-04-12", type: "rest", title: "Family Ride / Rest", duration: "30-45 min",
-      desc: "S deťmi alebo prechádzka.", exercises: [] },
+      bikeNote: "Bike po servise — prvá jazda, skontroluj všetko. Vezmi Enervit Isotonic vo fľaši. Piť každých 15 min. Ak sa cítiš super, môžeš ísť aj 100 min." },
+    { date: "2026-04-12", type: "rest", title: "REST / Family", duration: "—",
+      desc: "Regenerácia po prvom 90-min ride.", exercises: [] },
 
     // WEEK 4 (DELOAD)
     { date: "2026-04-13", type: "rest", title: "REST — Deload Week", duration: "—",
