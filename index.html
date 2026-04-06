@@ -477,18 +477,22 @@ const PLAN = [
       zones: ["z2"],
       exercises: [],
       bikeNote: "Avg speed 19.7 km/h (+2 km/h oproti sobote). 95% asfalt. Teplota 17°C. Stamina 60% na konci — ešte bolo v nádrži." },
-    { date: "2026-04-07", type: "bike", title: "Beh Z2 / REST", duration: "30-40 min",
-      desc: "Meetingy + bike do servisu doobeda. Večer beh Z2 ak stihneš, inak rest.",
-      zones: ["z2"], exercises: [],
-      bikeNote: "Beh 30-40 min Z2 (konverzačné tempo). Alternatíva keď bike nie je k dispozícii." },
-    { date: "2026-04-08", type: "strength", title: "Sila A — Progres", duration: "40 min",
-      desc: "Bike v servise. Zvýšené váhy, KB Swing 14-18 kg.",
+    { date: "2026-04-07", type: "strength", title: "Sila A — Progres", duration: "40 min",
+      desc: "Meetingy + bike do servisu. Sila doma medzi meetingmi.",
       exercises: [
         { ...EXERCISES.kb_deadlift, sets: "4 × 8", weight: "2×14 kg" },
         { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×14 kg" },
         { ...EXERCISES.kb_swing, sets: "4 × 15", weight: "1×18 kg" },
         { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
         { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-04-08", type: "mobility", title: "REST / Mobilita", duration: "20 min",
+      desc: "Recovery po pondelkovom 33 km ride + utorkovej sile. Bike v servise.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" },
+        { ...EXERCISES.wall_angels, sets: "10×", weight: "" }
       ]},
     { date: "2026-04-09", type: "mobility", title: "Mobilita — Travel Day", duration: "15-20 min",
       desc: "Praha → Zlín → Praha + Paralympic Gala. Len strečing kdekoľvek stihneš.",
@@ -507,53 +511,56 @@ const PLAN = [
         { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "stredný odpor" },
         { ...EXERCISES.band_pull, sets: "3 × 15", weight: "ľahký odpor" }
       ]},
-    { date: "2026-04-11", type: "bike", title: "Long Ride #3 — Z2", duration: "90 min",
-      desc: "Bike späť zo servisu! Prvý 90-minútový ride. Z2 celú dobu.",
+    { date: "2026-04-11", type: "bike", title: "Long Ride — 50 km", duration: "~2.5h",
+      desc: "Bike späť zo servisu! 50 km Z2. Progres: 33 → 50 km.",
       zones: ["z2"],
       exercises: [],
-      bikeNote: "Bike po servise — prvá jazda, skontroluj všetko. Vezmi Enervit Isotonic vo fľaši. Piť každých 15 min. Ak sa cítiš super, môžeš ísť aj 100 min." },
+      bikeNote: "Bike po servise — skontroluj všetko. Isotonic vo fľaši. Gél po 60. min + po 90. min. Piť každých 15 min. Cieľ: pohodlne dobikovať, nie zomierať." },
     { date: "2026-04-12", type: "rest", title: "REST / Family", duration: "—",
       desc: "Regenerácia po prvom 90-min ride.", exercises: [] },
 
-    // WEEK 4 (DELOAD)
-    { date: "2026-04-13", type: "rest", title: "REST — Deload Week", duration: "—",
-      desc: "Deload týždeň. Znížený objem, žiadna intenzita. Telo sa adaptuje.", exercises: [] },
-    { date: "2026-04-14", type: "strength", title: "Sila — Light", duration: "30 min",
-      desc: "Rovnaké cviky, znížená váha o 20-30%.",
+    // WEEK 4 — BUILD (sweet spot intro)
+    { date: "2026-04-13", type: "rest", title: "REST", duration: "—",
+      desc: "Regenerácia. Build blok začína.", exercises: [] },
+    { date: "2026-04-14", type: "strength", title: "Sila A", duration: "40 min",
+      desc: "Progres vo váhach.",
       exercises: [
-        { ...EXERCISES.kb_deadlift, sets: "3 × 8", weight: "2×11 kg" },
-        { ...EXERCISES.kb_swing, sets: "3 × 12", weight: "1×14 kg" },
-        { ...EXERCISES.plank, sets: "2 × 45s", weight: "" },
-        { ...EXERCISES.bird_dog, sets: "2 × 10/strana", weight: "" }
+        { ...EXERCISES.kb_deadlift, sets: "4 × 8", weight: "2×14 kg" },
+        { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×14 kg" },
+        { ...EXERCISES.kb_swing, sets: "4 × 15", weight: "1×18 kg" },
+        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
+        { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
       ]},
-    { date: "2026-04-15", type: "bike", title: "Easy Spin", duration: "45 min",
-      desc: "Z1-Z2, žiadne intervaly. Regenerácia.",
-      zones: ["z1", "z2"], exercises: [],
-      bikeNote: "Ľahké šliapanie. Toto NIE je tréning — je to aktívna regenerácia." },
-    { date: "2026-04-16", type: "bike", title: "Easy Spin", duration: "40 min",
-      desc: "Z1-Z2, plynulé.", zones: ["z1", "z2"], exercises: [],
-      bikeNote: "Pokračujeme v regenerácii." },
-    { date: "2026-04-17", type: "mobility", title: "Mobilita", duration: "20 min",
-      desc: "Full body mobilita.",
+    { date: "2026-04-15", type: "bike", title: "Sweet Spot #1", duration: "55 min",
+      desc: "Prvé sweet spot intervaly! Pod prahom, vysoký ROI.",
+      zones: ["z2", "z3"],
+      exercises: [],
+      bikeNote: "15 min WU Z2 → 2×10 min Z3-Z4 (5 min easy medzi) → 10 min CD Z1. Sweet spot = ťažšie ako tempo, ľahšie ako prah." },
+    { date: "2026-04-16", type: "bike", title: "Steady State Z2", duration: "55 min",
+      desc: "Z2, konštantné tempo. Recovery po intervaloch.", zones: ["z2"], exercises: [],
+      bikeNote: "Ľahké šliapanie. Aktívna regenerácia." },
+    { date: "2026-04-17", type: "strength", title: "Sila B + Mobilita", duration: "45 min",
+      desc: "Unilateral + core + strečing.",
       exercises: [
-        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
-        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
-        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
-        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" },
-        { ...EXERCISES.wall_angels, sets: "10×", weight: "" }
+        { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×18 kg" },
+        { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×11 kg" },
+        { ...EXERCISES.glute_bridge, sets: "3 × 12/strana", weight: "" },
+        { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "stredný odpor" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
       ]},
-    { date: "2026-04-18", type: "bike", title: "Long Ride — Easy", duration: "90 min",
-      desc: "Z2, flat, žiadne kopce. Regeneračný long ride.",
-      zones: ["z2"], exercises: [],
-      bikeNote: "Deload long ride. Konštantné ľahké tempo. Piť." },
-    { date: "2026-04-19", type: "rest", title: "REST", duration: "—",
-      desc: "Plný odpočinok.", exercises: [] },
+    { date: "2026-04-18", type: "bike", title: "Long Ride — 65 km", duration: "~3h",
+      desc: "Z2, cieľ: 400m D+. Prvý 3-hodinový ride!",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Isotonic vo fľaši. Gél po 60. a 90. min. Nacvič race výživu: piť každých 15 min, jesť každých 30-45 min po prvej hodine." },
+    { date: "2026-04-19", type: "rest", title: "REST / Family", duration: "—",
+      desc: "Regenerácia po prvom 3h ride.", exercises: [] },
 
-    // WEEK 5
+    // WEEK 5 — BUILD (sweet spot progres)
     { date: "2026-04-20", type: "rest", title: "REST", duration: "—",
-      desc: "Nový build blok začína.", exercises: [] },
+      desc: "Odpočinok pred ťažkým týždňom.", exercises: [] },
     { date: "2026-04-21", type: "strength", title: "Sila A — Heavy", duration: "40 min",
-      desc: "Max váhy. Progres!",
+      desc: "Zvýšené váhy. Progres!",
       exercises: [
         { ...EXERCISES.kb_deadlift, sets: "4 × 6", weight: "2×18 kg" },
         { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×18 kg" },
@@ -562,13 +569,13 @@ const PLAN = [
         { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
       ]},
     { date: "2026-04-22", type: "bike", title: "Sweet Spot #2", duration: "65 min",
-      desc: "Progres: 3×10 min Z3-Z4.",
+      desc: "Progres: 3×10 min Z3-Z4. Dlhšie intervaly, kratšie pauzy.",
       zones: ["z2", "z3", "z4"],
       exercises: [],
-      bikeNote: "15 min WU Z2 → 3×10 min Z3-Z4 (4 min easy medzi) → 10 min CD Z1. Dlhšie intervaly, kratšie pauzy." },
-    { date: "2026-04-23", type: "bike", title: "Steady State", duration: "60 min",
+      bikeNote: "15 min WU Z2 → 3×10 min Z3-Z4 (4 min easy medzi) → 10 min CD Z1." },
+    { date: "2026-04-23", type: "bike", title: "Steady State Z2", duration: "60 min",
       desc: "Z2, konštantné tempo.", zones: ["z2"], exercises: [],
-      bikeNote: "Recovery po intervaloch." },
+      bikeNote: "Recovery po intervaloch. Easy." },
     { date: "2026-04-24", type: "strength", title: "Sila B", duration: "40 min",
       desc: "Unilateral + core.",
       exercises: [
@@ -578,91 +585,90 @@ const PLAN = [
         { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "ťažký odpor" },
         { ...EXERCISES.band_pull, sets: "3 × 15", weight: "stredný odpor" }
       ]},
-    { date: "2026-04-25", type: "bike", title: "Long Ride #4", duration: "2.5h",
-      desc: "Z2, cieľ: 500m prevýšenie.",
+    { date: "2026-04-25", type: "bike", title: "Long Ride — 85 km", duration: "~3.5-4h",
+      desc: "Z2, cieľ: 600m D+. Prvý naozaj dlhý ride!",
       zones: ["z2"],
       exercises: [],
-      bikeNote: "Prvý 2,5h ride. Výživa: Enervit Isotonic Drink vo fľaši, gél po 60. a 90. min. Piť každých 15 min." },
-    { date: "2026-04-26", type: "rest", title: "Active Recovery", duration: "30 min",
-      desc: "Family ride alebo prechádzka.", exercises: [] },
+      bikeNote: "2 fľaše Isotonic. Gél každých 30 min po prvej hodine. Cieľ: 60g sacharidov/h. Toto je kľúčový tréning — nacvič všetko čo budeš robiť na Pálave." },
+    { date: "2026-04-26", type: "rest", title: "REST / Family", duration: "—",
+      desc: "Regenerácia po 85 km ride. Nohy hore.", exercises: [] },
 
-    // WEEK 6
+    // WEEK 6 — PEAK BUILD (Pálava simulácia)
     { date: "2026-04-27", type: "rest", title: "REST", duration: "—",
-      desc: "Posledný ťažký build týždeň pred Pálavou.", exercises: [] },
-    { date: "2026-04-28", type: "strength", title: "Sila A — Maintain", duration: "40 min",
-      desc: "Udržať silu, nepridávať objem.",
+      desc: "Posledný ťažký build týždeň!", exercises: [] },
+    { date: "2026-04-28", type: "strength", title: "Sila — Maintain", duration: "35 min",
+      desc: "Udržať silu, nepridávať objem. Šetríme nohy na sobotu.",
       exercises: [
-        { ...EXERCISES.kb_deadlift, sets: "4 × 6", weight: "2×18 kg" },
-        { ...EXERCISES.kb_bulgarian, sets: "3 × 10/strana", weight: "1×18 kg" },
-        { ...EXERCISES.kb_swing, sets: "4 × 15", weight: "1×22 kg" },
-        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
-        { ...EXERCISES.dead_bug, sets: "3 × 10/strana", weight: "" }
-      ]},
-    { date: "2026-04-29", type: "bike", title: "Threshold Intervaly", duration: "65 min",
-      desc: "Prahové intervaly: 3×8 min Z4.",
-      zones: ["z2", "z4"],
-      exercises: [],
-      bikeNote: "15 min WU Z2 → 3×8 min Z4 (5 min easy medzi) → 10 min CD Z1. Z4 = nepríjemné, len pár slov. Toto je nové!" },
-    { date: "2026-04-30", type: "bike", title: "Steady State", duration: "60 min",
-      desc: "Z2, konštantné tempo.", zones: ["z2"], exercises: [],
-      bikeNote: "Recovery." },
-    { date: "2026-05-01", type: "strength", title: "Sila B", duration: "35 min",
-      desc: "Unilateral + core.",
-      exercises: [
-        { ...EXERCISES.kb_goblet_squat, sets: "3 × 12", weight: "1×22 kg" },
-        { ...EXERCISES.kb_step_up, sets: "3 × 10/strana", weight: "2×14 kg" },
-        { ...EXERCISES.glute_bridge, sets: "3 × 12/strana", weight: "" },
-        { ...EXERCISES.pallof, sets: "3 × 10/strana", weight: "ťažký odpor" }
-      ]},
-    { date: "2026-05-02", type: "bike", title: "Long Ride #5", duration: "3h",
-      desc: "Z2, cieľ: 700m D+. Nacvič výživu!",
-      zones: ["z2"],
-      exercises: [],
-      bikeNote: "3-hodinový ride! Simulácia race výživy: Enervit Isotonic vo fľašiach, gél každých 30 min po prvej hodine. Cieľ: 60g sacharidov/h." },
-    { date: "2026-05-03", type: "rest", title: "REST", duration: "—",
-      desc: "Regenerácia po najťažšom týždni.", exercises: [] },
-
-    // WEEK 7 (PEAK)
-    { date: "2026-05-04", type: "rest", title: "REST — Peak Week", duration: "—",
-      desc: "Peak týždeň. Posledný tvrdý long ride.", exercises: [] },
-    { date: "2026-05-05", type: "strength", title: "Sila — Posledná", duration: "30 min",
-      desc: "Ľahká sila, udržiavacie.",
-      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "3 × 8", weight: "2×14 kg" },
         { ...EXERCISES.kb_swing, sets: "3 × 12", weight: "1×18 kg" },
-        { ...EXERCISES.kb_goblet_squat, sets: "2 × 10", weight: "1×14 kg" },
-        { ...EXERCISES.plank, sets: "2 × 45s", weight: "" },
+        { ...EXERCISES.plank, sets: "3 × 60s", weight: "" },
         { ...EXERCISES.bird_dog, sets: "2 × 10/strana", weight: "" }
       ]},
-    { date: "2026-05-06", type: "bike", title: "Threshold Sharp", duration: "60 min",
-      desc: "4×6 min Z4 — krátke, ostré.",
+    { date: "2026-04-29", type: "bike", title: "Threshold Intervaly", duration: "65 min",
+      desc: "Prahové intervaly: 3×8 min Z4. Nová intenzita!",
       zones: ["z2", "z4"],
       exercises: [],
-      bikeNote: "15 min WU → 4×6 min Z4 (4 min easy) → 10 min CD. Udržať ostrosť." },
-    { date: "2026-05-07", type: "bike", title: "Easy Spin", duration: "45 min",
-      desc: "Z1-Z2, regenerácia.", zones: ["z1", "z2"], exercises: [],
-      bikeNote: "Ľahké šliapanie." },
-    { date: "2026-05-08", type: "mobility", title: "Mobilita", duration: "20 min",
-      desc: "Uvoľnenie pred long ride.",
+      bikeNote: "15 min WU Z2 → 3×8 min Z4 (5 min easy medzi) → 10 min CD Z1. Z4 = nepríjemné, len pár slov. Toto je race pace!" },
+    { date: "2026-04-30", type: "bike", title: "Easy Spin", duration: "45 min",
+      desc: "Z1-Z2, aktívna regenerácia pred sobotou.", zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Ultra ľahké. Šetríme nohy na sobotu 100 km." },
+    { date: "2026-05-01", type: "mobility", title: "Mobilita + Prep", duration: "20 min",
+      desc: "Sviatok. Uvoľnenie pred Pálava simuláciou. Príprava výbavy a výživy na zajtra.",
       exercises: [
         { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
         { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
         { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
         { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
       ]},
-    { date: "2026-05-09", type: "bike", title: "Long Ride #6 — MAX", duration: "3.5h",
-      desc: "Z2, cieľ: 1 000m D+. Posledný dlhý pred Pálavou!",
+    { date: "2026-05-02", type: "bike", title: "Long Ride — 100 km (Pálava SIM!)", duration: "~4.5-5h",
+      desc: "Z2, cieľ: 800-1 000m D+. SIMULÁCIA PÁLAVY! Full race výživa.",
       zones: ["z2", "z3"],
       exercises: [],
-      bikeNote: "Simulácia Pálavy. 3,5h s 1 000m D+. Full race výživa. Po tomto už len taper." },
-    { date: "2026-05-10", type: "rest", title: "REST", duration: "—",
-      desc: "Začína taper. Odpočívaj.", exercises: [] },
+      bikeNote: "Toto je generálka! 2 fľaše Isotonic C2:1. Gél každých 30 min od 1. hodiny. Kofeínový gél od 3. hodiny. Cieľ: 60-80g sacharidov/h. Ak dáš 100 km, dáš aj Pálavu." },
+    { date: "2026-05-03", type: "rest", title: "REST", duration: "—",
+      desc: "Regenerácia po 100 km simulácii. Nohy hore, hydratácia, spánok.", exercises: [] },
 
-    // WEEK 8 (TAPER + RACE)
-    { date: "2026-05-11", type: "rest", title: "REST — Taper Week", duration: "—",
-      desc: "Závodný týždeň! Menej je viac.", exercises: [] },
+    // WEEK 7 — TAPER
+    { date: "2026-05-04", type: "rest", title: "REST — Taper Week", duration: "—",
+      desc: "Taper začína. Menej je viac. Telo sa adaptuje na predchádzajúce týždne.", exercises: [] },
+    { date: "2026-05-05", type: "strength", title: "Sila — Light", duration: "25 min",
+      desc: "Posledná sila pred závodom. Ľahká, udržiavacie.",
+      exercises: [
+        { ...EXERCISES.kb_swing, sets: "3 × 10", weight: "1×14 kg" },
+        { ...EXERCISES.kb_goblet_squat, sets: "2 × 10", weight: "1×14 kg" },
+        { ...EXERCISES.plank, sets: "2 × 45s", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "2 × 10/strana", weight: "" }
+      ]},
+    { date: "2026-05-06", type: "bike", title: "Threshold Sharp", duration: "50 min",
+      desc: "4×5 min Z4 — krátke, ostré. Udržať ostrosť bez únavy.",
+      zones: ["z2", "z4"],
+      exercises: [],
+      bikeNote: "15 min WU → 4×5 min Z4 (4 min easy) → 10 min CD. Krátke a ostré. Neunavuj sa!" },
+    { date: "2026-05-07", type: "bike", title: "Easy Spin", duration: "40 min",
+      desc: "Z1-Z2, regenerácia.", zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Ľahké šliapanie." },
+    { date: "2026-05-08", type: "mobility", title: "Mobilita", duration: "20 min",
+      desc: "Uvoľnenie.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
+      ]},
+    { date: "2026-05-09", type: "bike", title: "Long Ride — 50 km easy", duration: "~2.5h",
+      desc: "Z2, žiadne kopce. Taper long ride — udržať motor v chode.",
+      zones: ["z2"],
+      exercises: [],
+      bikeNote: "Konštantné ľahké tempo. Isotonic. Toto NIE je tréning — je to aktívna regenerácia." },
+    { date: "2026-05-10", type: "rest", title: "REST", duration: "—",
+      desc: "Odpočinok. Závodný týždeň sa blíži.", exercises: [] },
+
+    // WEEK 8 — RACE WEEK (PÁLAVA)
+    { date: "2026-05-11", type: "rest", title: "REST — Race Week", duration: "—",
+      desc: "Závodný týždeň! Menej je viac. Hydratácia, spánok, mentálna príprava.", exercises: [] },
     { date: "2026-05-12", type: "bike", title: "Easy Spin", duration: "40 min",
       desc: "Z1-Z2, otvorenie nôh.", zones: ["z1", "z2"], exercises: [],
-      bikeNote: "Ľahké šliapanie, žiadna záťaž. Hydratácia." },
+      bikeNote: "Ľahké šliapanie. Hydratácia celý deň." },
     { date: "2026-05-13", type: "bike", title: "Openers", duration: "45 min",
       desc: "WU + 3×5 min Z4 — krátke, ostré openers.",
       zones: ["z2", "z4"],
@@ -672,12 +678,12 @@ const PLAN = [
       desc: "Z1, flush nohy.", zones: ["z1"], exercises: [],
       bikeNote: "Ultra ľahké. Flush laktát z nôh." },
     { date: "2026-05-15", type: "rest", title: "REST + Carb Load", duration: "—",
-      desc: "ŽIADNY tréning. Carb loading: 8-10g/kg sacharidov. Ryža, cestoviny, med. Príprava výbavy.",
+      desc: "ŽIADNY tréning. Carb loading: 8-10g/kg sacharidov. Ryža, cestoviny, med. Príprava výbavy a výživy.",
       exercises: [] },
-    { date: "2026-05-16", type: "race", title: "🏁 PÁLAVA — 125 km / 1 450 m", duration: "5-6h",
-      desc: "ZÁVODNÝ DEŇ! Raňajky 3h pred štartom. Enervit gély každých 30 min od 1. hodiny. Užívaj si!",
+    { date: "2026-05-16", type: "race", title: "PÁLAVA — 125 km / 1 450 m", duration: "5-6h",
+      desc: "ZÁVODNÝ DEŇ! Prvý monument Road Classics 2026!",
       exercises: [],
-      bikeNote: "Raňajky: ovsená kaša + med + banán. Enervit Pre Sport. Fľaše: Enervit Isotonic C2:1. Gély: 8-10 ks. Kofeínové géle na 2. polovicu. UŽÍVAJ SI TO!" }
+      bikeNote: "Raňajky 3h pred štartom: ovsená kaša + med + banán. PRE Sport. Fľaše: Isotonic C2:1. Gél každých 30 min od 1. hodiny. Kofeínové géle od 3. hodiny. Cieľ: 60-80g sacharidov/h. UŽÍVAJ SI TO!" }
 ];
 
 function daysUntil(target) {
@@ -725,7 +731,7 @@ function renderWeekNav(activeWeek) {
     const currentWeek = todayEntry ? getWeekNum(todayEntry.date) : 1;
 
     nav.innerHTML = weeks.map(w => {
-        const labels = {4: 'Deload', 7: 'Peak', 8: 'Taper/Race'};
+        const labels = {6: 'Peak', 7: 'Taper', 8: 'Race'};
         const label = labels[w] || `W${w}`;
         const cls = [
             'week-btn',
@@ -740,7 +746,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase II — Base & Threshold',4:'Phase II — Deload',5:'Phase II — Base & Threshold',6:'Phase II — Base & Threshold',7:'Phase III — Peak',8:'Phase III — Taper → PÁLAVA'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (Sweet Spot)',5:'Phase II — Build (Progres)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
