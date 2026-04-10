@@ -269,6 +269,95 @@
 
         .saddle-note strong { color: var(--blue); }
 
+        .fuel-panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .fuel-header {
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .fuel-header:hover { background: var(--card-hover); }
+        .fuel-header .fuel-icon { font-size: 1.1rem; }
+        .fuel-header .fuel-title { flex: 1; font-weight: 600; font-size: 0.95rem; }
+        .fuel-header .fuel-arrow { color: var(--muted); transition: transform 0.2s; }
+        .fuel-panel.open .fuel-arrow { transform: rotate(180deg); }
+
+        .fuel-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .fuel-panel.open .fuel-body { max-height: 2000px; }
+
+        .fuel-content {
+            padding: 0 16px 16px;
+        }
+
+        .fuel-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+
+        .fuel-table th {
+            text-align: left;
+            padding: 8px 6px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .fuel-table td {
+            padding: 8px 6px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.4;
+        }
+
+        .fuel-table tr:last-child td { border-bottom: none; }
+
+        .fuel-table .duration-cell {
+            white-space: nowrap;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .fuel-section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--orange);
+            margin: 16px 0 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .fuel-tip {
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.5;
+            padding: 8px 10px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            margin-top: 4px;
+        }
+
+        .fuel-tip strong { color: var(--accent); }
+
         @media (max-width: 480px) {
             .countdown-card .days { font-size: 1.6rem; }
             .container { padding: 16px 0 60px; }
@@ -307,6 +396,90 @@
 
         <div class="saddle-note" id="saddle-note">
             <strong>Sedlo:</strong> Aktuálne 700mm. Progresie: +5mm každé 2 týždne → cieľ 710-720mm do Pálavy.
+        </div>
+
+        <div class="fuel-panel" id="fuel-panel">
+            <div class="fuel-header" onclick="document.getElementById('fuel-panel').classList.toggle('open')">
+                <span class="fuel-icon">⚡</span>
+                <span class="fuel-title">Výživa & suplementácia počas jazdy</span>
+                <span class="fuel-arrow">▼</span>
+            </div>
+            <div class="fuel-body">
+                <div class="fuel-content">
+
+                    <div class="fuel-section-title">Pred jazdou</div>
+                    <table class="fuel-table">
+                        <tr><th>Kedy</th><th>Čo</th></tr>
+                        <tr><td>2-3h pred</td><td>Ľahké raňajky/obed: rožky + med, ovsené vločky, pasta (ak >3h pred)</td></tr>
+                        <tr><td>60 min pred</td><td>Espresso (voliteľne)</td></tr>
+                        <tr><td>30 min pred</td><td><strong>Enervit PRE Sport</strong> (1 sáčok 45g)</td></tr>
+                    </table>
+
+                    <div class="fuel-section-title">Počas jazdy — podľa dĺžky</div>
+                    <table class="fuel-table">
+                        <tr><th>Trvanie</th><th>Fľaša</th><th>Jedlo / gél</th><th>Carbs/h</th></tr>
+                        <tr>
+                            <td class="duration-cell">&lt; 60 min</td>
+                            <td>Voda</td>
+                            <td>Nič</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="duration-cell">60–90 min</td>
+                            <td>Voda alebo Isotonic</td>
+                            <td>Voliteľne 1× gél po 60 min</td>
+                            <td>~30g</td>
+                        </tr>
+                        <tr>
+                            <td class="duration-cell">90 min – 2h</td>
+                            <td><strong>Isotonic</strong></td>
+                            <td>1× gél po 60 min</td>
+                            <td>~40g</td>
+                        </tr>
+                        <tr>
+                            <td class="duration-cell">2–3h</td>
+                            <td><strong>Isotonic</strong></td>
+                            <td>Gél alebo bar každých 30-45 min od 60. min</td>
+                            <td>~50g</td>
+                        </tr>
+                        <tr>
+                            <td class="duration-cell">3–5h</td>
+                            <td><strong>Isotonic C2:1</strong> (2 fľaše)</td>
+                            <td>Gél každých 30 min od 60. min + bar pre variáciu</td>
+                            <td>60–80g</td>
+                        </tr>
+                        <tr>
+                            <td class="duration-cell">5h+ (závod)</td>
+                            <td><strong>Isotonic C2:1</strong> (2+ fľaše, doplniť na citizni)</td>
+                            <td>Gél/bar každých 30 min. Kofeínové géle od 3. hodiny</td>
+                            <td>60–80g</td>
+                        </tr>
+                    </table>
+
+                    <div class="fuel-section-title">Tvoje Enervit produkty</div>
+                    <table class="fuel-table">
+                        <tr><th>Produkt</th><th>Carbs</th><th>Kedy</th></tr>
+                        <tr><td><strong>C2:1 Carbo Gel</strong></td><td>25g</td><td>Hlavný gél počas jazdy</td></tr>
+                        <tr><td><strong>C2:1 Carbo Gel KOFEÍN</strong></td><td>25g + 75mg kofeín</td><td>Od 3. hodiny jazdy (2. polovica závodu)</td></tr>
+                        <tr><td><strong>C2:1 Carbo Bar</strong> (200mg sodium)</td><td>~40g</td><td>Variácia k gélom — jedz na rovinkách, nie v kopcoch</td></tr>
+                        <tr><td><strong>C2:1 Carbo Chews</strong></td><td>~30g</td><td>Alternatíva k gélom — dávkuješ postupne</td></tr>
+                        <tr><td><strong>Competition Bar</strong></td><td>~25g</td><td>Solid snack, dlhšie rides</td></tr>
+                        <tr><td><strong>Isotonic Drink</strong></td><td>~30g/fľaša</td><td>Základ hydratácie na bike</td></tr>
+                        <tr><td><strong>PRE Sport</strong></td><td>~17g</td><td>30 min pred jazdou</td></tr>
+                        <tr><td><strong>R2 Recovery Drink</strong></td><td>~40g + proteín</td><td>Do 30 min PO jazde</td></tr>
+                        <tr><td><strong>Magic Cherry</strong></td><td>—</td><td>Anti-inflamatórium, pred spaním po ťažkom dni</td></tr>
+                    </table>
+
+                    <div class="fuel-section-title">Pravidlá</div>
+                    <div class="fuel-tip">
+                        <strong>Piť každých 15 min</strong> — malé dúšky, nečakaj na smäd.<br>
+                        <strong>Jesť na rovinkách</strong> — v kopci len piť, bar/gél na rovine.<br>
+                        <strong>Trénovať výživu!</strong> — nacvič na dlhých jazdách presne to, čo budeš robiť na závode.<br>
+                        <strong>Po jazde:</strong> R2 Recovery Drink do 30 min + normálne jedlo do 2h.
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div class="week-nav" id="week-nav"></div>
