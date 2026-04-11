@@ -578,13 +578,23 @@ const EXERCISES = {
         name: "Wall Angels",
         video: "https://www.youtube.com/watch?v=M_ooIhKYs7c",
         note: "Chrbát + lakte + ruky na stene — 10×"
+    },
+    kb_overhead_press: {
+        name: "KB Overhead Press",
+        video: "https://www.youtube.com/watch?v=HrnFm9sDMGY",
+        note: "Kompenzácia drop bar pozície — ramená + triceps"
+    },
+    kb_renegade_row: {
+        name: "KB Renegade Row",
+        video: "https://www.youtube.com/watch?v=b3yMQjSiMJ0",
+        note: "Core + chrbát v jednom — plank pozícia"
     }
 };
 
 const PLAN = [
     // WEEK 1
     { date: "2026-03-23", type: "bike", title: "Bike dorazil — SETUP", duration: "—",
-      desc: "Montáž: pedále, bottle cages, LOAD bag, Garmin mount, sedlo na 700mm",
+      desc: "Montáž: pedále, bottle cages, LOAD bag, Garmin mount, sedlo na 710mm",
       exercises: [] },
     { date: "2026-03-24", type: "strength", title: "Sila — Intro", duration: "30 min",
       desc: "Prvý silový. Ľahké váhy, naučiť formu.",
@@ -693,8 +703,17 @@ const PLAN = [
       desc: "Regenerácia po prvom 90-min ride.", exercises: [] },
 
     // WEEK 4 — FIBO WEEK (bike Po-St, DE Št-Ne)
-    { date: "2026-04-13", type: "rest", title: "REST", duration: "—",
-      desc: "Regenerácia po 50 km long ride.", exercises: [] },
+    { date: "2026-04-13", type: "strength", title: "Upper Body + Mobilita", duration: "40 min",
+      desc: "Kompenzačná sila na vrch tela + mobilita. Nohy oddychujú pred utorkovým Sweet Spot.",
+      exercises: [
+        { ...EXERCISES.kb_overhead_press, sets: "3 × 10/strana", weight: "1×7-11 kg" },
+        { ...EXERCISES.band_pull, sets: "3 × 15", weight: "ľahký odpor" },
+        { ...EXERCISES.wall_angels, sets: "3 × 10", weight: "" },
+        { ...EXERCISES.kb_renegade_row, sets: "3 × 8/strana", weight: "1×7-11 kg" },
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
+      ]},
     { date: "2026-04-14", type: "bike", title: "Sweet Spot #1", duration: "55 min",
       desc: "Prvé sweet spot intervaly! Kľúčový tréning pred FIBO cestou.",
       zones: ["z2", "z3"],
