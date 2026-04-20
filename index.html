@@ -725,47 +725,50 @@ const PLAN = [
       desc: "FIBO deň. Ranný alebo večerný beh Z2 pri hoteli.",
       zones: ["z2"], exercises: [],
       bikeNote: "Beh 35-40 min Z2. Alternatíva keď bike nie je k dispozícii. Udržať aeróbnu base." },
-    { date: "2026-04-17", type: "bike", title: "FIBO — Beh Z2 + Mobilita", duration: "35+15 min",
-      desc: "FIBO deň 2. Beh + mobilita. Ak je gym v hoteli, sila namiesto behu.",
-      zones: ["z2"],
+    { date: "2026-04-17", type: "bike", title: "Beh Z2 — Dortmund", duration: "32:15",
+      desc: "✅ 5.01 km, 22m D+, avg HR 145, max HR 161. TE 3.0 Impacting. Avg pace 6:27/km. Best pace 3:47/km. Dortmund city run pri hoteli.",
+      zones: ["z2"], exercises: [],
+      bikeNote: "Moving time 32:08. Teplota 20-29°C. Cadence 161 spm. Intensity minutes: 3 min moderate + 30 min vigorous. Dobrý Z2 beh po FIBO dňoch." },
+    { date: "2026-04-18", type: "rest", title: "Presun DE → PRG", duration: "7h",
+      desc: "7-hodinový presun autom Dortmund → Praha bez prestávky. Dlhé sedenie = záťaž na chrbát.", exercises: [] },
+    { date: "2026-04-19", type: "rest", title: "Recovery", duration: "—",
+      desc: "Regenerácia po 7h ceste. Odpočinok, rodina.", exercises: [] },
+
+    // WEEK 5 — WORKSHOP ZLÍN + RC CAMP LIBEREC
+    { date: "2026-04-20", type: "rest", title: "REST (práca)", duration: "—",
+      desc: "Mega veľa práce. Odpočinok po 7h presune z DE. Ak stihneš, 10 min mobilita večer.", exercises: [] },
+    { date: "2026-04-21", type: "mobility", title: "Workshop Zlín — Mobilita", duration: "15-20 min",
+      desc: "Celodňový workshop + presun do Zlína. Bike nestíhaš. Večer na ubytovaní 15 min mobilita — odblokuj chrbát po sedení.",
       exercises: [
         { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
         { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
-        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" },
-        { ...EXERCISES.wall_angels, sets: "10×", weight: "" }
+        { ...EXERCISES.hip_flexor, sets: "60s / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" }
       ]},
-    { date: "2026-04-18", type: "rest", title: "DE s rodinou / Beh", duration: "30-40 min",
-      desc: "V DE s rodinou. Voliteľne ranný beh Z2. Inak rest.", exercises: [] },
-    { date: "2026-04-19", type: "rest", title: "Cesta späť / REST", duration: "—",
-      desc: "Návrat z DE. Odpočinok po FIBO týždni.", exercises: [] },
-
-    // WEEK 5 — ZLÍN + LIBEREC + SŤAHOVANIE
-    { date: "2026-04-20", type: "rest", title: "REST", duration: "—",
-      desc: "Príprava na náročný týždeň.", exercises: [] },
-    { date: "2026-04-21", type: "bike", title: "Bike Z2 (Zlín)", duration: "55-65 min",
-      desc: "Bike so sebou do Zlína. Večerná Z2 jazda.",
-      zones: ["z2"], exercises: [],
-      bikeNote: "Objavuj Zlín na bike! Z2 celú dobu. Nový terén = mentálna stimulácia." },
-    { date: "2026-04-22", type: "bike", title: "Sweet Spot #2 (Zlín)", duration: "60 min",
-      desc: "Ranná jazda v Zlíne. Sweet spot intervaly.",
-      zones: ["z2", "z3", "z4"],
-      exercises: [],
-      bikeNote: "15 min WU Z2 → 3×10 min Z3-Z4 (4 min easy medzi) → 10 min CD Z1. Potom cesta do Liberca." },
-    { date: "2026-04-23", type: "bike", title: "Bike Z2 (Liberec RC Camp)", duration: "40-50 min",
-      desc: "Príchod do Liberca na VIP Road Classics event. Poobedná/večerná jazda.",
-      zones: ["z2"], exercises: [],
-      bikeNote: "Ľahká jazda, spoznaj terén. Šetri nohy na zajtrajšiu camp ride." },
-    { date: "2026-04-24", type: "bike", title: "RC Camp Ride — LONG!", duration: "2-3.5h",
-      desc: "Road Classics camp ride! Hlavný program. Cieľ: čo najviac km (50-70 km). Toto nahrádza long ride!",
+    { date: "2026-04-22", type: "mobility", title: "Meetingy + presun PRG — Mobilita", duration: "15 min",
+      desc: "Meeting od 9:00, koniec ~16:00, rýchly presun do Prahy. Bike neberie. Ráno pred meetingom 15 min mobilita.",
+      exercises: [
+        { ...EXERCISES.wall_angels, sets: "10×", weight: "" },
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s / strana", weight: "" }
+      ]},
+    { date: "2026-04-23", type: "rest", title: "Presun na RC Camp Liberec", duration: "—",
+      desc: "Presun do Liberca na VIP Road Classics camp. Travel day. Šetri energiu na zajtrajšiu camp ride!", exercises: [] },
+    { date: "2026-04-24", type: "bike", title: "RC Camp Ride — 75 km!", duration: "3-4h",
+      desc: "🎯 Road Classics camp ride! Cieľ: 75 km. Ak sa podarí, najdlhší ride sezóny a nový rekord!",
       zones: ["z2", "z3"],
       exercises: [],
-      bikeNote: "Race-like ride s ostatnými účastníkmi. Skúsená skupina = ťahanie. Isotonic + gély. Ak stihneš 60-70 km, máš najdlhší ride! Ak musíš skrátiť, ok — aj 40-50 km je cenných." },
-    { date: "2026-04-25", type: "bike", title: "Sťahovanie — Ranná jazda", duration: "45-60 min",
-      desc: "Ráno krátka Z2 jazda (ak stihneš), potom sťahovanie celý deň.",
-      zones: ["z2"], exercises: [],
-      bikeNote: "Max 1h. Ľahká Z2. Hlavná práca dnes = sťahovanie. Šetri energiu." },
-    { date: "2026-04-26", type: "rest", title: "Sťahovanie / REST", duration: "—",
-      desc: "Sťahovanie. Ak stihneš rannú jazdu 30-45 min, bonus. Inak rest.", exercises: [] },
+      bikeNote: "Race-like ride s ostatnými účastníkmi. Skupinová dynamika = ťahanie. Výživa: Enervit Isotonic vo fľaši, C2:1 gél každých 30-40 min od 1. hodiny. Cieľ 60-90g sacharidov/h. Pred jazdou: raňajky 2-3h pred + Pre Sport." },
+    { date: "2026-04-25", type: "rest", title: "REST / Mobilita", duration: "15-20 min",
+      desc: "Regenerácia po camp ride. Ľahká mobilita ak stihneš — uvoľni nohy a chrbát.",
+      exercises: [
+        { ...EXERCISES.hip_flexor, sets: "60s / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" }
+      ]},
+    { date: "2026-04-26", type: "rest", title: "REST", duration: "—",
+      desc: "Plný odpočinok. Ďalší tréning najskôr utorok.", exercises: [] },
 
     // WEEK 6 — PEAK BUILD (sťahovanie Po-Ut, potom normál)
     { date: "2026-04-27", type: "rest", title: "Sťahovanie / REST", duration: "—",
@@ -920,7 +923,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Zlín + Liberec RC)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
