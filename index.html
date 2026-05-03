@@ -797,8 +797,15 @@ const PLAN = [
       bikeNote: "Moving time 1:01:18. Cadence 113 spm. Stride 1.20m. HR vyššie kvôli 30°C+ horúčave. Bonus Z2 objem na rest day." },
 
     // WEEK 7 — TAPER
-    { date: "2026-05-04", type: "rest", title: "REST — Taper Week", duration: "—",
-      desc: "Taper začína. Menej je viac. Telo sa adaptuje na predchádzajúce týždne.", exercises: [] },
+    { date: "2026-05-04", type: "mobility", title: "Mobilita — Taper Week", duration: "20 min",
+      desc: "Taper začína. Uvoľni chrbát a bedrá po náročnom W6. Menej je viac.",
+      exercises: [
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "2 kolá / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "60s / strana", weight: "" },
+        { ...EXERCISES.wall_angels, sets: "10×", weight: "" }
+      ]},
     { date: "2026-05-05", type: "strength", title: "Sila — Light", duration: "25 min",
       desc: "Posledná sila pred závodom. Ľahká, udržiavacie.",
       exercises: [
