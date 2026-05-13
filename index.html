@@ -269,6 +269,17 @@
 
         .saddle-note strong { color: var(--blue); }
 
+        .routes-panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .routes-panel .fuel-body { display: none; }
+        .routes-panel.open .fuel-body { display: block; }
+        .routes-panel.open .fuel-arrow { transform: rotate(180deg); }
+
         .fuel-panel {
             background: var(--card);
             border: 1px solid var(--border);
@@ -393,6 +404,30 @@
         </div>
 
         <div id="today-banner"></div>
+
+        <div class="routes-panel" id="routes-panel">
+            <div class="fuel-header" onclick="document.getElementById('routes-panel').classList.toggle('open')">
+                <span class="fuel-icon">📍</span>
+                <span class="fuel-title">Trasy — GPX download → Strava / Garmin</span>
+                <span class="fuel-arrow">▼</span>
+            </div>
+            <div class="fuel-body">
+                <div class="fuel-content">
+                    <table class="fuel-table">
+                        <tr><th>Trasa</th><th>Km</th><th>D+</th><th></th></tr>
+                        <tr>
+                            <td>RC Pálava 2026 — Dlhá</td><td>124 km</td><td>1 282 m</td>
+                            <td><a href="routes/palava-2026-dlouha-124km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                        </tr>
+                        <tr>
+                            <td>TTT — Social Ride</td><td>22 km</td><td>50 m</td>
+                            <td><a href="routes/ttt-22km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                        </tr>
+                    </table>
+                    <p style="color:var(--muted);font-size:0.75rem;margin-top:8px;">Stiahni GPX → Garmin Connect app → Tréning → Trasy → Import → Sync na Edge 840</p>
+                </div>
+            </div>
+        </div>
 
         <div class="saddle-note" id="saddle-note">
             <strong>Sedlo:</strong> Aktuálne 710mm (overené 10.4.). Cieľ: 715mm o 2 týždne → max 720mm do Pálavy. PPS range: 716-726mm.
