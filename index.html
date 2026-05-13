@@ -276,8 +276,8 @@
             margin-bottom: 16px;
             overflow: hidden;
         }
-        .routes-panel .fuel-body { display: none; }
-        .routes-panel.open .fuel-body { display: block; }
+        .routes-panel .fuel-body { max-height: 0; }
+        .routes-panel.open .fuel-body { max-height: 1000px; }
         .routes-panel.open .fuel-arrow { transform: rotate(180deg); }
 
         .fuel-panel {
