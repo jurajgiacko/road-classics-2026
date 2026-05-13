@@ -417,34 +417,52 @@
                         <tr><th>Trasa</th><th>Km</th><th>D+</th><th></th></tr>
                         <tr style="border-bottom:2px solid var(--green);">
                             <td>🏁 RC Pálava 2026 — Dlhá</td><td>124 km</td><td>1 282 m</td>
-                            <td><a href="routes/palava-2026-dlouha-124km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/palava-2026-dlouha-124km.gpx" onclick="event.preventDefault();shareGPX(this.href,'palava-2026-dlouha-124km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                         <tr>
                             <td>TTT</td><td>22 km</td><td>50 m</td>
-                            <td><a href="routes/ttt-22km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/ttt-22km.gpx" onclick="event.preventDefault();shareGPX(this.href,'ttt-22km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                         <tr>
                             <td>Short</td><td>27 km</td><td>102 m</td>
-                            <td><a href="routes/short-27km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/short-27km.gpx" onclick="event.preventDefault();shareGPX(this.href,'short-27km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                         <tr>
                             <td>Short w/ coffee ☕</td><td>32 km</td><td>109 m</td>
-                            <td><a href="routes/short-w-coffee-32km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/short-w-coffee-32km.gpx" onclick="event.preventDefault();shareGPX(this.href,'short-w-coffee-32km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                         <tr>
                             <td>Middle</td><td>35 km</td><td>282 m</td>
-                            <td><a href="routes/middle-35km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/middle-35km.gpx" onclick="event.preventDefault();shareGPX(this.href,'middle-35km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                         <tr>
                             <td>Middle w/ coffee ☕</td><td>40 km</td><td>328 m</td>
-                            <td><a href="routes/middle-w-coffee-40km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/middle-w-coffee-40km.gpx" onclick="event.preventDefault();shareGPX(this.href,'middle-w-coffee-40km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                         <tr>
                             <td>Long w/ coffee ☕</td><td>54 km</td><td>380 m</td>
-                            <td><a href="routes/long-w-coffee-54km.gpx" download style="color:var(--green);text-decoration:none;font-weight:600;">⬇ GPX</a></td>
+                            <td><a href="routes/long-w-coffee-54km.gpx" onclick="event.preventDefault();shareGPX(this.href,'long-w-coffee-54km.gpx',this)" style="color:var(--green);text-decoration:none;font-weight:600;cursor:pointer;">⬇ GPX</a></td>
                         </tr>
                     </table>
-                    <p style="color:var(--muted);font-size:0.75rem;margin-top:8px;">Stiahni GPX → Garmin Connect app → Tréning → Trasy → Import → Sync na Edge 840</p>
+                    <p style="color:var(--muted);font-size:0.75rem;margin-top:8px;">Klikni ⬇ GPX → vyber Garmin Connect alebo Strava zo zdieľania → Sync na Edge 840</p>
+                    <script>
+                    async function shareGPX(url, filename, btn) {
+                        try {
+                            btn.textContent = '⏳';
+                            const response = await fetch(url);
+                            const blob = await response.blob();
+                            const file = new File([blob], filename, { type: 'application/gpx+xml' });
+                            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                                await navigator.share({ files: [file], title: filename });
+                            } else {
+                                window.open(url);
+                            }
+                        } catch(e) {
+                            if (e.name !== 'AbortError') window.open(url);
+                        }
+                        btn.textContent = '⬇ GPX';
+                    }
+                    </script>
                 </div>
             </div>
         </div>
