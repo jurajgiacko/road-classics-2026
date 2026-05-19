@@ -383,17 +383,17 @@
         </header>
 
         <div class="countdown-grid">
-            <div class="countdown-card palava">
-                <div class="race-name">Pálava</div>
-                <div class="days" id="cd-palava">—</div>
-                <div class="days-label">dní</div>
-                <div class="race-info">16.5. · 125 km · 1 450 m</div>
+            <div class="countdown-card palava" style="opacity:0.7">
+                <div class="race-name">Pálava ✅</div>
+                <div class="days" id="cd-palava" style="font-size:1.2rem">FINISHER</div>
+                <div class="days-label">5:50:42</div>
+                <div class="race-info">16.5. · 123 km · 1 592 m D+</div>
             </div>
             <div class="countdown-card vysocina">
                 <div class="race-name">Vysočina</div>
                 <div class="days" id="cd-vysocina">—</div>
                 <div class="days-label">dní</div>
-                <div class="race-info">18.7. · 102 km · 1 750 m</div>
+                <div class="race-info">19.7. · 102 km · 1 750 m D+</div>
             </div>
             <div class="countdown-card jested">
                 <div class="race-name">Ještěd</div>
@@ -936,7 +936,191 @@ const PLAN = [
     { date: "2026-05-16", type: "race", title: "🏁 PÁLAVA — FINISHER! 123 km ✅", duration: "5:50:42",
       desc: "✅ PRVÝ MONUMENT HOTOVÝ! 123.14 km, 1 592m D+, Avg HR 151, Max HR 179. TE 5.0 Overreaching. Oficiálny čas 5:50:42 (po 10km neutral). Vietor, chladno 9-16°C, minimálny dážď. 87% road / 13% offroad.",
       exercises: [],
-      bikeNote: "Max speed 61.9 kph. Avg speed 20.0 kph (20.3 moving). Moving time 6:03:48. Elapsed 6:08:32. Kadencia 276 max. 2 854 kcal. Enervit C2:1 gély + jelly celý závod. Kalas bunda + leg warmers + návleky tretry. Royal Bay ponožky. Sarah + Sophie nálepky na riadidlách. OD NULY K FINISHER ZA 8 TÝŽDŇOV." }
+      bikeNote: "Max speed 61.9 kph. Avg speed 20.0 kph (20.3 moving). Moving time 6:03:48. Elapsed 6:08:32. Kadencia 276 max. 2 854 kcal. Enervit C2:1 gély + jelly celý závod. Kalas bunda + leg warmers + návleky tretry. Royal Bay ponožky. Sarah + Sophie nálepky na riadidlách. OD NULY K FINISHER ZA 8 TÝŽDŇOV." },
+
+    // === BLOCK 2: Pálava → Vysočina (W9-W17) ===
+
+    // W9 — Recovery
+    { date: "2026-05-19", type: "rest", title: "REST", duration: "—",
+      desc: "Kompletný odpočinok po Pálave. TE 5.0 recovery. Nohy hore.", exercises: [] },
+    { date: "2026-05-20", type: "mobility", title: "Mobilita + Core", duration: "20 min",
+      desc: "Žiadna sila — iba mobilita a deep core. 90/90 Hips, Open Books, Dead Bug, Bird Dog, Pallof Press.",
+      exercises: [
+        { ...EXERCISES.hip_90_90, sets: "2 kolo / strana", weight: "" },
+        { ...EXERCISES.open_books, sets: "10× / strana", weight: "" },
+        { ...EXERCISES.dead_bug, sets: "3×10 / strana", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "3×10 / strana", weight: "" }
+      ] },
+    { date: "2026-05-21", type: "bike", title: "Easy Spin — Recovery", duration: "30-40 min",
+      desc: "Z1, flat, kadencia 90+. Len pretočiť nohy. Žiadna intenzita.",
+      zones: ["z1"], exercises: [] },
+    { date: "2026-05-22", type: "rest", title: "REST / Prechádzka", duration: "—",
+      desc: "Aktívny odpočinok.", exercises: [] },
+    { date: "2026-05-23", type: "mobility", title: "Mobilita + Zápästie rehab", duration: "20 min",
+      desc: "Mobilita + fyzio cviky na zápästie.",
+      exercises: [
+        { ...EXERCISES.hip_90_90, sets: "2 kolo / strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.wall_angels, sets: "10×", weight: "" }
+      ] },
+    { date: "2026-05-24", type: "bike", title: "Easy Ride — Recovery", duration: "60 min",
+      desc: "Z1-Z2, flat, žiadne kopce. Pocit v nohách?",
+      zones: ["z1", "z2"], exercises: [] },
+    { date: "2026-05-25", type: "rest", title: "Family Ride / REST", duration: "—",
+      desc: "Podľa pocitu. S deťmi alebo odpočinok.", exercises: [] },
+
+    // W10 — Build 1 Start
+    { date: "2026-05-26", type: "rest", title: "REST", duration: "—", desc: "Regenerácia.", exercises: [] },
+    { date: "2026-05-27", type: "strength", title: "Sila A — Climbing Power", duration: "45 min",
+      desc: "Quads + glutes + core. Fokus na silu do kopca.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "4×8", weight: "2×18 kg" },
+        { ...EXERCISES.kb_bulgarian_split, sets: "3×10/strana", weight: "1×14 kg" },
+        { ...EXERCISES.kb_swing, sets: "3×15", weight: "1×18 kg" },
+        { ...EXERCISES.plank, sets: "3×60s", weight: "" },
+        { ...EXERCISES.bird_dog, sets: "3×10/strana", weight: "" }
+      ] },
+    { date: "2026-05-28", type: "bike", title: "Hill Repeats — 4×5 min Z4", duration: "60 min",
+      desc: "KĽÚČOVÝ TRÉNING! 15 WU + 4×5 min kopec Z4 (3 min zjazd) + CD. Kadencia 80+.",
+      zones: ["z2", "z4"], exercises: [],
+      bikeNote: "Nájdi kopec 3-5 min. Opakuj. HR do Z4. Kadencia 80+, nesedieť — striedať." },
+    { date: "2026-05-29", type: "bike", title: "Z2 Endurance", duration: "60 min",
+      desc: "Steady Z2, kadencia 85+. Aeróbna base.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-05-30", type: "strength", title: "Sila B + Mobilita", duration: "40 min",
+      desc: "Unilateral + core + zápästie rehab.",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3×12", weight: "1×18 kg" },
+        { ...EXERCISES.single_leg_glute_bridge, sets: "3×12/strana", weight: "" },
+        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "" },
+        { ...EXERCISES.pallof_press, sets: "3×10/strana", weight: "stredný" }
+      ] },
+    { date: "2026-05-31", type: "bike", title: "Long Ride — 2,5h / 600m D+", duration: "2:30",
+      desc: "Prvý dlhší ride Block 2. Kopce! Enervit gél stratégia od 1. hodiny.",
+      zones: ["z2", "z3"], exercises: [],
+      bikeNote: "Cieľ: 600m D+. Gél každých 30 min. Kadencia 80+ v kopcoch." },
+    { date: "2026-06-01", type: "rest", title: "Active Recovery", duration: "30-40 min",
+      desc: "Z1 easy spin alebo prechádzka s rodinou.", exercises: [] },
+
+    // W11 — Build 1
+    { date: "2026-06-02", type: "rest", title: "REST", duration: "—", desc: "Regenerácia.", exercises: [] },
+    { date: "2026-06-03", type: "strength", title: "Sila A — Climbing Power", duration: "45 min",
+      desc: "Progresia: KB Swing 22 kg.",
+      exercises: [
+        { ...EXERCISES.kb_deadlift, sets: "4×8", weight: "2×18 kg" },
+        { ...EXERCISES.kb_bulgarian_split, sets: "3×10/strana", weight: "1×14 kg" },
+        { ...EXERCISES.kb_swing, sets: "4×15", weight: "1×22 kg" },
+        { ...EXERCISES.plank, sets: "3×60s", weight: "" }
+      ] },
+    { date: "2026-06-04", type: "bike", title: "Hill Repeats — 5×5 min Z4", duration: "75 min",
+      desc: "15 WU + 5×5 min kopec Z4 (3 min zjazd) + CD. Jeden set navyše.",
+      zones: ["z2", "z4"], exercises: [] },
+    { date: "2026-06-05", type: "bike", title: "Z2 + Tempo", duration: "70 min",
+      desc: "50 min Z2 + 2×8 min Z3 (tempo na rovine). Kadencia 85+.",
+      zones: ["z2", "z3"], exercises: [] },
+    { date: "2026-06-06", type: "strength", title: "Sila B + Mobilita", duration: "40 min",
+      desc: "Unilateral + core.",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3×12", weight: "1×18 kg" },
+        { ...EXERCISES.single_leg_glute_bridge, sets: "3×12/strana", weight: "" },
+        { ...EXERCISES.pallof_press, sets: "3×10/strana", weight: "stredný" }
+      ] },
+    { date: "2026-06-07", type: "bike", title: "Long Ride — 3h / 800m D+", duration: "3:00",
+      desc: "Progresia: viac kopcovania. Full nutrition.",
+      zones: ["z2", "z3"], exercises: [],
+      bikeNote: "Cieľ: 800m D+. Dlhšie stúpania. Kadencia focus." },
+    { date: "2026-06-08", type: "rest", title: "Active Recovery", duration: "—", desc: "Easy spin alebo prechádzka.", exercises: [] },
+
+    // W12 — Build 2 Climbing Focus
+    { date: "2026-06-09", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-10", type: "strength", title: "Sila A", duration: "45 min", desc: "Climbing power.", exercises: [] },
+    { date: "2026-06-11", type: "bike", title: "Hill Repeats — 3×8 min Z3-Z4", duration: "75 min",
+      desc: "DLHŠIE intervaly! 15 WU + 3×8 min kopec Z3-Z4 (4 min zjazd) + CD.",
+      zones: ["z2", "z3", "z4"], exercises: [] },
+    { date: "2026-06-12", type: "bike", title: "Z2 Endurance", duration: "65 min",
+      desc: "Steady Z2.", zones: ["z2"], exercises: [] },
+    { date: "2026-06-13", type: "strength", title: "Sila B + Mobilita", duration: "40 min", desc: "", exercises: [] },
+    { date: "2026-06-14", type: "bike", title: "Long Ride — 3,5h / 1 000m D+", duration: "3:30",
+      desc: "Simulácia Vysočina profilu. 1 000m+ prevýšenie. Full race nutrition.",
+      zones: ["z2", "z3"], exercises: [],
+      bikeNote: "Cieľ: 1 000m D+. Opakovanie stúpaní = Vysočina simulácia." },
+    { date: "2026-06-15", type: "rest", title: "Active Recovery", duration: "—", desc: "", exercises: [] },
+
+    // W13 — Build 2 Peak
+    { date: "2026-06-16", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-17", type: "strength", title: "Sila A", duration: "45 min", desc: "Climbing power.", exercises: [] },
+    { date: "2026-06-18", type: "bike", title: "Hill Repeats — 3×10 min Z3-Z4", duration: "80 min",
+      desc: "PEAK BUILD! 15 WU + 3×10 min kopec Z3-Z4 (5 min zjazd) + CD.",
+      zones: ["z2", "z3", "z4"], exercises: [] },
+    { date: "2026-06-19", type: "bike", title: "Z2 + Tempo", duration: "70 min",
+      desc: "45 Z2 + 3×8 min Z3.", zones: ["z2", "z3"], exercises: [] },
+    { date: "2026-06-20", type: "strength", title: "Sila B + Mobilita", duration: "40 min", desc: "", exercises: [] },
+    { date: "2026-06-21", type: "bike", title: "Long Ride — 4h / 1 200m D+ 🔥", duration: "4:00",
+      desc: "NAJDLHŠIA JAZDA SEZÓNY! 1 200m+ D+. Full Enervit protocol. Toto je test pred Vysočinou.",
+      zones: ["z2", "z3"], exercises: [],
+      bikeNote: "Biggest ride Block 2. Jedz od 1. hodiny. Kadencia 80+ v kopcoch. Šetri na posledných 30 min." },
+    { date: "2026-06-22", type: "rest", title: "REST", duration: "—", desc: "Regenerácia po najdlhšej jazde.", exercises: [] },
+
+    // W14 — Deload
+    { date: "2026-06-23", type: "rest", title: "REST", duration: "—", desc: "Deload week.", exercises: [] },
+    { date: "2026-06-24", type: "mobility", title: "Mobilita + Core", duration: "20 min",
+      desc: "Žiadna ťažká sila. Iba mobilita a deep core.", exercises: [] },
+    { date: "2026-06-25", type: "bike", title: "Easy Spin + Openers", duration: "45 min",
+      desc: "Z2 + 3×3 min Z4 (ľahké openers).", zones: ["z2", "z4"], exercises: [] },
+    { date: "2026-06-26", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-27", type: "mobility", title: "Mobilita", duration: "20 min", desc: "", exercises: [] },
+    { date: "2026-06-28", type: "bike", title: "Easy Ride", duration: "90 min",
+      desc: "Z2, flat, žiadne kopce. Pocit v nohách.", zones: ["z2"], exercises: [] },
+    { date: "2026-06-29", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+
+    // W15 — Peak 1
+    { date: "2026-06-30", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-01", type: "strength", title: "Sila A — Maintain", duration: "40 min",
+      desc: "Rovnaká váha, menej setov.", exercises: [] },
+    { date: "2026-07-02", type: "bike", title: "Hill Repeats — 2×15 min Z3-Z4 🔥", duration: "90 min",
+      desc: "RACE SIMULATION! 15 WU + 2×15 min kopec Z3-Z4 (5 min rest) + CD.",
+      zones: ["z2", "z3", "z4"], exercises: [],
+      bikeNote: "Najdlhšie climbing intervaly sezóny. Race pace." },
+    { date: "2026-07-03", type: "bike", title: "Z2 Endurance", duration: "60 min",
+      desc: "Steady Z2.", zones: ["z2"], exercises: [] },
+    { date: "2026-07-04", type: "mobility", title: "Mobilita + Core", duration: "30 min", desc: "", exercises: [] },
+    { date: "2026-07-05", type: "bike", title: "Long Ride — VYSOČINA SIM 🏔️", duration: "3:30",
+      desc: "3,5h / 1 500m D+. VYSOČINA SIMULÁCIA. Celý race protocol: PRE Sport, gély, Isocarb.",
+      zones: ["z2", "z3"], exercises: [],
+      bikeNote: "Cieľ: 1 500m D+ = Vysočina level. Full nutrition. Testuj pacing." },
+    { date: "2026-07-06", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+
+    // W16 — Peak 2
+    { date: "2026-07-07", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-08", type: "strength", title: "Sila A — Light", duration: "30 min",
+      desc: "Posledná sila pred taperom.", exercises: [] },
+    { date: "2026-07-09", type: "bike", title: "Climbing Tempo — 1×20 min Z3", duration: "75 min",
+      desc: "WU + 1×20 min kopec Z3 (race pace simulation) + CD.",
+      zones: ["z2", "z3"], exercises: [] },
+    { date: "2026-07-10", type: "bike", title: "Z2 Endurance", duration: "60 min",
+      desc: "Kadencia focus 85+.", zones: ["z2"], exercises: [] },
+    { date: "2026-07-11", type: "mobility", title: "Mobilita", duration: "20 min", desc: "", exercises: [] },
+    { date: "2026-07-12", type: "bike", title: "Taper Long — 2,5h / 500m D+", duration: "2:30",
+      desc: "Z2, ľahké. Posledný long ride pred Vysočinou.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-07-13", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+
+    // W17 — Race Week Vysočina
+    { date: "2026-07-14", type: "rest", title: "REST", duration: "—", desc: "Race week. Menej je viac.", exercises: [] },
+    { date: "2026-07-15", type: "bike", title: "Easy Spin", duration: "40 min",
+      desc: "Z1-Z2. Pretočiť nohy.", zones: ["z1", "z2"], exercises: [] },
+    { date: "2026-07-16", type: "bike", title: "Openers", duration: "45 min",
+      desc: "15 WU + 3×5 min Z4 (3 min rest) + CD.",
+      zones: ["z2", "z4"], exercises: [] },
+    { date: "2026-07-17", type: "bike", title: "Easy Spin — Posledná jazda", duration: "30 min",
+      desc: "Z1. Ľahké.", zones: ["z1"], exercises: [] },
+    { date: "2026-07-18", type: "rest", title: "REST + Carb Load", duration: "—",
+      desc: "ŽIADNY tréning. 8-10g/kg sacharidov. Príprava výbavy a výživy.",
+      exercises: [] },
+    { date: "2026-07-19", type: "race", title: "🏁 VYSOČINA — 102 km / 1 750 m", duration: "cieľ <5:30",
+      desc: "ZÁVODNÝ DEŇ! Druhý monument Road Classics 2026! 102 km, 1 750m D+. Kopcovitejšie ako Pálava!",
+      exercises: [],
+      bikeNote: "Pálava learning: jedz od začiatku, kadencia 80+ v kopcoch, drž skupinu čo najdlhšie. Enervit C2:1 protocol. Sarah + Sophie nálepky. IDEME!" }
 ];
 
 function daysUntil(target) {
@@ -999,7 +1183,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 Start',11:'Block 2 — Build 1',12:'Block 2 — Build 2 Climbing Focus',13:'Block 2 — Build 2 Peak',14:'Block 2 — Deload',15:'Block 2 — Peak 1',16:'Block 2 — Peak 2',17:'Block 2 — Race Week → VYSOČINA'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
