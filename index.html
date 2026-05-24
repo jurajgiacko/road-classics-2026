@@ -661,6 +661,122 @@ const EXERCISES = {
         name: "KB Renegade Row",
         video: "https://www.youtube.com/watch?v=JGDdzQdRZns",
         note: "Core + chrbát v jednom — plank pozícia"
+    },
+    // GYM exercises
+    deadlift: {
+        name: "Mŕtvy ťah (Barbell)",
+        video: "https://www.youtube.com/watch?v=op9kVnSso6Q",
+        note: "Hip hinge, rovný chrbát, 5 rep × progresívne"
+    },
+    bench_press: {
+        name: "Benchpress",
+        video: "https://www.youtube.com/watch?v=rT7DgCr-3pg",
+        note: "Lopatky stiahnuté, nádych dole, výdych hore"
+    },
+    lat_pulldown: {
+        name: "Kladka nadhmat",
+        video: "https://www.youtube.com/watch?v=CAwf7n6Luuc",
+        note: "A12 density: 80% effort × 15 sérií za 15 min"
+    },
+    incline_db_press: {
+        name: "Šikmý DB Press",
+        video: "https://www.youtube.com/watch?v=8iPEnn-ltC8",
+        note: "30° lavica, jednoručky, kontrolovaný pohyb"
+    },
+    seated_row: {
+        name: "Príťahy spodnej kladky (Seated Row)",
+        video: "https://www.youtube.com/watch?v=GZbfZ033f74",
+        note: "Pridržať v kontrakcii 2s, lopatky k sebe"
+    },
+    pull_up: {
+        name: "Zhyby / Pull-up (s dopomocou)",
+        video: "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+        note: "Nadhmat, progresívne znižovať dopomoc"
+    },
+    shoulder_press: {
+        name: "Tlaky na ramená (stroj/DB)",
+        video: "https://www.youtube.com/watch?v=qEwKCR5JCog",
+        note: "Kontrolovaný pohyb, pozor na zápästie"
+    },
+    lateral_raise: {
+        name: "Upažovanie (Lateral Raises)",
+        video: "https://www.youtube.com/watch?v=3VcKaXpzqRo",
+        note: "Ľahké váhy, kontrola, ramenné čiapočky"
+    },
+    cable_crossover: {
+        name: "Cable Crossover",
+        video: "https://www.youtube.com/watch?v=taI4XduLpTk",
+        note: "Hrudníková izolácia, functional trainer"
+    },
+    bicep_curl: {
+        name: "Bicepsové zdvihy (DB)",
+        video: "https://www.youtube.com/watch?v=ykJmrZ5v0Oo",
+        note: "Lokty fixované, kontrolovaný eccentric"
+    },
+    tricep_pushdown: {
+        name: "Triceps sťahovanie kladky",
+        video: "https://www.youtube.com/watch?v=2-LAMcpzODU",
+        note: "A12 density: 10×10 (10s pauza)"
+    },
+    dips: {
+        name: "Bradlá / Dips (s dopomocou)",
+        video: "https://www.youtube.com/watch?v=2z8JmcrW-As",
+        note: "Triceps + hrudník, progresívne znižovať dopomoc"
+    },
+    back_squat: {
+        name: "Zadné drepy (Back Squat)",
+        video: "https://www.youtube.com/watch?v=ultWZbUMPL8",
+        note: "A12 štýl: volume za 15 min"
+    },
+    leg_extension: {
+        name: "Predkopávanie (Leg Extension)",
+        video: "https://www.youtube.com/watch?v=YyvSfVjQeL0",
+        note: "Quad izolácia, kontrolovaný pohyb"
+    },
+    leg_curl: {
+        name: "Zakopávanie (Leg Curl)",
+        video: "https://www.youtube.com/watch?v=1Tq3QdYUuHs",
+        note: "Hamstring izolácia"
+    },
+    hack_squat: {
+        name: "Hack Squat",
+        video: "https://www.youtube.com/watch?v=0tn5K9NlCGg",
+        note: "Quad-dominant, bezpečné pre chrbát"
+    },
+    calf_raise_standing: {
+        name: "Výpony v stoji",
+        video: "https://www.youtube.com/watch?v=gwLzBJYoWlI",
+        note: "10×10 s 10s pauzou alebo 5×15 na stroji"
+    },
+    calf_raise_seated: {
+        name: "Výpony v sede",
+        video: "https://www.youtube.com/watch?v=JbyjNymZOt0",
+        note: "3×max s jednoručkami alebo na stroji"
+    },
+    hanging_leg_raise: {
+        name: "Dvíhanie nôh vo vise",
+        video: "https://www.youtube.com/watch?v=hdng3Nm1x_E",
+        note: "Kontrolovaný pohyb, žiadny momentum"
+    },
+    russian_twist: {
+        name: "Ruský twist",
+        video: "https://www.youtube.com/watch?v=wkD8rjkodUI",
+        note: "S kettlebellom alebo medicimbalom"
+    },
+    split_squat: {
+        name: "Rozdelené drepy (Split Squat)",
+        video: "https://www.youtube.com/watch?v=2C-uNgKwPLE",
+        note: "Unilateral — cyklistická sila"
+    },
+    db_row: {
+        name: "Jednoručné príťahy (DB Row)",
+        video: "https://www.youtube.com/watch?v=pYcpY20QaE8",
+        note: "Jedna ruka na lavici, ťahať k bedru"
+    },
+    neck_exercise: {
+        name: "Neck Exercise",
+        video: "https://www.youtube.com/watch?v=q7MCjabre6w",
+        note: "S 2,5 kg kotúčom, aerodynamická pozícia"
     }
 };
 
@@ -960,144 +1076,240 @@ const PLAN = [
     { date: "2026-05-25", type: "rest", title: "Family Ride / REST", duration: "—",
       desc: "Podľa pocitu. S deťmi alebo odpočinok.", exercises: [] },
 
-    // W10 — Build 1 Start
-    { date: "2026-05-26", type: "rest", title: "REST", duration: "—", desc: "Regenerácia.", exercises: [] },
-    { date: "2026-05-27", type: "strength", title: "Sila A — Climbing Power", duration: "45 min",
-      desc: "Quads + glutes + core. Fokus na silu do kopca.",
+    // === W10 — Build 1 Start (Po=GYM A, Ut=Hill, St=GYM B, Št=REST, Pi=Long, So-Ne=Flex) ===
+    { date: "2026-05-26", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
+      desc: "PRVÝ GYM TRÉNING! MetaGym. A12-style compound + Huberman estetika. Progresívne preťažovanie od W1 čísel.",
       exercises: [
-        { ...EXERCISES.kb_deadlift, sets: "4×8", weight: "2×18 kg" },
-        { ...EXERCISES.kb_bulgarian_split, sets: "3×10/strana", weight: "1×14 kg" },
-        { ...EXERCISES.kb_swing, sets: "3×15", weight: "1×18 kg" },
-        { ...EXERCISES.plank, sets: "3×60s", weight: "" },
-        { ...EXERCISES.bird_dog, sets: "3×10/strana", weight: "" }
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "40 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min (80%)", weight: "30 kg" },
+        { ...EXERCISES.incline_db_press, sets: "4×6", weight: "2×10 kg" },
+        { ...EXERCISES.seated_row, sets: "4×10", weight: "20 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×12", weight: "" },
+        { ...EXERCISES.plank, sets: "progresívne", weight: "" }
       ] },
-    { date: "2026-05-28", type: "bike", title: "Hill Repeats — 4×5 min Z4", duration: "60 min",
+    { date: "2026-05-27", type: "bike", title: "Hill Repeats — 4×5 min Z4", duration: "60 min",
       desc: "KĽÚČOVÝ TRÉNING! 15 WU + 4×5 min kopec Z4 (3 min zjazd) + CD. Kadencia 80+.",
       zones: ["z2", "z4"], exercises: [],
-      bikeNote: "Nájdi kopec 3-5 min. Opakuj. HR do Z4. Kadencia 80+, nesedieť — striedať." },
-    { date: "2026-05-29", type: "bike", title: "Z2 Endurance", duration: "60 min",
-      desc: "Steady Z2, kadencia 85+. Aeróbna base.",
-      zones: ["z2"], exercises: [] },
-    { date: "2026-05-30", type: "strength", title: "Sila B + Mobilita", duration: "40 min",
-      desc: "Unilateral + core + zápästie rehab.",
+      bikeNote: "Nájdi kopec 3-5 min. Opakuj. HR do Z4. Kadencia 80+, striedaj sed/stoj." },
+    { date: "2026-05-28", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+      desc: "Nohy + zadný reťazec. Stredná intenzita — šetríme na piatkový long ride.",
       exercises: [
-        { ...EXERCISES.kb_goblet_squat, sets: "3×12", weight: "1×18 kg" },
-        { ...EXERCISES.single_leg_glute_bridge, sets: "3×12/strana", weight: "" },
-        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "" },
-        { ...EXERCISES.pallof_press, sets: "3×10/strana", weight: "stredný" }
+        { ...EXERCISES.deadlift, sets: "5×5", weight: "70 kg" },
+        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +15 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "20 kg" },
+        { ...EXERCISES.leg_extension, sets: "3×12", weight: "20 kg" },
+        { ...EXERCISES.split_squat, sets: "3×6/strana", weight: "2×10 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "25 kg" },
+        { ...EXERCISES.russian_twist, sets: "4×20", weight: "8 kg KB" }
       ] },
-    { date: "2026-05-31", type: "bike", title: "Long Ride — 2,5h / 600m D+", duration: "2:30",
+    { date: "2026-05-29", type: "rest", title: "REST / Jóga", duration: "—",
+      desc: "Regenerácia pred long ride. Jóga alebo mobilita ak stíhaš.", exercises: [] },
+    { date: "2026-05-30", type: "bike", title: "Long Ride — 2,5h / 600m D+", duration: "2:30",
       desc: "Prvý dlhší ride Block 2. Kopce! Enervit gél stratégia od 1. hodiny.",
       zones: ["z2", "z3"], exercises: [],
       bikeNote: "Cieľ: 600m D+. Gél každých 30 min. Kadencia 80+ v kopcoch." },
-    { date: "2026-06-01", type: "rest", title: "Active Recovery", duration: "30-40 min",
-      desc: "Z1 easy spin alebo prechádzka s rodinou.", exercises: [] },
+    { date: "2026-05-31", type: "rest", title: "Z2 Easy / Family", duration: "—",
+      desc: "Podľa pocitu — easy spin alebo rodina.", exercises: [] },
+    { date: "2026-06-01", type: "rest", title: "REST / Bonus GYM A", duration: "—",
+      desc: "Ak cítiš energiu → GYM A v nedeľu = bonus. Inak rest.", exercises: [] },
 
     // W11 — Build 1
-    { date: "2026-06-02", type: "rest", title: "REST", duration: "—", desc: "Regenerácia.", exercises: [] },
-    { date: "2026-06-03", type: "strength", title: "Sila A — Climbing Power", duration: "45 min",
-      desc: "Progresia: KB Swing 22 kg.",
+    { date: "2026-06-02", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
+      desc: "Progresia: bench +2,5 kg, kladka +2,5 kg.",
       exercises: [
-        { ...EXERCISES.kb_deadlift, sets: "4×8", weight: "2×18 kg" },
-        { ...EXERCISES.kb_bulgarian_split, sets: "3×10/strana", weight: "1×14 kg" },
-        { ...EXERCISES.kb_swing, sets: "4×15", weight: "1×22 kg" },
-        { ...EXERCISES.plank, sets: "3×60s", weight: "" }
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "42,5 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "32,5 kg" },
+        { ...EXERCISES.incline_db_press, sets: "4×7", weight: "2×10 kg" },
+        { ...EXERCISES.seated_row, sets: "4×10", weight: "22,5 kg" },
+        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "15 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×12", weight: "" }
       ] },
-    { date: "2026-06-04", type: "bike", title: "Hill Repeats — 5×5 min Z4", duration: "75 min",
+    { date: "2026-06-03", type: "bike", title: "Hill Repeats — 5×5 min Z4", duration: "75 min",
       desc: "15 WU + 5×5 min kopec Z4 (3 min zjazd) + CD. Jeden set navyše.",
       zones: ["z2", "z4"], exercises: [] },
-    { date: "2026-06-05", type: "bike", title: "Z2 + Tempo", duration: "70 min",
-      desc: "50 min Z2 + 2×8 min Z3 (tempo na rovine). Kadencia 85+.",
-      zones: ["z2", "z3"], exercises: [] },
-    { date: "2026-06-06", type: "strength", title: "Sila B + Mobilita", duration: "40 min",
-      desc: "Unilateral + core.",
+    { date: "2026-06-04", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+      desc: "Progresia: deadlift +5 kg.",
       exercises: [
-        { ...EXERCISES.kb_goblet_squat, sets: "3×12", weight: "1×18 kg" },
-        { ...EXERCISES.single_leg_glute_bridge, sets: "3×12/strana", weight: "" },
-        { ...EXERCISES.pallof_press, sets: "3×10/strana", weight: "stredný" }
+        { ...EXERCISES.deadlift, sets: "5×5", weight: "75 kg" },
+        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +20 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "23 kg" },
+        { ...EXERCISES.leg_extension, sets: "3×12", weight: "25 kg" },
+        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×10 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "25 kg" },
+        { ...EXERCISES.russian_twist, sets: "4×20", weight: "8 kg KB" }
       ] },
-    { date: "2026-06-07", type: "bike", title: "Long Ride — 3h / 800m D+", duration: "3:00",
+    { date: "2026-06-05", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-06", type: "bike", title: "Long Ride — 3h / 800m D+", duration: "3:00",
       desc: "Progresia: viac kopcovania. Full nutrition.",
       zones: ["z2", "z3"], exercises: [],
       bikeNote: "Cieľ: 800m D+. Dlhšie stúpania. Kadencia focus." },
-    { date: "2026-06-08", type: "rest", title: "Active Recovery", duration: "—", desc: "Easy spin alebo prechádzka.", exercises: [] },
+    { date: "2026-06-07", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-08", type: "rest", title: "REST / Bonus GYM", duration: "—", desc: "", exercises: [] },
 
     // W12 — Build 2 Climbing Focus
-    { date: "2026-06-09", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
-    { date: "2026-06-10", type: "strength", title: "Sila A", duration: "45 min", desc: "Climbing power.", exercises: [] },
-    { date: "2026-06-11", type: "bike", title: "Hill Repeats — 3×8 min Z3-Z4", duration: "75 min",
+    { date: "2026-06-09", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
+      desc: "Progresia: bench +2,5 kg. Pridať cable crossover.",
+      exercises: [
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "45 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "35 kg" },
+        { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×12,5 kg" },
+        { ...EXERCISES.cable_crossover, sets: "3×12", weight: "7,5 kg/strana" },
+        { ...EXERCISES.seated_row, sets: "4×10", weight: "25 kg" },
+        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×7 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
+      ] },
+    { date: "2026-06-10", type: "bike", title: "Hill Repeats — 3×8 min Z3-Z4", duration: "75 min",
       desc: "DLHŠIE intervaly! 15 WU + 3×8 min kopec Z3-Z4 (4 min zjazd) + CD.",
       zones: ["z2", "z3", "z4"], exercises: [] },
-    { date: "2026-06-12", type: "bike", title: "Z2 Endurance", duration: "65 min",
-      desc: "Steady Z2.", zones: ["z2"], exercises: [] },
-    { date: "2026-06-13", type: "strength", title: "Sila B + Mobilita", duration: "40 min", desc: "", exercises: [] },
-    { date: "2026-06-14", type: "bike", title: "Long Ride — 3,5h / 1 000m D+", duration: "3:30",
+    { date: "2026-06-11", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+      desc: "Progresia: deadlift +5 kg.",
+      exercises: [
+        { ...EXERCISES.deadlift, sets: "5×5", weight: "80 kg" },
+        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +25 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "25 kg" },
+        { ...EXERCISES.leg_extension, sets: "3×12", weight: "25 kg" },
+        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×12,5 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
+        { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
+      ] },
+    { date: "2026-06-12", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-13", type: "bike", title: "Long Ride — 3,5h / 1 000m D+", duration: "3:30",
       desc: "Simulácia Vysočina profilu. 1 000m+ prevýšenie. Full race nutrition.",
       zones: ["z2", "z3"], exercises: [],
       bikeNote: "Cieľ: 1 000m D+. Opakovanie stúpaní = Vysočina simulácia." },
-    { date: "2026-06-15", type: "rest", title: "Active Recovery", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-14", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-15", type: "rest", title: "REST / Bonus GYM", duration: "—", desc: "", exercises: [] },
 
     // W13 — Build 2 Peak
-    { date: "2026-06-16", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
-    { date: "2026-06-17", type: "strength", title: "Sila A", duration: "45 min", desc: "Climbing power.", exercises: [] },
-    { date: "2026-06-18", type: "bike", title: "Hill Repeats — 3×10 min Z3-Z4", duration: "80 min",
+    { date: "2026-06-16", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
+      desc: "PEAK BUILD! Bench + pull-up progression.",
+      exercises: [
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "47,5 kg" },
+        { ...EXERCISES.pull_up, sets: "4×8", weight: "pomoc 28 kg" },
+        { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×12,5 kg" },
+        { ...EXERCISES.cable_crossover, sets: "3×12", weight: "9 kg/strana" },
+        { ...EXERCISES.seated_row, sets: "4×10", weight: "25 kg" },
+        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×8 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" },
+        { ...EXERCISES.neck_exercise, sets: "3×12", weight: "2,5 kg" }
+      ] },
+    { date: "2026-06-17", type: "bike", title: "Hill Repeats — 3×10 min Z3-Z4", duration: "80 min",
       desc: "PEAK BUILD! 15 WU + 3×10 min kopec Z3-Z4 (5 min zjazd) + CD.",
       zones: ["z2", "z3", "z4"], exercises: [] },
-    { date: "2026-06-19", type: "bike", title: "Z2 + Tempo", duration: "70 min",
-      desc: "45 Z2 + 3×8 min Z3.", zones: ["z2", "z3"], exercises: [] },
-    { date: "2026-06-20", type: "strength", title: "Sila B + Mobilita", duration: "40 min", desc: "", exercises: [] },
-    { date: "2026-06-21", type: "bike", title: "Long Ride — 4h / 1 200m D+ 🔥", duration: "4:00",
-      desc: "NAJDLHŠIA JAZDA SEZÓNY! 1 200m+ D+. Full Enervit protocol. Toto je test pred Vysočinou.",
+    { date: "2026-06-18", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+      desc: "PEAK BUILD! Deadlift peak.",
+      exercises: [
+        { ...EXERCISES.deadlift, sets: "5×5", weight: "85 kg" },
+        { ...EXERCISES.back_squat, sets: "volume 15 min", weight: "50 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "30 kg" },
+        { ...EXERCISES.leg_extension, sets: "3×12", weight: "30 kg" },
+        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×14 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
+        { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
+      ] },
+    { date: "2026-06-19", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-20", type: "bike", title: "Long Ride — 4h / 1 200m D+ 🔥", duration: "4:00",
+      desc: "NAJDLHŠIA JAZDA SEZÓNY! 1 200m+ D+. Full Enervit protocol.",
       zones: ["z2", "z3"], exercises: [],
-      bikeNote: "Biggest ride Block 2. Jedz od 1. hodiny. Kadencia 80+ v kopcoch. Šetri na posledných 30 min." },
-    { date: "2026-06-22", type: "rest", title: "REST", duration: "—", desc: "Regenerácia po najdlhšej jazde.", exercises: [] },
+      bikeNote: "Biggest ride Block 2. Jedz od 1. hodiny. Kadencia 80+ v kopcoch." },
+    { date: "2026-06-21", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-22", type: "rest", title: "REST", duration: "—", desc: "Regenerácia po peak week.", exercises: [] },
 
     // W14 — Deload
-    { date: "2026-06-23", type: "rest", title: "REST", duration: "—", desc: "Deload week.", exercises: [] },
-    { date: "2026-06-24", type: "mobility", title: "Mobilita + Core", duration: "20 min",
-      desc: "Žiadna ťažká sila. Iba mobilita a deep core.", exercises: [] },
-    { date: "2026-06-25", type: "bike", title: "Easy Spin + Openers", duration: "45 min",
+    { date: "2026-06-23", type: "strength", title: "🏋️ GYM A — DELOAD (65%)", duration: "45 min",
+      desc: "Deload week. Rovnaké cviky, 65% váhy, 10-12 opakovani. Nechať telo sa zregenerovať.",
+      exercises: [
+        { ...EXERCISES.bench_press, sets: "3×10", weight: "30 kg (65%)" },
+        { ...EXERCISES.lat_pulldown, sets: "10s za 10 min", weight: "25 kg" },
+        { ...EXERCISES.incline_db_press, sets: "3×10", weight: "2×8 kg" },
+        { ...EXERCISES.seated_row, sets: "3×12", weight: "15 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×5 kg" }
+      ] },
+    { date: "2026-06-24", type: "bike", title: "Easy Spin + Openers", duration: "45 min",
       desc: "Z2 + 3×3 min Z4 (ľahké openers).", zones: ["z2", "z4"], exercises: [] },
-    { date: "2026-06-26", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
-    { date: "2026-06-27", type: "mobility", title: "Mobilita", duration: "20 min", desc: "", exercises: [] },
-    { date: "2026-06-28", type: "bike", title: "Easy Ride", duration: "90 min",
-      desc: "Z2, flat, žiadne kopce. Pocit v nohách.", zones: ["z2"], exercises: [] },
+    { date: "2026-06-25", type: "strength", title: "🏋️ GYM B — DELOAD (65%)", duration: "45 min",
+      desc: "Deload. Ľahké nohy.",
+      exercises: [
+        { ...EXERCISES.deadlift, sets: "3×8", weight: "55 kg (65%)" },
+        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +10 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "15 kg" },
+        { ...EXERCISES.split_squat, sets: "3×6/strana", weight: "2×8 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "3×15", weight: "20 kg" }
+      ] },
+    { date: "2026-06-26", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-27", type: "bike", title: "Easy Ride", duration: "90 min",
+      desc: "Z2, flat, žiadne kopce.", zones: ["z2"], exercises: [] },
+    { date: "2026-06-28", type: "rest", title: "Family / REST", duration: "—", desc: "", exercises: [] },
     { date: "2026-06-29", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
 
     // W15 — Peak 1
-    { date: "2026-06-30", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
-    { date: "2026-07-01", type: "strength", title: "Sila A — Maintain", duration: "40 min",
-      desc: "Rovnaká váha, menej setov.", exercises: [] },
-    { date: "2026-07-02", type: "bike", title: "Hill Repeats — 2×15 min Z3-Z4 🔥", duration: "90 min",
+    { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "60 min",
+      desc: "Po deloade = čerstvý. Push na nové PR.",
+      exercises: [
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "50 kg" },
+        { ...EXERCISES.pull_up, sets: "4×10", weight: "pomoc 25 kg" },
+        { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×14 kg" },
+        { ...EXERCISES.cable_crossover, sets: "3×12", weight: "9 kg/strana" },
+        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×8 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
+      ] },
+    { date: "2026-07-01", type: "bike", title: "Hill Repeats — 2×15 min Z3-Z4 🔥", duration: "90 min",
       desc: "RACE SIMULATION! 15 WU + 2×15 min kopec Z3-Z4 (5 min rest) + CD.",
       zones: ["z2", "z3", "z4"], exercises: [],
       bikeNote: "Najdlhšie climbing intervaly sezóny. Race pace." },
-    { date: "2026-07-03", type: "bike", title: "Z2 Endurance", duration: "60 min",
-      desc: "Steady Z2.", zones: ["z2"], exercises: [] },
-    { date: "2026-07-04", type: "mobility", title: "Mobilita + Core", duration: "30 min", desc: "", exercises: [] },
-    { date: "2026-07-05", type: "bike", title: "Long Ride — VYSOČINA SIM 🏔️", duration: "3:30",
-      desc: "3,5h / 1 500m D+. VYSOČINA SIMULÁCIA. Celý race protocol: PRE Sport, gély, Isocarb.",
+    { date: "2026-07-02", type: "strength", title: "🏋️ GYM B — Lower Peak", duration: "60 min",
+      desc: "Deadlift peak. Posledná ťažká legs session.",
+      exercises: [
+        { ...EXERCISES.deadlift, sets: "4×5", weight: "90 kg" },
+        { ...EXERCISES.back_squat, sets: "volume 15 min", weight: "55 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "30 kg" },
+        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×14 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "35 kg" }
+      ] },
+    { date: "2026-07-03", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-04", type: "bike", title: "Long Ride — VYSOČINA SIM 🏔️", duration: "3:30",
+      desc: "3,5h / 1 500m D+. VYSOČINA SIMULÁCIA. Full race protocol.",
       zones: ["z2", "z3"], exercises: [],
       bikeNote: "Cieľ: 1 500m D+ = Vysočina level. Full nutrition. Testuj pacing." },
+    { date: "2026-07-05", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
     { date: "2026-07-06", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
 
-    // W16 — Peak 2
-    { date: "2026-07-07", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
-    { date: "2026-07-08", type: "strength", title: "Sila A — Light", duration: "30 min",
-      desc: "Posledná sila pred taperom.", exercises: [] },
-    { date: "2026-07-09", type: "bike", title: "Climbing Tempo — 1×20 min Z3", duration: "75 min",
+    // W16 — Pre-Taper (posledný plný týždeň)
+    { date: "2026-07-07", type: "strength", title: "🏋️ GYM A — Posledná plná session", duration: "55 min",
+      desc: "Posledná ťažká upper session pred taperom. Maintain weights.",
+      exercises: [
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "50 kg" },
+        { ...EXERCISES.pull_up, sets: "4×10", weight: "pomoc 25 kg" },
+        { ...EXERCISES.incline_db_press, sets: "3×8", weight: "2×14 kg" },
+        { ...EXERCISES.seated_row, sets: "3×10", weight: "25 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×8 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
+      ] },
+    { date: "2026-07-08", type: "bike", title: "Climbing Tempo — 1×20 min Z3", duration: "75 min",
       desc: "WU + 1×20 min kopec Z3 (race pace simulation) + CD.",
       zones: ["z2", "z3"], exercises: [] },
-    { date: "2026-07-10", type: "bike", title: "Z2 Endurance", duration: "60 min",
-      desc: "Kadencia focus 85+.", zones: ["z2"], exercises: [] },
-    { date: "2026-07-11", type: "mobility", title: "Mobilita", duration: "20 min", desc: "", exercises: [] },
-    { date: "2026-07-12", type: "bike", title: "Taper Long — 2,5h / 500m D+", duration: "2:30",
+    { date: "2026-07-09", type: "strength", title: "🏋️ GYM B — Light Lower", duration: "40 min",
+      desc: "Posledné nohy. Ľahšie váhy, menej setov.",
+      exercises: [
+        { ...EXERCISES.deadlift, sets: "3×5", weight: "75 kg" },
+        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +15 kg" },
+        { ...EXERCISES.leg_curl, sets: "3×12", weight: "20 kg" },
+        { ...EXERCISES.calf_raise_standing, sets: "3×15", weight: "25 kg" }
+      ] },
+    { date: "2026-07-10", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-11", type: "bike", title: "Taper Long — 2,5h / 500m D+", duration: "2:30",
       desc: "Z2, ľahké. Posledný long ride pred Vysočinou.",
       zones: ["z2"], exercises: [] },
+    { date: "2026-07-12", type: "rest", title: "Family / REST", duration: "—", desc: "", exercises: [] },
     { date: "2026-07-13", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
 
-    // W17 — Race Week Vysočina
-    { date: "2026-07-14", type: "rest", title: "REST", duration: "—", desc: "Race week. Menej je viac.", exercises: [] },
+    // W17 — Race Week Vysočina (žiadna sila!)
+    { date: "2026-07-14", type: "rest", title: "REST", duration: "—", desc: "Race week. Žiadne GYM. Menej je viac.", exercises: [] },
     { date: "2026-07-15", type: "bike", title: "Easy Spin", duration: "40 min",
       desc: "Z1-Z2. Pretočiť nohy.", zones: ["z1", "z2"], exercises: [] },
     { date: "2026-07-16", type: "bike", title: "Openers", duration: "45 min",
@@ -1174,7 +1386,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 Start',11:'Block 2 — Build 1',12:'Block 2 — Build 2 Climbing Focus',13:'Block 2 — Build 2 Peak',14:'Block 2 — Deload',15:'Block 2 — Peak 1',16:'Block 2 — Peak 2',17:'Block 2 — Race Week → VYSOČINA'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Build 2 Climbing Focus',13:'Block 2 — Build 2 Peak 🔥',14:'Block 2 — Deload (65%)',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
