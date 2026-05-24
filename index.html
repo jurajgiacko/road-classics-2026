@@ -847,6 +847,16 @@ const EXERCISES = {
         name: "Neck Exercise",
         video: "https://www.youtube.com/watch?v=q7MCjabre6w",
         note: "S 2,5 kg kotúčom, aerodynamická pozícia"
+    },
+    hip_thrust: {
+        name: "Hip Thrust na lavici",
+        video: "https://www.youtube.com/watch?v=SEdqd1n0cvg",
+        note: "Hlavný glute cvik — lopatky na lavici, chin down, squeeze hore"
+    },
+    abductor: {
+        name: "Abductor (stroj)",
+        video: "https://www.youtube.com/watch?v=bdBnPYLoi1Q",
+        note: "Gluteus medius — stabilita bedier, anti-sedavá práca"
     }
 };
 
@@ -1143,9 +1153,11 @@ const PLAN = [
       bikeNote: "Max speed 52.9 kph. Moving time 52:30. Teplota 14-25°C. Kadencia 78. Calories 456. Prvý ride po Pálave — nohy OK, quads povolili." },
     { date: "2026-05-24", type: "rest", title: "REST + Thai Masáž ✅", duration: "60 min",
       desc: "✅ Silná svalovica (oneskorená po behu v 35°C + prvý ride). 60 min tradičná thajská masáž ako recovery. Žiadny tréning.", exercises: [] },
-    { date: "2026-05-25", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
+    { date: "2026-05-25", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "65 min",
       desc: "PRVÝ GYM TRÉNING! MetaGym, 8 min od domu. Predplatné done ✅. A12-style compound + Huberman estetika.",
       exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
         { ...EXERCISES.bench_press, sets: "5×5", weight: "40 kg" },
         { ...EXERCISES.lat_pulldown, sets: "15s za 15 min (80%)", weight: "30 kg" },
         { ...EXERCISES.incline_db_press, sets: "4×6", weight: "2×10 kg" },
@@ -1163,14 +1175,17 @@ const PLAN = [
       desc: "KĽÚČOVÝ TRÉNING! 15 WU + 4×5 min kopec Z4 (3 min zjazd) + CD. Kadencia 80+.",
       zones: ["z2", "z4"], exercises: [],
       bikeNote: "Nájdi kopec 3-5 min. Opakuj. HR do Z4. Kadencia 80+, striedaj sed/stoj." },
-    { date: "2026-05-28", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
-      desc: "Nohy + zadný reťazec. Stredná intenzita — šetríme na piatkový long ride.",
+    { date: "2026-05-28", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
+      desc: "Nohy + zadný reťazec + glutey (anti-sedavá práca). Stredná intenzita — šetríme na piatkový long ride.",
       exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
         { ...EXERCISES.deadlift, sets: "5×5", weight: "70 kg" },
         { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +15 kg" },
+        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "vlastná váha / 20 kg" },
         { ...EXERCISES.leg_curl, sets: "3×12", weight: "20 kg" },
         { ...EXERCISES.leg_extension, sets: "3×12", weight: "20 kg" },
         { ...EXERCISES.split_squat, sets: "3×6/strana", weight: "2×10 kg" },
+        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "25 kg" },
         { ...EXERCISES.russian_twist, sets: "4×20", weight: "8 kg KB" }
       ] },
@@ -1200,14 +1215,17 @@ const PLAN = [
     { date: "2026-06-03", type: "bike", title: "Hill Repeats — 5×5 min Z4", duration: "75 min",
       desc: "15 WU + 5×5 min kopec Z4 (3 min zjazd) + CD. Jeden set navyše.",
       zones: ["z2", "z4"], exercises: [] },
-    { date: "2026-06-04", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+    { date: "2026-06-04", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
       desc: "Progresia: deadlift +5 kg.",
       exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
         { ...EXERCISES.deadlift, sets: "5×5", weight: "75 kg" },
         { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +20 kg" },
+        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "20 kg" },
         { ...EXERCISES.leg_curl, sets: "3×12", weight: "23 kg" },
         { ...EXERCISES.leg_extension, sets: "3×12", weight: "25 kg" },
         { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×10 kg" },
+        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "25 kg" },
         { ...EXERCISES.russian_twist, sets: "4×20", weight: "8 kg KB" }
       ] },
@@ -1235,14 +1253,17 @@ const PLAN = [
     { date: "2026-06-10", type: "bike", title: "Hill Repeats — 3×8 min Z3-Z4", duration: "75 min",
       desc: "DLHŠIE intervaly! 15 WU + 3×8 min kopec Z3-Z4 (4 min zjazd) + CD.",
       zones: ["z2", "z3", "z4"], exercises: [] },
-    { date: "2026-06-11", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+    { date: "2026-06-11", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
       desc: "Progresia: deadlift +5 kg.",
       exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
         { ...EXERCISES.deadlift, sets: "5×5", weight: "80 kg" },
         { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +25 kg" },
+        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "30 kg" },
         { ...EXERCISES.leg_curl, sets: "3×12", weight: "25 kg" },
         { ...EXERCISES.leg_extension, sets: "3×12", weight: "25 kg" },
         { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×12,5 kg" },
+        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
         { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
       ] },
@@ -1271,14 +1292,17 @@ const PLAN = [
     { date: "2026-06-17", type: "bike", title: "Hill Repeats — 3×10 min Z3-Z4", duration: "80 min",
       desc: "PEAK BUILD! 15 WU + 3×10 min kopec Z3-Z4 (5 min zjazd) + CD.",
       zones: ["z2", "z3", "z4"], exercises: [] },
-    { date: "2026-06-18", type: "strength", title: "🏋️ GYM B — Lower + Posterior", duration: "60 min",
+    { date: "2026-06-18", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
       desc: "PEAK BUILD! Deadlift peak.",
       exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
         { ...EXERCISES.deadlift, sets: "5×5", weight: "85 kg" },
         { ...EXERCISES.back_squat, sets: "volume 15 min", weight: "50 kg" },
+        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "40 kg" },
         { ...EXERCISES.leg_curl, sets: "3×12", weight: "30 kg" },
         { ...EXERCISES.leg_extension, sets: "3×12", weight: "30 kg" },
         { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×14 kg" },
+        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
         { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
       ] },
@@ -1333,13 +1357,16 @@ const PLAN = [
       desc: "RACE SIMULATION! 15 WU + 2×15 min kopec Z3-Z4 (5 min rest) + CD.",
       zones: ["z2", "z3", "z4"], exercises: [],
       bikeNote: "Najdlhšie climbing intervaly sezóny. Race pace." },
-    { date: "2026-07-02", type: "strength", title: "🏋️ GYM B — Lower Peak", duration: "60 min",
+    { date: "2026-07-02", type: "strength", title: "🏋️ GYM B — Lower Peak + Glutes", duration: "65 min",
       desc: "Deadlift peak. Posledná ťažká legs session.",
       exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
         { ...EXERCISES.deadlift, sets: "4×5", weight: "90 kg" },
         { ...EXERCISES.back_squat, sets: "volume 15 min", weight: "55 kg" },
+        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "40 kg" },
         { ...EXERCISES.leg_curl, sets: "3×12", weight: "30 kg" },
         { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×14 kg" },
+        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "35 kg" }
       ] },
     { date: "2026-07-03", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
