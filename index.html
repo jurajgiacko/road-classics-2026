@@ -555,6 +555,76 @@
             </div>
         </div>
 
+        <div class="fuel-panel" id="suppl-panel">
+            <div class="fuel-header" onclick="document.getElementById('suppl-panel').classList.toggle('open')">
+                <span class="fuel-icon">💊</span>
+                <span class="fuel-title">Longevity Stack — denný protokol</span>
+                <span class="fuel-arrow">▼</span>
+            </div>
+            <div class="fuel-body">
+                <div class="fuel-content">
+
+                    <div class="fuel-section-title">🌅 Ráno — nalačno (~6:30)</div>
+                    <table class="fuel-table">
+                        <tr><th>Suplement</th><th>Dávka</th><th>Poznámka</th></tr>
+                        <tr><td>NMN</td><td>250-500 mg</td><td>5 dní ON / 2 OFF</td></tr>
+                        <tr><td>Resveratrol + Omega-3</td><td>500 mg</td><td>Spolu, s EPA/DHA</td></tr>
+                        <tr><td>CoQ10 (Ubiquinol)</td><td>100 mg</td><td></td></tr>
+                    </table>
+                    <div class="fuel-tip">Čakať 30-45 min pred jedlom.</div>
+
+                    <div class="fuel-section-title">☀️ S prvým jedlom (~8:30, musí obsahovať tuky)</div>
+                    <table class="fuel-table">
+                        <tr><th>Suplement</th><th>Dávka</th><th>Poznámka</th></tr>
+                        <tr><td><strong>Magnesium malate</strong></td><td>podľa etikety</td><td>Energizujúci — len ráno!</td></tr>
+                        <tr><td>Berberine</td><td>550 mg</td><td>Len pri väčšom jedle / sacharidoch</td></tr>
+                        <tr><td>Vitamin D3 + K2</td><td>podľa etikety</td><td>S tukom (vajcia, ghee)</td></tr>
+                        <tr><td>Elektrolyty</td><td>podľa etikety</td><td>Do vody</td></tr>
+                        <tr><td><strong>Creatine</strong></td><td>5 g</td><td>Denne, aj keď necvičíš</td></tr>
+                    </table>
+
+                    <div class="fuel-section-title">⚡ Pred tréningom (30-60 min pred)</div>
+                    <table class="fuel-table">
+                        <tr><th>Suplement</th><th>Dávka</th><th>Poznámka</th></tr>
+                        <tr><td>Alpha-GPC</td><td>300 mg</td><td>Focus — aj pred meetingom/prezentáciou</td></tr>
+                        <tr><td>L-Tyrosine</td><td>500 mg</td><td>Stabilizuje dopamín</td></tr>
+                        <tr><td>Elektrolyty</td><td>podľa potreby</td><td>Ak pôst / dlhý tréning</td></tr>
+                    </table>
+
+                    <div class="fuel-section-title">💪 Po tréningu</div>
+                    <table class="fuel-table">
+                        <tr><th>Suplement</th><th>Dávka</th><th>Poznámka</th></tr>
+                        <tr><td><strong>Whey Protein</strong></td><td>40 g</td><td>Do 30 min po tréningu</td></tr>
+                        <tr><td><strong>Mg Bisglycinate + B6</strong></td><td>podľa etikety</td><td>Regenerácia, relaxácia</td></tr>
+                        <tr><td>Elektrolyty</td><td>podľa potreby</td><td>Ak dehydrovaný</td></tr>
+                    </table>
+
+                    <div class="fuel-section-title">🌙 Večer — pred spaním</div>
+                    <table class="fuel-table">
+                        <tr><th>Suplement</th><th>Dávka</th><th>Poznámka</th></tr>
+                        <tr><td>NAC</td><td>600 mg</td><td>Antioxidant, detox</td></tr>
+                        <tr><td><strong>Mg L-Threonate (Magtein)</strong></td><td>podľa etikety</td><td>Spánok, neuroplasticita</td></tr>
+                        <tr><td>Fermentované jedlo</td><td>denne</td><td>Kimchi / kefír / jogurt — 2h po NAC</td></tr>
+                    </table>
+
+                    <div class="fuel-section-title">Magnézium — 3 formy, 3 účely</div>
+                    <table class="fuel-table">
+                        <tr><th>Forma</th><th>Účel</th><th>Kedy</th></tr>
+                        <tr><td>Malate</td><td>Energia</td><td>Ráno / dopoludnie</td></tr>
+                        <tr><td>Bisglycinate + B6</td><td>Regenerácia</td><td>Po tréningu / večer</td></tr>
+                        <tr><td>L-Threonate (Magtein)</td><td>Spánok</td><td>Pred spaním</td></tr>
+                    </table>
+
+                    <div class="fuel-tip">
+                        <strong>Žiadny kofeín po 14:00</strong> — tlmí Magtein + spánok.<br>
+                        <strong>Creatine denne 5g</strong> — mozog + svaly, necyklovať.<br>
+                        <strong>Niečo fermentované denne</strong> — min 2h od suplementov.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <div class="week-nav" id="week-nav"></div>
         <div id="training-days"></div>
     </div>
@@ -1073,12 +1143,22 @@ const PLAN = [
       bikeNote: "Max speed 52.9 kph. Moving time 52:30. Teplota 14-25°C. Kadencia 78. Calories 456. Prvý ride po Pálave — nohy OK, quads povolili." },
     { date: "2026-05-24", type: "rest", title: "REST + Thai Masáž ✅", duration: "60 min",
       desc: "✅ Silná svalovica (oneskorená po behu v 35°C + prvý ride). 60 min tradičná thajská masáž ako recovery. Žiadny tréning.", exercises: [] },
-    { date: "2026-05-25", type: "rest", title: "Family Ride / REST", duration: "—",
-      desc: "Podľa pocitu. S deťmi alebo odpočinok.", exercises: [] },
+    { date: "2026-05-25", type: "strength", title: "🏋️ GYM A — Upper + Core (Bonus Ne)", duration: "60 min",
+      desc: "PRVÝ GYM TRÉNING! MetaGym, 8 min od domu. A12-style compound + Huberman estetika. Ak Ne rest → presun na Po.",
+      exercises: [
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "40 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min (80%)", weight: "30 kg" },
+        { ...EXERCISES.incline_db_press, sets: "4×6", weight: "2×10 kg" },
+        { ...EXERCISES.seated_row, sets: "4×10", weight: "20 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
+        { ...EXERCISES.hanging_leg_raise, sets: "4×12", weight: "" },
+        { ...EXERCISES.plank, sets: "progresívne", weight: "" }
+      ] },
 
-    // === W10 — Build 1 Start (Po=GYM A, Ut=Hill, St=GYM B, Št=REST, Pi=Long, So-Ne=Flex) ===
-    { date: "2026-05-26", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
-      desc: "PRVÝ GYM TRÉNING! MetaGym. A12-style compound + Huberman estetika. Progresívne preťažovanie od W1 čísel.",
+    // === W10 — Build 1 Start (Ne=GYM A bonus → Po=Z2 ride, Ut=Hill, St=GYM B, Št=REST, Pi=Long) ===
+    { date: "2026-05-26", type: "bike", title: "Z2 Short Ride", duration: "45-60 min",
+      desc: "Z2 easy ride. Ak Ne bol GYM A → pretočiť nohy. Ak Ne bol rest → GYM A dnes.",
+      zones: ["z2"], exercises: [] },
       exercises: [
         { ...EXERCISES.bench_press, sets: "5×5", weight: "40 kg" },
         { ...EXERCISES.lat_pulldown, sets: "15s za 15 min (80%)", weight: "30 kg" },
