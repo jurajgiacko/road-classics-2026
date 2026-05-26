@@ -1432,29 +1432,34 @@ function daysUntil(target) {
     return diff;
 }
 
+function parseLocalDate(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return new Date(y, m - 1, d);
+}
+
 function formatDate(dateStr) {
-    const d = new Date(dateStr);
+    const d = parseLocalDate(dateStr);
     const days = ['Ne','Po','Ut','St','Št','Pi','So'];
     const months = ['jan','feb','mar','apr','máj','jún','júl','aug','sep','okt','nov','dec'];
     return `${days[d.getDay()]} ${d.getDate()}. ${months[d.getMonth()]}`;
 }
 
 function getWeekNum(dateStr) {
-    const start = new Date("2026-03-23");
-    const d = new Date(dateStr);
+    const start = new Date(2026, 2, 23);
+    const d = parseLocalDate(dateStr);
     return Math.floor((d - start) / (7*24*60*60*1000)) + 1;
 }
 
 function isToday(dateStr) {
     const today = new Date();
-    const d = new Date(dateStr);
+    const d = parseLocalDate(dateStr);
     return today.toDateString() === d.toDateString();
 }
 
 function isPast(dateStr) {
     const today = new Date();
     today.setHours(0,0,0,0);
-    return new Date(dateStr) < today;
+    return parseLocalDate(dateStr) < today;
 }
 
 function renderCountdowns() {
