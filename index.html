@@ -1190,15 +1190,17 @@ const PLAN = [
       desc: "Ak cítiš energiu → GYM A v nedeľu = bonus. Inak rest.", exercises: [] },
 
     // W11 — Build 1
-    { date: "2026-06-01", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
-      desc: "Progresia: bench +2,5 kg, kladka +2,5 kg.",
+    { date: "2026-06-01", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "65 min",
+      desc: "Progresia od reálnych W9 čísel: bench 30→32,5, kladka 30→32,5.",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "42,5 kg" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "32,5 kg" },
         { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "32,5 kg" },
         { ...EXERCISES.incline_db_press, sets: "4×7", weight: "2×10 kg" },
         { ...EXERCISES.seated_row, sets: "4×10", weight: "22,5 kg" },
         { ...EXERCISES.shoulder_press, sets: "3×10", weight: "15 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×4 kg" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×12", weight: "" }
       ] },
     { date: "2026-06-02", type: "bike", title: "Hill Repeats — 5×5 min Z4", duration: "75 min",
@@ -1227,16 +1229,18 @@ const PLAN = [
     { date: "2026-06-07", type: "rest", title: "REST / Bonus GYM", duration: "—", desc: "", exercises: [] },
 
     // W12 — Build 2 Climbing Focus
-    { date: "2026-06-09", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
-      desc: "Progresia: bench +2,5 kg. Pridať cable crossover.",
+    { date: "2026-06-09", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "65 min",
+      desc: "Progresia: bench 32,5→35, kladka 32,5→35. Pridať cable crossover.",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "45 kg" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "35 kg" },
         { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "35 kg" },
         { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×12,5 kg" },
         { ...EXERCISES.cable_crossover, sets: "3×12", weight: "7,5 kg/strana" },
         { ...EXERCISES.seated_row, sets: "4×10", weight: "25 kg" },
         { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×7 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×5 kg" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
       ] },
     { date: "2026-06-10", type: "bike", title: "Hill Repeats — 3×8 min Z3-Z4", duration: "75 min",
@@ -1265,16 +1269,18 @@ const PLAN = [
     { date: "2026-06-15", type: "rest", title: "REST / Bonus GYM", duration: "—", desc: "", exercises: [] },
 
     // W13 — Build 2 Peak
-    { date: "2026-06-16", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "60 min",
-      desc: "PEAK BUILD! Bench + pull-up progression.",
+    { date: "2026-06-16", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "65 min",
+      desc: "PEAK BUILD! Bench 35→37,5, kladka 37,5. Pull-up progression.",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "47,5 kg" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "37,5 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "37,5 kg" },
         { ...EXERCISES.pull_up, sets: "4×8", weight: "pomoc 28 kg" },
         { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×12,5 kg" },
         { ...EXERCISES.cable_crossover, sets: "3×12", weight: "9 kg/strana" },
-        { ...EXERCISES.seated_row, sets: "4×10", weight: "25 kg" },
         { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×8 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" },
         { ...EXERCISES.neck_exercise, sets: "3×12", weight: "2,5 kg" }
       ] },
@@ -1305,13 +1311,13 @@ const PLAN = [
 
     // W14 — Deload
     { date: "2026-06-23", type: "strength", title: "🏋️ GYM A — DELOAD (65%)", duration: "45 min",
-      desc: "Deload week. Rovnaké cviky, 65% váhy, 10-12 opakovani. Nechať telo sa zregenerovať.",
+      desc: "Deload week. Rovnaké cviky, ~65% váhy, 10-12 opakovani. Nechať telo sa zregenerovať. (Pozn: môže padnúť do Grécka → bodyweight náhrada.)",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "3×10", weight: "30 kg (65%)" },
+        { ...EXERCISES.bench_press, sets: "3×10", weight: "25 kg (65%)" },
         { ...EXERCISES.lat_pulldown, sets: "10s za 10 min", weight: "25 kg" },
         { ...EXERCISES.incline_db_press, sets: "3×10", weight: "2×8 kg" },
         { ...EXERCISES.seated_row, sets: "3×12", weight: "15 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×5 kg" }
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×4 kg" }
       ] },
     { date: "2026-06-24", type: "bike", title: "Easy Spin + Openers", duration: "45 min",
       desc: "Z2 + 3×3 min Z4 (ľahké openers).", zones: ["z2", "z4"], exercises: [] },
@@ -1331,15 +1337,18 @@ const PLAN = [
     { date: "2026-06-29", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
 
     // W15 — Peak 1
-    { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "60 min",
-      desc: "Po deloade = čerstvý. Push na nové PR.",
+    { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "65 min",
+      desc: "Po deloade = čerstvý. Push na nové PR. Bench 40, kladka 40.",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "50 kg" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "40 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "40 kg" },
         { ...EXERCISES.pull_up, sets: "4×10", weight: "pomoc 25 kg" },
         { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×14 kg" },
         { ...EXERCISES.cable_crossover, sets: "3×12", weight: "9 kg/strana" },
         { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×8 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
       ] },
     { date: "2026-07-01", type: "bike", title: "Hill Repeats — 2×15 min Z3-Z4 🔥", duration: "90 min",
@@ -1368,13 +1377,15 @@ const PLAN = [
 
     // W16 — Pre-Taper (posledný plný týždeň)
     { date: "2026-07-07", type: "strength", title: "🏋️ GYM A — Posledná plná session", duration: "55 min",
-      desc: "Posledná ťažká upper session pred taperom. Maintain weights.",
+      desc: "Posledná ťažká upper session pred taperom. Maintain: bench 42,5, kladka 42,5.",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "50 kg" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
+        { ...EXERCISES.bench_press, sets: "5×5", weight: "42,5 kg" },
+        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "42,5 kg" },
         { ...EXERCISES.pull_up, sets: "4×10", weight: "pomoc 25 kg" },
         { ...EXERCISES.incline_db_press, sets: "3×8", weight: "2×14 kg" },
         { ...EXERCISES.seated_row, sets: "3×10", weight: "25 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×8 kg" },
+        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
       ] },
     { date: "2026-07-08", type: "bike", title: "Climbing Tempo — 1×20 min Z3", duration: "75 min",
@@ -1435,7 +1446,8 @@ function formatDate(dateStr) {
 function getWeekNum(dateStr) {
     const start = new Date(2026, 2, 23);
     const d = parseLocalDate(dateStr);
-    return Math.floor((d - start) / (7*24*60*60*1000)) + 1;
+    const days = Math.round((d - start) / (24*60*60*1000));
+    return Math.floor(days / 7) + 1;
 }
 
 function isToday(dateStr) {
