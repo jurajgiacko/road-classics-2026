@@ -857,6 +857,31 @@ const EXERCISES = {
         name: "Abductor (stroj)",
         video: "https://www.youtube.com/watch?v=bdBnPYLoi1Q",
         note: "Gluteus medius — stabilita bedier, anti-sedavá práca"
+    },
+    doorway_pec_stretch: {
+        name: "Doorway Pec Stretch",
+        video: "https://www.youtube.com/watch?v=SmZ4lW0M9Ko",
+        note: "Otvorenie hrudníka — proti hrbeniu. 30s × 3 (rôzne uhly)"
+    },
+    chin_tuck: {
+        name: "Chin Tucks",
+        video: "https://www.youtube.com/watch?v=0xZQzKaxbqM",
+        note: "Proti predsunutej hlave z bike/desk. 10× pomaly"
+    },
+    thoracic_extension: {
+        name: "Thoracic Extension (foam roller)",
+        video: "https://www.youtube.com/watch?v=ZmsuZK_M8Hw",
+        note: "Roller pod horný chrbát, extenzia cez hrudnú chrbticu"
+    },
+    face_pull: {
+        name: "Face Pull (kladka/guma)",
+        video: "https://www.youtube.com/watch?v=rep-qVOkqgk",
+        note: "Zadné delty + rhomboidy — vyrovnáva hrbenie. 3×15"
+    },
+    prone_y_t_w: {
+        name: "Prone Y-T-W Raises",
+        video: "https://www.youtube.com/watch?v=N2A_Bxggm_8",
+        note: "Na bruchu — aktivácia dolných trapézov a rhomboidov"
     }
 };
 
@@ -1203,9 +1228,10 @@ const PLAN = [
         { ...EXERCISES.lateral_raise, sets: "3×12", weight: "3 kg (rameno!)" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×12", weight: "✅" }
       ] },
-    { date: "2026-06-02", type: "bike", title: "Hill Repeats — 5×5 min Z4", duration: "75 min",
-      desc: "15 WU + 5×5 min kopec Z4 (3 min zjazd) + CD. Jeden set navyše.",
-      zones: ["z2", "z4"], exercises: [] },
+    { date: "2026-06-02", type: "bike", title: "Hill Repeats — 5×5 min ✅", duration: "1:00:34",
+      desc: "✅ 19.64 km, 310m D+, Avg HR 135, Max HR 167. TE 2.9 Maintaining. Avg speed 19.5 kph. ŽIADNE KŔČE (elektrolyty zabrali!). Brutál teplo na obed. Self-eval 8/10 Very Hard.",
+      zones: ["z2", "z4"], exercises: [],
+      bikeNote: "Moving time 1:00:21. Stamina 89%. Teplota 24-29°C. Road 99%. Calories 515. Kŕč problém z minula vyriešený elektrolytmi. Posed — mierne hrbenie, zvážiť bike fitting + kompenzačné cviky." },
     { date: "2026-06-03", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
       desc: "Progresia: deadlift +5 kg.",
       exercises: [
@@ -1220,7 +1246,18 @@ const PLAN = [
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "25 kg" },
         { ...EXERCISES.russian_twist, sets: "4×20", weight: "8 kg KB" }
       ] },
-    { date: "2026-06-04", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-04", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
+      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta proti cyklistickej/desk pozícii. Bike fitting odporúčaný!",
+      exercises: [
+        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
+        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
+        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
+      ] },
     { date: "2026-06-05", type: "bike", title: "Long Ride — 3h / 800m D+", duration: "3:00",
       desc: "Progresia: viac kopcovania. Full nutrition.",
       zones: ["z2", "z3"], exercises: [],
@@ -1260,7 +1297,18 @@ const PLAN = [
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
         { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
       ] },
-    { date: "2026-06-12", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-12", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
+      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+      exercises: [
+        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
+        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
+        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
+      ] },
     { date: "2026-06-13", type: "bike", title: "Long Ride — 3,5h / 1 000m D+", duration: "3:30",
       desc: "Simulácia Vysočina profilu. 1 000m+ prevýšenie. Full race nutrition.",
       zones: ["z2", "z3"], exercises: [],
@@ -1301,7 +1349,18 @@ const PLAN = [
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
         { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
       ] },
-    { date: "2026-06-19", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-19", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
+      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+      exercises: [
+        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
+        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
+        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
+      ] },
     { date: "2026-06-20", type: "bike", title: "Long Ride — 4h / 1 200m D+ 🔥", duration: "4:00",
       desc: "NAJDLHŠIA JAZDA SEZÓNY! 1 200m+ D+. Full Enervit protocol.",
       zones: ["z2", "z3"], exercises: [],
@@ -1330,7 +1389,18 @@ const PLAN = [
         { ...EXERCISES.split_squat, sets: "3×6/strana", weight: "2×8 kg" },
         { ...EXERCISES.calf_raise_standing, sets: "3×15", weight: "20 kg" }
       ] },
-    { date: "2026-06-26", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-26", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
+      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+      exercises: [
+        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
+        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
+        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
+      ] },
     { date: "2026-06-27", type: "bike", title: "Easy Ride", duration: "90 min",
       desc: "Z2, flat, žiadne kopce.", zones: ["z2"], exercises: [] },
     { date: "2026-06-28", type: "rest", title: "Family / REST", duration: "—", desc: "", exercises: [] },
@@ -1367,7 +1437,18 @@ const PLAN = [
         { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "35 kg" }
       ] },
-    { date: "2026-07-03", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-03", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
+      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+      exercises: [
+        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
+        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
+        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
+      ] },
     { date: "2026-07-04", type: "bike", title: "Long Ride — VYSOČINA SIM 🏔️", duration: "3:30",
       desc: "3,5h / 1 500m D+. VYSOČINA SIMULÁCIA. Full race protocol.",
       zones: ["z2", "z3"], exercises: [],
@@ -1399,7 +1480,18 @@ const PLAN = [
         { ...EXERCISES.leg_curl, sets: "3×12", weight: "20 kg" },
         { ...EXERCISES.calf_raise_standing, sets: "3×15", weight: "25 kg" }
       ] },
-    { date: "2026-07-10", type: "rest", title: "REST / Jóga", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-10", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
+      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+      exercises: [
+        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
+        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
+        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
+        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
+      ] },
     { date: "2026-07-11", type: "bike", title: "Taper Long — 2,5h / 500m D+", duration: "2:30",
       desc: "Z2, ľahké. Posledný long ride pred Vysočinou.",
       zones: ["z2"], exercises: [] },
