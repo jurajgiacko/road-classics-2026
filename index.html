@@ -173,6 +173,9 @@
         .day-dot.strength { background: var(--purple); }
         .day-dot.mobility { background: var(--blue); }
         .day-dot.race { background: var(--red); }
+        .day-dot.run { background: var(--orange); }
+        .day-dot.swim { background: #06b6d4; }
+        .day-dot.travel { background: var(--muted); opacity: 0.5; }
 
         .day-meta { flex: 1; }
         .day-date { font-size: 0.75rem; color: var(--muted); }
@@ -882,6 +885,31 @@ const EXERCISES = {
         name: "Prone Y-T-W Raises",
         video: "https://www.youtube.com/watch?v=N2A_Bxggm_8",
         note: "Na bruchu — aktivácia dolných trapézov a rhomboidov"
+    },
+    push_up: {
+        name: "Kľuky (Push-ups)",
+        video: "https://www.youtube.com/watch?v=IODxDxX7oi4",
+        note: "Hrudník + triceps. Progresívne pridávať reps"
+    },
+    bw_squat: {
+        name: "Drepy s vlastnou váhou",
+        video: "https://www.youtube.com/watch?v=aclHkVaku9U",
+        note: "Plný rozsah, kolená von. Vysoký počet reps"
+    },
+    walking_lunge: {
+        name: "Výpady v chôdzi",
+        video: "https://www.youtube.com/watch?v=L8fvypPrzzs",
+        note: "Cyklistická sila — unilateral, glutey + quads"
+    },
+    pike_pushup: {
+        name: "Pike Push-ups",
+        video: "https://www.youtube.com/watch?v=x7_I8Ok2X3Q",
+        note: "Ramená — náhrada za shoulder press. Pozor na rameno"
+    },
+    chair_dip: {
+        name: "Dipy o stoličku/lavicu",
+        video: "https://www.youtube.com/watch?v=6kALZikXxLc",
+        note: "Triceps. Nohy bližšie = ľahšie"
     }
 };
 
@@ -1265,146 +1293,111 @@ const PLAN = [
     { date: "2026-06-06", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
     { date: "2026-06-07", type: "rest", title: "REST / Bonus GYM", duration: "—", desc: "", exercises: [] },
 
-    // W12 — Build 2 Climbing Focus
-    { date: "2026-06-09", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "65 min",
-      desc: "Progresia: bench 32,5→35, kladka 32,5→35. Pridať cable crossover.",
+    // W12 — Travel + Grécko (cesta + ease-in)
+    { date: "2026-06-08", type: "travel", title: "✈️ Cesta — Bratislava", duration: "—",
+      desc: "Pracovná/rodinná cesta do BA. Tréning OFF. Tip: 20 min anti-hrbenie mobilita večer v hoteli (bodyweight, netreba náradie).", exercises: [] },
+    { date: "2026-06-09", type: "travel", title: "✈️ Pracovná cesta — Zlín", duration: "—",
+      desc: "Zlín. Tréning OFF. Ak je chvíľa: 15 min prechádzka + kľuky/drepy v izbe. Hydratácia pred zajtrajším letom.", exercises: [] },
+    { date: "2026-06-10", type: "travel", title: "✈️ Let do Grécka 🇬🇷", duration: "—",
+      desc: "Presun. Po prílete ľahká prechádzka + prvé osvieženie v mori. Žiadny tvrdý tréning — adaptácia na teplo + cestu.", exercises: [] },
+    { date: "2026-06-11", type: "run", title: "🏃 Easy Run + more", duration: "30 min",
+      desc: "Ease-in. Z2 ľahký beh 30 min (ráno kým je chladno) + 15-20 min plávanie/osvieženie v mori. Spoznaj okolie, nájdi bežecké trasy.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-06-12", type: "strength", title: "💪 Bodyweight Circuit A", duration: "40 min",
+      desc: "Plný okruh bez náradia — udržanie svalov. 3-4 kolá, krátke pauzy. Robiť v tieni / ráno.",
       exercises: [
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "35 kg" },
-        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "35 kg" },
-        { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×12,5 kg" },
-        { ...EXERCISES.cable_crossover, sets: "3×12", weight: "7,5 kg/strana" },
-        { ...EXERCISES.seated_row, sets: "4×10", weight: "25 kg" },
-        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×5 kg" },
-        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
+        { ...EXERCISES.push_up, sets: "4×max", weight: "vlastná váha" },
+        { ...EXERCISES.bw_squat, sets: "4×20", weight: "vlastná váha" },
+        { ...EXERCISES.walking_lunge, sets: "3×12/nohu", weight: "" },
+        { ...EXERCISES.pike_pushup, sets: "3×8", weight: "pozor rameno" },
+        { ...EXERCISES.chair_dip, sets: "3×12", weight: "" },
+        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "" },
+        { ...EXERCISES.plank, sets: "3×45s", weight: "" }
       ] },
-    { date: "2026-06-10", type: "bike", title: "Hill Repeats — 3×8 min Z3-Z4", duration: "75 min",
-      desc: "DLHŠIE intervaly! 15 WU + 3×8 min kopec Z3-Z4 (4 min zjazd) + CD.",
-      zones: ["z2", "z3", "z4"], exercises: [] },
-    { date: "2026-06-11", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
-      desc: "Progresia: deadlift +5 kg.",
-      exercises: [
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.deadlift, sets: "5×5", weight: "80 kg" },
-        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +25 kg" },
-        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "30 kg" },
-        { ...EXERCISES.leg_curl, sets: "3×12", weight: "25 kg" },
-        { ...EXERCISES.leg_extension, sets: "3×12", weight: "25 kg" },
-        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×12,5 kg" },
-        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
-        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
-        { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
-      ] },
-    { date: "2026-06-12", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
-      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
-      exercises: [
-        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
-        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
-        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
-        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
-        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
-        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
-        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
-      ] },
-    { date: "2026-06-13", type: "bike", title: "Long Ride — 3,5h / 1 000m D+", duration: "3:30",
-      desc: "Simulácia Vysočina profilu. 1 000m+ prevýšenie. Full race nutrition.",
-      zones: ["z2", "z3"], exercises: [],
-      bikeNote: "Cieľ: 1 000m D+. Opakovanie stúpaní = Vysočina simulácia." },
-    { date: "2026-06-14", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
-    { date: "2026-06-15", type: "rest", title: "REST / Bonus GYM", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-13", type: "run", title: "🏃 Run + krátke sprinty", duration: "35 min",
+      desc: "Udržanie top-end. 10 min WU Z2 + 8×20s sprint (90s chôdza/klus medzi) + 10 min CD. Drží vysoké tepy ktoré na biku ťažko vytočíš.",
+      zones: ["z2", "z4"], exercises: [] },
+    { date: "2026-06-14", type: "rest", title: "🏖️ Family / more", duration: "—",
+      desc: "Voľno. More, plávanie, hra s babami. Aktívna regenerácia.", exercises: [] },
 
-    // W13 — Build 2 Peak
-    { date: "2026-06-16", type: "strength", title: "🏋️ GYM A — Upper + Core", duration: "65 min",
-      desc: "PEAK BUILD! Bench 35→37,5, kladka 37,5. Pull-up progression.",
+    // W13 — Grécko (full week)
+    { date: "2026-06-15", type: "strength", title: "💪 Bodyweight Circuit B", duration: "40 min",
+      desc: "Okruh — dôraz na nohy + chrbát (anti-hrbenie). 3-4 kolá.",
       exercises: [
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "37,5 kg" },
-        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "37,5 kg" },
-        { ...EXERCISES.pull_up, sets: "4×8", weight: "pomoc 28 kg" },
-        { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×12,5 kg" },
-        { ...EXERCISES.cable_crossover, sets: "3×12", weight: "9 kg/strana" },
-        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
-        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" },
-        { ...EXERCISES.neck_exercise, sets: "3×12", weight: "2,5 kg" }
+        { ...EXERCISES.bw_squat, sets: "4×25", weight: "vlastná váha" },
+        { ...EXERCISES.walking_lunge, sets: "4×12/nohu", weight: "" },
+        { ...EXERCISES.push_up, sets: "4×max", weight: "" },
+        { ...EXERCISES.prone_y_t_w, sets: "3×8 každé", weight: "anti-hrbenie" },
+        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "single-leg ak ide" },
+        { ...EXERCISES.plank, sets: "3×60s", weight: "" }
       ] },
-    { date: "2026-06-17", type: "bike", title: "Hill Repeats — 3×10 min Z3-Z4", duration: "80 min",
-      desc: "PEAK BUILD! 15 WU + 3×10 min kopec Z3-Z4 (5 min zjazd) + CD.",
+    { date: "2026-06-16", type: "run", title: "🏃 Z2 Easy Run + more", duration: "40 min",
+      desc: "Aeróbna báza. Z2 pohodový beh 40 min + plávanie v mori po. Drž tepy nízko.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-06-17", type: "run", title: "🏃 Hill / Tempo Run", duration: "40 min",
+      desc: "Top-end udržanie. 10 WU + 6×1 min do kopca/tempo hard (1-2 min easy medzi) + CD. Náhrada za hill repeats na biku.",
       zones: ["z2", "z3", "z4"], exercises: [] },
-    { date: "2026-06-18", type: "strength", title: "🏋️ GYM B — Lower + Posterior + Glutes", duration: "65 min",
-      desc: "PEAK BUILD! Deadlift peak.",
-      exercises: [
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.deadlift, sets: "5×5", weight: "85 kg" },
-        { ...EXERCISES.back_squat, sets: "volume 15 min", weight: "50 kg" },
-        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "40 kg" },
-        { ...EXERCISES.leg_curl, sets: "3×12", weight: "30 kg" },
-        { ...EXERCISES.leg_extension, sets: "3×12", weight: "30 kg" },
-        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×14 kg" },
-        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
-        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "30 kg" },
-        { ...EXERCISES.calf_raise_seated, sets: "3×max", weight: "15 kg" }
-      ] },
-    { date: "2026-06-19", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
-      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+    { date: "2026-06-18", type: "swim", title: "🏊 More + mobilita", duration: "30 min",
+      desc: "Regenerácia. 20-30 min plávanie/snorkel v mori (rameno + chrbát, low impact) + anti-hrbenie mobilita.",
       exercises: [
         { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
         { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
         { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
-        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
         { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
-        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
         { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
         { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
       ] },
-    { date: "2026-06-20", type: "bike", title: "Long Ride — 4h / 1 200m D+ 🔥", duration: "4:00",
-      desc: "NAJDLHŠIA JAZDA SEZÓNY! 1 200m+ D+. Full Enervit protocol.",
-      zones: ["z2", "z3"], exercises: [],
-      bikeNote: "Biggest ride Block 2. Jedz od 1. hodiny. Kadencia 80+ v kopcoch." },
-    { date: "2026-06-21", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
-    { date: "2026-06-22", type: "rest", title: "REST", duration: "—", desc: "Regenerácia po peak week.", exercises: [] },
+    { date: "2026-06-19", type: "strength", title: "💪 Bodyweight Circuit A", duration: "40 min",
+      desc: "Plný okruh. 3-4 kolá.",
+      exercises: [
+        { ...EXERCISES.push_up, sets: "4×max", weight: "vlastná váha" },
+        { ...EXERCISES.bw_squat, sets: "4×20", weight: "" },
+        { ...EXERCISES.walking_lunge, sets: "3×12/nohu", weight: "" },
+        { ...EXERCISES.pike_pushup, sets: "3×8", weight: "pozor rameno" },
+        { ...EXERCISES.chair_dip, sets: "3×12", weight: "" },
+        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "" },
+        { ...EXERCISES.plank, sets: "3×45s", weight: "" }
+      ] },
+    { date: "2026-06-20", type: "run", title: "🏃 Long Run", duration: "55 min",
+      desc: "Najdlhší beh týždňa. Z2 plynulý 50-60 min (ráno!). Udržuje vytrvalostnú bázu kým je bike off. Hydratuj + elektrolyty.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-06-21", type: "rest", title: "🏖️ Family / more", duration: "—",
+      desc: "Voľno. More, plávanie, rodina.", exercises: [] },
 
-    // W14 — Deload
-    { date: "2026-06-23", type: "strength", title: "🏋️ GYM A — DELOAD (65%)", duration: "45 min",
-      desc: "Deload week. Rovnaké cviky, ~65% váhy, 10-12 opakovani. Nechať telo sa zregenerovať. (Pozn: môže padnúť do Grécka → bodyweight náhrada.)",
+    // W14 — Grécko (full week → return)
+    { date: "2026-06-22", type: "strength", title: "💪 Bodyweight Circuit B", duration: "40 min",
+      desc: "Okruh — nohy + chrbát. 3-4 kolá.",
       exercises: [
-        { ...EXERCISES.bench_press, sets: "3×10", weight: "25 kg (65%)" },
-        { ...EXERCISES.lat_pulldown, sets: "10s za 10 min", weight: "25 kg" },
-        { ...EXERCISES.incline_db_press, sets: "3×10", weight: "2×8 kg" },
-        { ...EXERCISES.seated_row, sets: "3×12", weight: "15 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×4 kg" }
+        { ...EXERCISES.bw_squat, sets: "4×25", weight: "" },
+        { ...EXERCISES.walking_lunge, sets: "4×12/nohu", weight: "" },
+        { ...EXERCISES.push_up, sets: "4×max", weight: "" },
+        { ...EXERCISES.prone_y_t_w, sets: "3×8 každé", weight: "anti-hrbenie" },
+        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "" },
+        { ...EXERCISES.plank, sets: "3×60s", weight: "" }
       ] },
-    { date: "2026-06-24", type: "bike", title: "Easy Spin + Openers", duration: "45 min",
-      desc: "Z2 + 3×3 min Z4 (ľahké openers).", zones: ["z2", "z4"], exercises: [] },
-    { date: "2026-06-25", type: "strength", title: "🏋️ GYM B — DELOAD (65%)", duration: "45 min",
-      desc: "Deload. Ľahké nohy.",
-      exercises: [
-        { ...EXERCISES.deadlift, sets: "3×8", weight: "55 kg (65%)" },
-        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +10 kg" },
-        { ...EXERCISES.leg_curl, sets: "3×12", weight: "15 kg" },
-        { ...EXERCISES.split_squat, sets: "3×6/strana", weight: "2×8 kg" },
-        { ...EXERCISES.calf_raise_standing, sets: "3×15", weight: "20 kg" }
-      ] },
-    { date: "2026-06-26", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
-      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
+    { date: "2026-06-23", type: "run", title: "🏃 Z2 Easy Run + more", duration: "40 min",
+      desc: "Aeróbna báza + plávanie po behu.", zones: ["z2"], exercises: [] },
+    { date: "2026-06-24", type: "run", title: "🏃 Hill / Tempo Run", duration: "40 min",
+      desc: "Top-end. 10 WU + 6×1 min hard (1-2 min easy) + CD.",
+      zones: ["z2", "z3", "z4"], exercises: [] },
+    { date: "2026-06-25", type: "swim", title: "🏊 More + mobilita", duration: "30 min",
+      desc: "Posledný deň v Grécku — plávanie + anti-hrbenie mobilita. Užiť si more.",
       exercises: [
         { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
         { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
         { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
-        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
         { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
-        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
         { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
         { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
       ] },
-    { date: "2026-06-27", type: "bike", title: "Easy Ride", duration: "90 min",
-      desc: "Z2, flat, žiadne kopce.", zones: ["z2"], exercises: [] },
-    { date: "2026-06-28", type: "rest", title: "Family / REST", duration: "—", desc: "", exercises: [] },
-    { date: "2026-06-29", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-06-26", type: "travel", title: "✈️ Návrat domov", duration: "—",
+      desc: "Cesta späť. Tréning OFF. Hydratácia, ľahká prechádzka po prílete.", exercises: [] },
+    { date: "2026-06-27", type: "bike", title: "🚴 Comeback Spin", duration: "75 min",
+      desc: "Späť na bike! Z2 pohodový vyjazd 60-75 min, znovu zvyknúť na sedlo po 2 týždňoch. Žiadne kopce, žiadne tepy.",
+      zones: ["z2"], exercises: [],
+      bikeNote: "Prvý ride po Grécku. Skontroluj tlak v plášťoch, namaž reťaz. Pocitová jazda." },
+    { date: "2026-06-28", type: "rest", title: "Family / REST", duration: "—", desc: "Regenerácia po ceste.", exercises: [] },
+    { date: "2026-06-29", type: "rest", title: "REST", duration: "—", desc: "Pred Peak blokom. Naber sily.", exercises: [] },
 
     // W15 — Peak 1
     { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "65 min",
@@ -1582,7 +1575,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Build 2 Climbing Focus',13:'Block 2 — Build 2 Peak 🔥',14:'Block 2 — Deload (65%)',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
