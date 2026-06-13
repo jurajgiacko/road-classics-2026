@@ -910,6 +910,26 @@ const EXERCISES = {
         name: "Dipy o stoličku/lavicu",
         video: "https://www.youtube.com/watch?v=6kALZikXxLc",
         note: "Triceps. Nohy bližšie = ľahšie"
+    },
+    foam_roll_lower: {
+        name: "Roller: dolné končatiny",
+        video: "https://www.youtube.com/watch?v=F8cOBIc0bR4",
+        note: "Kvadri + TFL/bočné stehno + glutey + lýtka. 45-60s/oblasť. IT band neroluj priamo na kosti"
+    },
+    clamshell: {
+        name: "Clamshell (band)",
+        video: "https://www.youtube.com/watch?v=wDJKAczVXP0",
+        note: "Glute medius izolácia — bedrá stacked, panva sa nehýbe, dvíhaš len koleno"
+    },
+    lateral_band_walk: {
+        name: "Lateral Band Walk (band)",
+        video: "https://www.youtube.com/watch?v=1LvxZrJFy9Y",
+        note: "#1 na IT band/tracking kolena. Quarter squat, kolená netlač dovnútra, malé kroky"
+    },
+    side_plank: {
+        name: "Side Plank",
+        video: "https://www.youtube.com/watch?v=XeN4pEZZJNI",
+        note: "Glute medius + core. Lakeť pod ramenom, telo v rovine. Spodné koleno dole ak ťažké"
     }
 };
 
@@ -1305,11 +1325,23 @@ const PLAN = [
     { date: "2026-06-12", type: "run", title: "✅ Easy Run — 5.01 km", duration: "37:26",
       desc: "✅ Koufonisia 🇬🇷. Večerný beh 17:57. 5.01 km, pace 7:29/km, avg HR 135 (max 157), 82m D+, 368 kcal. Horúčava 29.6°C. Z2 Maintaining (TE 2.4). Spoznávanie ostrova.",
       zones: ["z2"], exercises: [] },
-    { date: "2026-06-13", type: "run", title: "✅ Easy Run — 6.58 km + mobility", duration: "50:01",
-      desc: "✅ Koufonisia 🇬🇷. Ranný beh 07:53. 6.58 km, pace 7:36/km, avg HR 134 (max 158), 157m D+, 478 kcal, 26.5°C. Z2 Maintaining (TE 2.4). + popoludní terasová mobility/glute aktivácia (roller + light band + osuška): release kvadri/TFL/glute + hip flexor/T-spine + glute bridge/lateral walk/clamshell/band pull-apart + side plank. Zameranie IT band (glute med) + anti-hrbenie.",
+    { date: "2026-06-13", type: "run", title: "✅ Easy Run — 6.58 km + terasová mobility", duration: "50:01",
+      desc: "✅ Koufonisia 🇬🇷. Ranný beh 07:53. 6.58 km, pace 7:36/km, avg HR 134 (max 158), 157m D+, 478 kcal, 26.5°C. Z2 Maintaining (TE 2.4). + popoludní ~25 min terasová mobility/glute aktivácia (náradie: roller + light band + osuška). Zameranie: IT band / glute medius (koleno) + anti-hrbenie. Bloky: 1) Release rollerom 2) Mobilita 3) Aktivácia s gumou.",
       zones: ["z2"],
-      bikeNote: "✅ Pravé koleno už OK — bolesť z 6.6. (IT band/lateral) odznela po behoch + mobilite. Pokračovať v glute med aktivácii preventívne.",
-      exercises: [] },
+      bikeNote: "✅ Pravé koleno už OK — bolesť z 6.6. (IT band/lateral) odznela po behoch + mobilite. Glute med aktiváciu (clamshell + lateral walk) držať preventívne. IT band neroluj priamo na bočnej kosti — cieľ TFL + glute.",
+      exercises: [
+        { ...EXERCISES.foam_roll_lower, sets: "45-60s/oblasť", weight: "roller" },
+        { ...EXERCISES.thoracic_extension, sets: "1-2 min", weight: "roller" },
+        { ...EXERCISES.hip_flexor, sets: "40s/strana", weight: "" },
+        { ...EXERCISES.hip_90_90, sets: "8×/strana", weight: "" },
+        { ...EXERCISES.open_books, sets: "8×/strana", weight: "" },
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "band nad kolená" },
+        { ...EXERCISES.lateral_band_walk, sets: "2×12/smer", weight: "band" },
+        { ...EXERCISES.clamshell, sets: "2×15/strana", weight: "band" },
+        { ...EXERCISES.band_pull, sets: "2×15", weight: "band" },
+        { ...EXERCISES.bird_dog, sets: "2×10/strana", weight: "" },
+        { ...EXERCISES.side_plank, sets: "2×30s/strana", weight: "" }
+      ] },
     { date: "2026-06-14", type: "rest", title: "🏖️ Family / more", duration: "—",
       desc: "Voľno. More, plávanie, hra s babami. Aktívna regenerácia.", exercises: [] },
 
