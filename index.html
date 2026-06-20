@@ -1374,34 +1374,27 @@ const PLAN = [
         { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
         { ...EXERCISES.cat_cow, sets: "2 min", weight: "" }
       ] },
-    { date: "2026-06-19", type: "strength", title: "💪 Bodyweight Circuit A", duration: "40 min",
-      desc: "Plný okruh. 3-4 kolá.",
+    { date: "2026-06-19", type: "travel", title: "✈️ Presuny / únavná cesta", duration: "—",
+      desc: "Piatkové presuny + únavná cesta. Tréning OFF. Bodyweight A presunutý na sobotu.", exercises: [] },
+    { date: "2026-06-20", type: "strength", title: "⚠️ Bodyweight A — nedokončené", duration: "~35 min",
+      desc: "Presun z piatka. Náročnosť stále rastie aj napriek väčšiemu recovery. Drepy + výpady = extrémna bolesť veľkých stehenných svalov (quads, doznievajúca svalovica). Dipy + pike pushupy (ramená) skoro nemožné — RAMENO + ZÁPÄSTIE (celý pletenec) limituje. Okruh nedokončený celý.",
+      bikeNote: "⚠️ FIX ASAP — chronický limiter ramenného pletenca + ľavé zápästie/predlaktie (viď about-me + history). Bodyweight tlaky na dlaniach (kľuky, dipy, pike) zaťažujú zápästie v extenzii + rameno. Náhrada: kľuky na PÄSTIACH/parallettes (neutrálne zápästie), VYNECHAŤ dipy + pike pushupy. Denný band prehab: external rotation + face pull + band pull-apart + wall slides + Y-T-W. Po návrate OBJEDNAŤ fyzioterapeuta — opakovaný problém čo blokuje tréning. Detail v road-classics-training-plan-2026.md (WATCH rameno/zápästie).",
       exercises: [
-        { ...EXERCISES.push_up, sets: "4×max", weight: "vlastná váha" },
-        { ...EXERCISES.bw_squat, sets: "4×20", weight: "" },
-        { ...EXERCISES.walking_lunge, sets: "3×12/nohu", weight: "" },
-        { ...EXERCISES.pike_pushup, sets: "3×8", weight: "pozor rameno" },
-        { ...EXERCISES.chair_dip, sets: "3×12", weight: "" },
-        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "" },
-        { ...EXERCISES.plank, sets: "3×45s", weight: "" }
+        { ...EXERCISES.bw_squat, sets: "4×20", weight: "✅ done (quads extrémne boleli)" },
+        { ...EXERCISES.walking_lunge, sets: "3×12/nohu", weight: "✅ done (bolestivé)" },
+        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "✅ done" },
+        { ...EXERCISES.plank, sets: "3×45s", weight: "✅ done" },
+        { ...EXERCISES.push_up, sets: "skrátené", weight: "⚠️ zápästie — nabudúce na pästiach" },
+        { ...EXERCISES.pike_pushup, sets: "nedokončené", weight: "❌ rameno — VYNECHAŤ" },
+        { ...EXERCISES.chair_dip, sets: "nedokončené", weight: "❌ rameno/zápästie — VYNECHAŤ" }
       ] },
-    { date: "2026-06-20", type: "run", title: "🏃 Long Run", duration: "55 min",
-      desc: "Najdlhší beh týždňa. Z2 plynulý 50-60 min (ráno!). Udržuje vytrvalostnú bázu kým je bike off. Hydratuj + elektrolyty.",
-      zones: ["z2"], exercises: [] },
     { date: "2026-06-21", type: "rest", title: "🏖️ Family / more", duration: "—",
       desc: "Voľno. More, plávanie, rodina.", exercises: [] },
 
     // W14 — Grécko (full week → return)
-    { date: "2026-06-22", type: "strength", title: "💪 Bodyweight Circuit B", duration: "40 min",
-      desc: "Okruh — nohy + chrbát. 3-4 kolá.",
-      exercises: [
-        { ...EXERCISES.bw_squat, sets: "4×25", weight: "" },
-        { ...EXERCISES.walking_lunge, sets: "4×12/nohu", weight: "" },
-        { ...EXERCISES.push_up, sets: "4×max", weight: "" },
-        { ...EXERCISES.prone_y_t_w, sets: "3×8 každé", weight: "anti-hrbenie" },
-        { ...EXERCISES.glute_bridge, sets: "3×20", weight: "" },
-        { ...EXERCISES.plank, sets: "3×60s", weight: "" }
-      ] },
+    { date: "2026-06-22", type: "run", title: "🥾 Hike na horu", duration: "—",
+      desc: "Long Z2 efort presunutý z víkendu → hike na horu (trail). Vytrvalostná báza na nohách, low impact na rameno/zápästie. Tempo pohodové, hydratácia + elektrolyty (horúčava). Bodyweight B vynechaný — nohy potrebujú po svalovici skôr objem v Z2 než ďalší silový.",
+      zones: ["z2"], exercises: [] },
     { date: "2026-06-23", type: "run", title: "🏃 Z2 Easy Run + more", duration: "40 min",
       desc: "Aeróbna báza + plávanie po behu.", zones: ["z2"], exercises: [] },
     { date: "2026-06-24", type: "run", title: "🏃 Hill / Tempo Run", duration: "40 min",
@@ -1439,6 +1432,7 @@ const PLAN = [
     // W15 — Peak 1
     { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "65 min",
       desc: "Po deloade = čerstvý. Push na nové PR. Bench 40, kladka 40.",
+      bikeNote: "⚠️ RAMENO/ZÁPÄSTIE: pred PR-mi over stav po fyzioterapeutovi. Shoulder press + lateral raise + incline len ak bez bolesti — inak zníž váhu / nahraď neutrálnym gripom + pridaj rotator cuff warm-up (band external rotation, face pull). Žiadne tlačenie cez bolesť.",
       exercises: [
         { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
         { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
