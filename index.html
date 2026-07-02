@@ -396,7 +396,7 @@
                 <div class="race-name">Vysočina</div>
                 <div class="days" id="cd-vysocina">—</div>
                 <div class="days-label">dní</div>
-                <div class="race-info">19.7. · 102 km · 1 750 m D+</div>
+                <div class="race-info">19.7. · krátka trasa · finisher</div>
             </div>
             <div class="countdown-card jested">
                 <div class="race-name">Ještěd</div>
@@ -667,7 +667,7 @@
 <script>
 const RACES = {
     palava: new Date(2026, 4, 16),
-    vysocina: new Date(2026, 6, 18),
+    vysocina: new Date(2026, 6, 19),
     jested: new Date(2026, 8, 19)
 };
 
@@ -1460,35 +1460,12 @@ const PLAN = [
       desc: "Prvý bike po Grécku sa nekonal — aktivity + cestovanie po návrate. Bike posunutý (prvý rozjazd až 3.7.).", exercises: [] },
 
     // W15 — Peak 1
-    { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "65 min",
-      desc: "Po deloade = čerstvý. Push na nové PR. Bench 40, kladka 40.",
-      bikeNote: "⚠️ RAMENO/ZÁPÄSTIE: pred PR-mi over stav po fyzioterapeutovi. Shoulder press + lateral raise + incline len ak bez bolesti — inak zníž váhu / nahraď neutrálnym gripom + pridaj rotator cuff warm-up (band external rotation, face pull). Žiadne tlačenie cez bolesť.",
-      exercises: [
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "warm-up aktivácia" },
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "40 kg" },
-        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "40 kg" },
-        { ...EXERCISES.pull_up, sets: "4×10", weight: "pomoc 25 kg" },
-        { ...EXERCISES.incline_db_press, sets: "4×8", weight: "2×14 kg" },
-        { ...EXERCISES.cable_crossover, sets: "3×12", weight: "9 kg/strana" },
-        { ...EXERCISES.shoulder_press, sets: "3×10", weight: "18 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
-        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
-      ] },
+    { date: "2026-06-30", type: "rest", title: "❌ GYM A Upper — nezrealizované", duration: "—",
+      desc: "Nedané — aktivity + cestovanie po dovolenke. Peak blok sa nekonal.", exercises: [] },
     { date: "2026-07-01", type: "rest", title: "❌ Hill Repeats — nezrealizované", duration: "—",
       desc: "Peak blok nezačal — stále bez biku po dovolenke (aktivity + cestovanie). Hill repeats vynechané. Namiesto peaku ide REBUILD od 3.7.", exercises: [] },
-    { date: "2026-07-02", type: "strength", title: "🏋️ GYM B — Lower Peak + Glutes", duration: "65 min",
-      desc: "Deadlift peak. Posledná ťažká legs session.",
-      exercises: [
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.deadlift, sets: "4×5", weight: "90 kg" },
-        { ...EXERCISES.back_squat, sets: "volume 15 min", weight: "55 kg" },
-        { ...EXERCISES.hip_thrust, sets: "4×12", weight: "40 kg" },
-        { ...EXERCISES.leg_curl, sets: "3×12", weight: "30 kg" },
-        { ...EXERCISES.split_squat, sets: "3×8/strana", weight: "2×14 kg" },
-        { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
-        { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "35 kg" }
-      ] },
+    { date: "2026-07-02", type: "rest", title: "❌ GYM B Lower — nezrealizované", duration: "—",
+      desc: "Nedané — aktivity + cestovanie. Peak blok sa nekonal.", exercises: [] },
     { date: "2026-07-03", type: "bike", title: "🚴 Prvý bike po dovolenke — ľahký rozjazd", duration: "45-60 min",
       desc: "PRVÝ BIKE po ~4 týždňoch (posledný 6.6.)! Ráno, úplne z ľahka — Z1/Z2, žiadne kopce, žiadne tepy. Len znovu zvyknúť telo + sedlo, vysoká kadencia, nohy voľné. Pocitová jazda, nie výkon.",
       zones: ["z1", "z2"], exercises: [],
@@ -1497,33 +1474,28 @@ const PLAN = [
       desc: "PÔVODNE Vysočina SIM 3,5h/1500m — ZRUŠENÉ. Po prvom bike po 4 týždňoch je 3,5h/1500m priveľa (riziko prepálenia/zranenia). Namiesto: pohodový Z2 rebuild 1,5-2h, mierne prevýšenie, žiadne intervaly. Postupné vrátenie objemu.",
       zones: ["z2"], exercises: [],
       bikeNote: "Rebuild pred Vysočinou (18.7.). Veľký SIM až keď sadnú 2-3 pokojné jazdy. Nutrition trénuj aj tu (elektrolyty, gél/h)." },
-    { date: "2026-07-05", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
-    { date: "2026-07-06", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
+    { date: "2026-07-05", type: "bike", title: "🚴 Z2 Endurance Rebuild", duration: "2-2,5h",
+      desc: "Tretia jazda rebuildu — pomaly naberaj objem. Z2 pohodovo 2-2,5h, mierne kopce v pohode. Žiadne intervaly. Ak nohy/rameno OK; inak skráť. Trénuj pitie + gél/h.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-07-06", type: "rest", title: "REST / Family", duration: "—", desc: "Regenerácia po prvom bike bloku späť. Denný rameno prehab.", exercises: [] },
 
-    // W16 — Pre-Taper (posledný plný týždeň)
-    { date: "2026-07-07", type: "strength", title: "🏋️ GYM A — Posledná plná session", duration: "55 min",
-      desc: "Posledná ťažká upper session pred taperom. Maintain: bench 42,5, kladka 42,5.",
+    // W16 — Rebuild → Finisher taper (krátka trasa)
+    { date: "2026-07-07", type: "strength", title: "🏋️ Ľahká údržba (shoulder-safe)", duration: "40 min",
+      desc: "Nie peak — len ľahká údržba, fokus je rebuild na bike + finisher (krátka trasa). Ramenný pletenec šetriť: neutrálny grip, žiadne overhead/incline cez bolesť.",
       exercises: [
         { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "warm-up" },
-        { ...EXERCISES.bench_press, sets: "5×5", weight: "42,5 kg" },
-        { ...EXERCISES.lat_pulldown, sets: "15s za 15 min", weight: "42,5 kg" },
-        { ...EXERCISES.pull_up, sets: "4×10", weight: "pomoc 25 kg" },
-        { ...EXERCISES.incline_db_press, sets: "3×8", weight: "2×14 kg" },
-        { ...EXERCISES.seated_row, sets: "3×10", weight: "25 kg" },
-        { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
-        { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
+        { ...EXERCISES.glute_bridge, sets: "2×15", weight: "" },
+        { ...EXERCISES.seated_row, sets: "3×12", weight: "stredná (neutrálny grip)" },
+        { ...EXERCISES.lat_pulldown, sets: "3×12", weight: "stredná" },
+        { ...EXERCISES.bw_squat, sets: "3×20", weight: "alebo hack squat ľahko" },
+        { ...EXERCISES.face_pull, sets: "3×15", weight: "prehab" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "prehab" }
       ] },
-    { date: "2026-07-08", type: "bike", title: "Climbing Tempo — 1×20 min Z3", duration: "75 min",
-      desc: "WU + 1×20 min kopec Z3 (race pace simulation) + CD.",
-      zones: ["z2", "z3"], exercises: [] },
-    { date: "2026-07-09", type: "strength", title: "🏋️ GYM B — Light Lower", duration: "40 min",
-      desc: "Posledné nohy. Ľahšie váhy, menej setov.",
-      exercises: [
-        { ...EXERCISES.deadlift, sets: "3×5", weight: "75 kg" },
-        { ...EXERCISES.hack_squat, sets: "3×10", weight: "báza +15 kg" },
-        { ...EXERCISES.leg_curl, sets: "3×12", weight: "20 kg" },
-        { ...EXERCISES.calf_raise_standing, sets: "3×15", weight: "25 kg" }
-      ] },
+    { date: "2026-07-08", type: "bike", title: "🚴 Z2 s ľahkými kopcami", duration: "1,5h",
+      desc: "Zvykaj nohy na stúpanie — ale POHODOVO. Z2, kopce ideš ľahko v sedle, vysoká kadencia. Žiadne Z3 intervaly (rebuild, nie peak). Krátka trasa Vysočiny nevyžaduje hrotenie.",
+      zones: ["z2"], exercises: [] },
+    { date: "2026-07-09", type: "rest", title: "REST / mobilita", duration: "—",
+      desc: "Voľno alebo ľahká anti-hrbenie mobilita + denný rameno prehab. Nohy oddych pred víkendovým longom.", exercises: [] },
     { date: "2026-07-10", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
       desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
       exercises: [
@@ -1536,8 +1508,8 @@ const PLAN = [
         { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
         { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
       ] },
-    { date: "2026-07-11", type: "bike", title: "Taper Long — 2,5h / 500m D+", duration: "2:30",
-      desc: "Z2, ľahké. Posledný long ride pred Vysočinou.",
+    { date: "2026-07-11", type: "bike", title: "🚴 Kľúčový rebuild long — 2,5h", duration: "2:30",
+      desc: "Najdlhšia jazda pred Vysočinou. Z2 pohodovo ~2,5h s miernym prevýšením. NIE SIM, nehrotíš — cieľ je istota že krátku trasu v pohode dáš. Odjazdi FULL nutrition protocol (elektrolyty + gél/h) ako generálku.",
       zones: ["z2"], exercises: [] },
     { date: "2026-07-12", type: "rest", title: "Family / REST", duration: "—", desc: "", exercises: [] },
     { date: "2026-07-13", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
@@ -1554,10 +1526,10 @@ const PLAN = [
     { date: "2026-07-18", type: "rest", title: "REST + Carb Load", duration: "—",
       desc: "ŽIADNY tréning. 8-10g/kg sacharidov. Príprava výbavy a výživy.",
       exercises: [] },
-    { date: "2026-07-19", type: "race", title: "🏁 VYSOČINA — 102 km / 1 750 m", duration: "cieľ <5:30",
-      desc: "ZÁVODNÝ DEŇ! Druhý monument Road Classics 2026! 102 km, 1 750m D+. Kopcovitejšie ako Pálava!",
+    { date: "2026-07-19", type: "race", title: "🏁 VYSOČINA — krátka trasa (finisher)", duration: "finisher, bez tlaku na čas",
+      desc: "ZÁVODNÝ DEŇ! Ideš KRÁTKU trasu ako finisher, nie na výkon — po ~4 týždňoch off bike rozumné rozhodnutie. Presné km krátkej trasy over v propozíciách. Cieľ: dokončiť v pohode + natrénovať výživu/pacing pred hlavným cieľom Ještěd (19.9.).",
       exercises: [],
-      bikeNote: "Pálava learning: jedz od začiatku, kadencia 80+ v kopcoch, drž skupinu čo najdlhšie. Enervit C2:1 protocol. Sarah + Sophie nálepky. IDEME!" }
+      bikeNote: "Netlač. Z2, jedz od začiatku, kadencia 80+ v kopcoch, pi elektrolyty. Toto je tréningový závod, nie hrotenie. Sarah + Sophie nálepky. Uži si to!" }
 ];
 
 function daysUntil(target) {
