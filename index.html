@@ -1456,10 +1456,8 @@ const PLAN = [
     { date: "2026-06-28", type: "run", title: "🏃 Beh (BA) / Family", duration: "40 min",
       desc: "Rodina SK. Ak chuť: Z2 beh 40 min v BA (alebo voľno). Posledný deň bez biku.",
       zones: ["z2"], exercises: [] },
-    { date: "2026-06-29", type: "bike", title: "🚴 Comeback Spin — späť na bike!", duration: "75 min",
-      desc: "PRVÝ BIKE po 2,5 týždňoch! Z2 pohodový vyjazd 60-75 min, znovu zvyknúť na sedlo. Žiadne kopce, žiadne tepy — len rozjazd.",
-      zones: ["z2"], exercises: [],
-      bikeNote: "Skontroluj tlak v plášťoch, namaž reťaz. Pocitová jazda. Od zajtra Peak blok." },
+    { date: "2026-06-29", type: "rest", title: "❌ Comeback Spin — nezrealizované", duration: "—",
+      desc: "Prvý bike po Grécku sa nekonal — aktivity + cestovanie po návrate. Bike posunutý (prvý rozjazd až 3.7.).", exercises: [] },
 
     // W15 — Peak 1
     { date: "2026-06-30", type: "strength", title: "🏋️ GYM A — Upper Peak", duration: "65 min",
@@ -1477,10 +1475,8 @@ const PLAN = [
         { ...EXERCISES.lateral_raise, sets: "3×12", weight: "2×6 kg" },
         { ...EXERCISES.hanging_leg_raise, sets: "4×15", weight: "" }
       ] },
-    { date: "2026-07-01", type: "bike", title: "Hill Repeats — 2×15 min Z3-Z4 🔥", duration: "90 min",
-      desc: "RACE SIMULATION! 15 WU + 2×15 min kopec Z3-Z4 (5 min rest) + CD.",
-      zones: ["z2", "z3", "z4"], exercises: [],
-      bikeNote: "Najdlhšie climbing intervaly sezóny. Race pace." },
+    { date: "2026-07-01", type: "rest", title: "❌ Hill Repeats — nezrealizované", duration: "—",
+      desc: "Peak blok nezačal — stále bez biku po dovolenke (aktivity + cestovanie). Hill repeats vynechané. Namiesto peaku ide REBUILD od 3.7.", exercises: [] },
     { date: "2026-07-02", type: "strength", title: "🏋️ GYM B — Lower Peak + Glutes", duration: "65 min",
       desc: "Deadlift peak. Posledná ťažká legs session.",
       exercises: [
@@ -1493,22 +1489,14 @@ const PLAN = [
         { ...EXERCISES.abductor, sets: "3×15", weight: "podľa stroja" },
         { ...EXERCISES.calf_raise_standing, sets: "5×15", weight: "35 kg" }
       ] },
-    { date: "2026-07-03", type: "mobility", title: "Kompenzačná mobilita / Jóga", duration: "20 min",
-      desc: "Anti-hrbenie rutina — otvorenie hrudníka + aktivácia chrbta.",
-      exercises: [
-        { ...EXERCISES.doorway_pec_stretch, sets: "3×30s", weight: "" },
-        { ...EXERCISES.thoracic_extension, sets: "2 min", weight: "" },
-        { ...EXERCISES.chin_tuck, sets: "10× pomaly", weight: "" },
-        { ...EXERCISES.band_pull, sets: "3×15", weight: "guma" },
-        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "" },
-        { ...EXERCISES.open_books, sets: "10×/strana", weight: "" },
-        { ...EXERCISES.cat_cow, sets: "2 min", weight: "" },
-        { ...EXERCISES.hip_flexor, sets: "30s/strana", weight: "" }
-      ] },
-    { date: "2026-07-04", type: "bike", title: "Long Ride — VYSOČINA SIM 🏔️", duration: "3:30",
-      desc: "3,5h / 1 500m D+. VYSOČINA SIMULÁCIA. Full race protocol.",
-      zones: ["z2", "z3"], exercises: [],
-      bikeNote: "Cieľ: 1 500m D+ = Vysočina level. Full nutrition. Testuj pacing." },
+    { date: "2026-07-03", type: "bike", title: "🚴 Prvý bike po dovolenke — ľahký rozjazd", duration: "45-60 min",
+      desc: "PRVÝ BIKE po ~4 týždňoch (posledný 6.6.)! Ráno, úplne z ľahka — Z1/Z2, žiadne kopce, žiadne tepy. Len znovu zvyknúť telo + sedlo, vysoká kadencia, nohy voľné. Pocitová jazda, nie výkon.",
+      zones: ["z1", "z2"], exercises: [],
+      bikeNote: "Skontroluj tlak v plášťoch + namaž reťaz (bike stál ~4 týždne). Po pauze je toto REBUILD, nie peak — netlač. Rameno/zápästie: sleduj posed, ak tŕpne ruka uprav oporu na riadidlách. Večer voliteľne anti-hrbenie mobilita + denný rameno prehab (panel hore)." },
+    { date: "2026-07-04", type: "bike", title: "🚴 Z2 Rebuild Ride (nie SIM)", duration: "1,5-2h",
+      desc: "PÔVODNE Vysočina SIM 3,5h/1500m — ZRUŠENÉ. Po prvom bike po 4 týždňoch je 3,5h/1500m priveľa (riziko prepálenia/zranenia). Namiesto: pohodový Z2 rebuild 1,5-2h, mierne prevýšenie, žiadne intervaly. Postupné vrátenie objemu.",
+      zones: ["z2"], exercises: [],
+      bikeNote: "Rebuild pred Vysočinou (18.7.). Veľký SIM až keď sadnú 2-3 pokojné jazdy. Nutrition trénuj aj tu (elektrolyty, gél/h)." },
     { date: "2026-07-05", type: "rest", title: "Z2 Easy / Family", duration: "—", desc: "", exercises: [] },
     { date: "2026-07-06", type: "rest", title: "REST", duration: "—", desc: "", exercises: [] },
 
