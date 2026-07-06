@@ -396,7 +396,7 @@
                 <div class="race-name">Vysočina</div>
                 <div class="days" id="cd-vysocina">—</div>
                 <div class="days-label">dní</div>
-                <div class="race-info">19.7. · krátka trasa · finisher</div>
+                <div class="race-info">18.7. · krátka trasa · finisher (+ prolog 17.7.)</div>
             </div>
             <div class="countdown-card jested">
                 <div class="race-name">Ještěd</div>
@@ -667,7 +667,7 @@
 <script>
 const RACES = {
     palava: new Date(2026, 4, 16),
-    vysocina: new Date(2026, 6, 19),
+    vysocina: new Date(2026, 6, 18),
     jested: new Date(2026, 8, 19)
 };
 
@@ -1522,15 +1522,17 @@ const PLAN = [
     { date: "2026-07-16", type: "bike", title: "Openers", duration: "45 min",
       desc: "15 WU + 3×5 min Z4 (3 min rest) + CD.",
       zones: ["z2", "z4"], exercises: [] },
-    { date: "2026-07-17", type: "bike", title: "Easy Spin — Posledná jazda", duration: "30 min",
-      desc: "Z1. Ľahké.", zones: ["z1"], exercises: [] },
-    { date: "2026-07-18", type: "rest", title: "REST + Carb Load", duration: "—",
-      desc: "ŽIADNY tréning. 8-10g/kg sacharidov. Príprava výbavy a výživy.",
-      exercises: [] },
-    { date: "2026-07-19", type: "race", title: "🏁 VYSOČINA — krátka trasa (finisher)", duration: "finisher, bez tlaku na čas",
-      desc: "ZÁVODNÝ DEŇ! Ideš KRÁTKU trasu ako finisher, nie na výkon — po ~4 týždňoch off bike rozumné rozhodnutie. Presné km krátkej trasy over v propozíciách. Cieľ: dokončiť v pohode + natrénovať výživu/pacing pred hlavným cieľom Ještěd (19.9.).",
+    { date: "2026-07-17", type: "race", title: "🕐 Cestovanie na Vysočinu + PROLOG časovka (večer)", duration: "TT 2,3 km",
+      desc: "Ráno cesta do Nového Města na Moravě + rozjazdenie nôh (Z1-Z2, pár krátkych rozstrelov). Večer PROLOG: časovka jednotlivcov/dvojíc, 2,3 km na okruhu vo Vysočina Arene pod umelým osvetlením. Prvý štart cca 20:30. Trať sa dá 'osahať' 17:00-19:00 pred štartom (bez toho na okruh nesmieš). Krátky maximálny effort ~3-4 min.",
+      zones: ["z1", "z2", "z5"], exercises: [],
+      bikeNote: "Prolog = krátky flat-out. Poriadne sa rozohrej (10-15 min + 2-3 rozstrely), inak to 'odpáliš' za studena. Pozor nespáliť nohy pred sobotou — je to zábava, nie hlavný cieľ. Skontroluj svetlá/viditeľnosť, je to pod umelým osvetlením." },
+    { date: "2026-07-18", type: "race", title: "🏁 VYSOČINA — krátka trasa (finisher)", duration: "62 km · 1000 m D+ · štart 12:30",
+      desc: "ZÁVODNÝ DEŇ! Krátka trasa 62 km / 1000 m D+, štart 12:30 (dlhá 11:00). Ideš ako finisher, nie na výkon — po ~4 týždňoch off bike rozumné rozhodnutie. Časový limit krátkej: 3h45m (tempo min. 16,5 km/h) — pohodlná rezerva. Krátka sa jazdí podľa pravidiel švihu (do výsledku sa počíta len čas zo segmentov). Cieľ: dokončiť v pohode + natrénovať výživu/pacing pred hlavným cieľom Ještěd (19.9.).",
       exercises: [],
-      bikeNote: "Netlač. Z2, jedz od začiatku, kadencia 80+ v kopcoch, pi elektrolyty. Toto je tréningový závod, nie hrotenie. Sarah + Sophie nálepky. Uži si to!" }
+      bikeNote: "Netlač. Z2, jedz od začiatku, kadencia 80+ v kopcoch, pi elektrolyty. Toto je tréningový závod, nie hrotenie. Výdaj čísel 8:00-10:00, race brief krátkej 11:50, radenie do koridoru 12:00-12:20. Sarah + Sophie nálepky. Uži si to!" },
+    { date: "2026-07-19", type: "rest", title: "After ride s Pavé Cycles + regenerácia", duration: "voľné",
+      desc: "Nedeľa po závode. O 10:00 after ride s Pavé Cycles (ak vládzeš, len pohodová vyjazdka Z1). Inak plná regenerácia — strečing, doplnenie, oddych. Bez tlaku.",
+      zones: ["z1"], exercises: [] }
 ];
 
 function daysUntil(target) {
