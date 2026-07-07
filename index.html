@@ -967,6 +967,26 @@ const EXERCISES = {
         name: "Side Plank",
         video: "https://www.youtube.com/watch?v=XeN4pEZZJNI",
         note: "Glute medius + core. Lakeť pod ramenom, telo v rovine. Spodné koleno dole ak ťažké"
+    },
+    figure_four: {
+        name: "Seated Figure-4 (glute stretch)",
+        video: "https://www.youtube.com/watch?v=jNXdOVgvMV4",
+        note: "V offici na stoličke: členok na koleno, rovný chrbát, predklon z bedra. Uvoľní zadok/piriformis po sedení"
+    },
+    wrist_mobility: {
+        name: "Mobilita zápästia (flexory/extenzory + prayer)",
+        video: "https://www.youtube.com/watch?v=D4-jQu5GfBg",
+        note: "Jemne, cez deň. Naťahuj flexory aj extenzory + prayer stretch. NIKDY cez bolesť (tvoj limiter)"
+    },
+    legs_up_wall: {
+        name: "Legs Up the Wall",
+        video: "https://www.youtube.com/watch?v=Eu3HEv5OtQk",
+        note: "Regenerácia nôh po jazde + cestovaní. Nohy hore o stenu, dýchaj, 5-10 min. Super na opuch"
+    },
+    childs_pose: {
+        name: "Child's Pose",
+        video: "https://www.youtube.com/watch?v=_ZX_zTOBgp8",
+        note: "Dekompresia driekovej chrbtice po sedení. Zadok k pätám, ruky dopredu, čelo na zem"
     }
 };
 
@@ -1497,9 +1517,23 @@ const PLAN = [
         { ...EXERCISES.face_pull, sets: "3×15", weight: "prehab" },
         { ...EXERCISES.band_pull, sets: "3×15", weight: "prehab" }
       ] },
-    { date: "2026-07-08", type: "bike", title: "🚴 Ranný rýchly spin (~1h)", duration: "do 1h",
-      desc: "Nabitý deň: ráno rýchly Z2 spin (~1h) pred rodinnými raňajkami, potom cesta Tišnov 2h + office do 16:30 + cesta späť do Prahy 2h. Ráno je jediné okno — pohodovo Z2, prebudiť nohy. Pozor: 4h v aute za deň → večer strečing/mobilita chrbta a bedra. Long v piatok je priorita, dnes netreba hrotiť.",
-      zones: ["z2"], exercises: [] },
+    { date: "2026-07-08", type: "bike", title: "🚴 Ranný rýchly spin (~1h) + office/večer mobilita", duration: "do 1h + mikropauzy",
+      desc: "Nabitý deň: ráno rýchly Z2 spin (~1h) pred rodinnými raňajkami, potom cesta Tišnov 2h + office do 16:30 + cesta späť do Prahy 2h. Ráno je jediné bikové okno — pohodovo Z2, prebudiť nohy. Long v piatok je priorita, dnes netreba hrotiť. Pri ~4h v aute + sedení v offici: rob mikropauzy (nižšie) každých 30-45 min a večer dekompresiu. Vezmi si gumu.",
+      zones: ["z2"],
+      exercises: [
+        { ...EXERCISES.hip_flexor, sets: "30s/nohu", weight: "OFFICE — každých 30-45 min" },
+        { ...EXERCISES.figure_four, sets: "30s/strana", weight: "OFFICE — na stoličke" },
+        { ...EXERCISES.chin_tuck, sets: "8-10× pomaly", weight: "OFFICE — proti korytnačke" },
+        { ...EXERCISES.doorway_pec_stretch, sets: "30s", weight: "OFFICE — otvor hrudník" },
+        { ...EXERCISES.thoracic_extension, sets: "5-8×", weight: "OFFICE — cez operadlo" },
+        { ...EXERCISES.wrist_mobility, sets: "1 kolo", weight: "OFFICE — jemne, tvoj limiter" },
+        { ...EXERCISES.band_pull, sets: "2×15", weight: "OFFICE — guma, prehab" },
+        { ...EXERCISES.legs_up_wall, sets: "5-10 min", weight: "VEČER — regen nôh" },
+        { ...EXERCISES.foam_roll_lower, sets: "5 min", weight: "VEČER — pozor pravé koleno" },
+        { ...EXERCISES.cat_cow, sets: "2 min", weight: "VEČER — rozhýb chrbticu" },
+        { ...EXERCISES.open_books, sets: "10×/strana", weight: "VEČER — hrudná rotácia" },
+        { ...EXERCISES.childs_pose, sets: "1 min", weight: "VEČER — dekompresia driek" }
+      ] },
     { date: "2026-07-09", type: "rest", title: "REST / mobilita", duration: "—",
       desc: "Voľno alebo ľahká anti-hrbenie mobilita + denný rameno prehab. Nohy oddych pred víkendovým longom.", exercises: [] },
     { date: "2026-07-10", type: "bike", title: "🚴 Kľúčový rebuild long — 2,5h", duration: "2:30",
