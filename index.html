@@ -396,7 +396,7 @@
                 <div class="race-name">Vysočina</div>
                 <div class="days" id="cd-vysocina">—</div>
                 <div class="days-label">dní</div>
-                <div class="race-info">18.7. · krátka trasa · finisher (+ prolog 17.7.)</div>
+                <div class="race-info">✅ 18.7. DOKONČENÉ · 62,79 km · 2:51:55 (+ prolog 17.7.)</div>
             </div>
             <div class="countdown-card jested">
                 <div class="race-name">Ještěd</div>
@@ -1562,17 +1562,31 @@ const PLAN = [
     { date: "2026-07-16", type: "bike", title: "🚗 Cesta na Vysočinu + rozjazdenie/obhliadka", duration: "45 min",
       desc: "Cesta do Nového Města na Moravě (odchod už štvrtok). Po príchode ľahké rozjazdenie nôh po ceste: 30-45 min Z1-Z2 + pár krátkych rozstrelov (openers), nech sa nohy po sedení v aute prebudia. Ak stihneš, pozri si okolie / logistiku areálu (parkovanie priamo pri Vysočina Arene).",
       zones: ["z1", "z2"], exercises: [] },
-    { date: "2026-07-17", type: "race", title: "🕐 Openers ráno + PROLOG časovka (večer)", duration: "TT 2,3 km",
-      desc: "Ráno/dopoludnie voľno + krátke openers (10-15 min WU + 2-3 rozstrely, nič dlhé). PROLOG večer: časovka jednotlivcov/dvojíc, 2,3 km na okruhu vo Vysočina Arene pod umelým osvetlením. Prvý štart cca 20:30. Trať sa dá 'osahať' 17:00-19:00 pred štartom (bez toho na okruh nesmieš). Krátky maximálny effort ~3-4 min.",
-      zones: ["z1", "z2", "z5"], exercises: [],
-      bikeNote: "Prolog = krátky flat-out. Poriadne sa rozohrej (10-15 min + 2-3 rozstrely), inak to 'odpáliš' za studena. Pozor nespáliť nohy pred sobotou — je to zábava, nie hlavný cieľ. Skontroluj svetlá/viditeľnosť, je to pod umelým osvetlením." },
-    { date: "2026-07-18", type: "race", title: "🏁 VYSOČINA — krátka trasa (finisher)", duration: "62 km · 1000 m D+ · štart 12:30",
-      desc: "ZÁVODNÝ DEŇ! Krátka trasa 62 km / 1000 m D+, štart 12:30 (dlhá 11:00). Ideš ako finisher, nie na výkon — po ~4 týždňoch off bike rozumné rozhodnutie. Časový limit krátkej: 3h45m (tempo min. 16,5 km/h) — pohodlná rezerva. Krátka sa jazdí podľa pravidiel švihu (do výsledku sa počíta len čas zo segmentov). Cieľ: dokončiť v pohode + natrénovať výživu/pacing pred hlavným cieľom Ještěd (19.9.).",
+    { date: "2026-07-17", type: "race", title: "✅ PROLOG nočná časovka — flat-out!", duration: "2,29 km · 5:56",
+      desc: "✅ PROLOG odjazdený! Nočná časovka vo Vysočina Arene pod umelým osvetlením: 2,29 km za 5:56, avg 23,2 km/h, max 48,8 km/h, 59 m D+. HR avg 168 / max 182 (poriadny rozstrel!), TE 2.5 Maintaining, 18,1°C. Krátky maximálny effort — presne ako mal byť. Nohy zobudené pred sobotou, ale nespálené.",
+      zones: ["z4", "z5"], exercises: [],
+      bikeNote: "HR max 182 = išiel si naplno. Pekná zábava a dobrá aktivácia CNS pred pretekom. Pozor bolo nespáliť nohy — 6 minút flat-out to nespravilo, ideálne." },
+    { date: "2026-07-18", type: "race", title: "🏁 ✅ VYSOČINA — DOKONČENÉ! Silný finisher", duration: "62,79 km · 1 080 m D+ · 2:51:55",
+      desc: "🏁 ZÁVOD ZA NAMI — a vôbec nie ako 'len finisher'! 62,79 km / 1 080 m D+ za 2:51:55, avg 21,9 km/h, max 65,5 km/h. HR avg 159 / max 179, TE 5.0 (Overreaching), 24,5°C. Dojazd hlboko pod limitom (3h45) s rezervou takmer hodinu. Po ~4 týždňoch off-bike a jednom rebuild bloku toto je nadštandard — a výživa/pacing z generálky (10.7.) sedeli. Presne to, čo mal Vysočina naučiť pred Ještědom (19.9.).",
       exercises: [],
-      bikeNote: "Netlač. Z2, jedz od začiatku, kadencia 80+ v kopcoch, pi elektrolyty. Toto je tréningový závod, nie hrotenie. Výdaj čísel 8:00-10:00, race brief krátkej 11:50, radenie do koridoru 12:00-12:20. Sarah + Sophie nálepky. Uži si to!" },
-    { date: "2026-07-19", type: "rest", title: "After ride s Pavé Cycles + regenerácia", duration: "voľné",
-      desc: "Nedeľa po závode. O 10:00 after ride s Pavé Cycles (ak vládzeš, len pohodová vyjazdka Z1). Inak plná regenerácia — strečing, doplnenie, oddych. Bez tlaku.",
-      zones: ["z1"], exercises: [] }
+      bikeNote: "TE 5.0 = išiel si to naozaj tvrdo (Threshold/High Aerobic), nie Z2 pohodu ako plán hovoril — a zvládol si to bez problémov. Skvelá správa pre formu. Teraz ale POCTIVÁ regenerácia: telo dostalo veľkú dávku, ďalší týždeň ber ľahko (rodina, hiking, žiadne hrotenie)." },
+    { date: "2026-07-19", type: "bike", title: "✅ Rodinné vyjazdky s deťmi (Nové Město) — aktívna regen", duration: "2 jazdy · ~17,6 km",
+      desc: "✅ Nedeľa po pretekoch = aktívna regenerácia s deťmi v areáli Vysočina Areny. Dve pohodové vyjazdky 's detmi': 8,03 km (1:18, avg 6,1 km/h, TE Recovery) + 9,59 km (1:34, avg 6,1 km/h, TE Recovery). Plus detský závod (2,14 km) — Sarah/Sophie na trati! Nohy pretočené, žiadny tlak, čistá regen a rodinný čas.",
+      zones: ["z1"], exercises: [] },
+
+    // W18 — Regeneračný / offsite týždeň po Vysočine
+    { date: "2026-07-20", type: "rest", title: "REST / cesta", duration: "—",
+      desc: "Deň po pretekovom víkende — plná regenerácia. Strečing, doplnenie tekutín/glykogénu, oddych.", exercises: [] },
+    { date: "2026-07-21", type: "bike", title: "✅ Praha — pohodová jazda s deťmi", duration: "7,10 km · 1:35",
+      desc: "✅ Rekreačná vyjazdka s deťmi v Prahe: 7,10 km, 1:35, avg 4,5 km/h (veľa zastávok), 96 m D+, TE Recovery, 29,6°C. Aktívna regen, žiadna intenzita.",
+      zones: ["z1"], exercises: [] },
+    { date: "2026-07-22", type: "rest", title: "REST", duration: "—", desc: "Regeneračný týždeň po Vysočine. Oddych.", exercises: [] },
+    { date: "2026-07-23", type: "bike", title: "✅ Bratislava — jazda s deťmi", duration: "11,00 km · 1:17",
+      desc: "✅ Pohodová jazda s deťmi v Bratislave: 11,00 km, 1:17:56, avg 8,5 km/h, max 39,8 km/h, 49 m D+, TE Recovery, 26,3°C. Ľahké nohy, aktívna regen.",
+      zones: ["z1"], exercises: [] },
+    { date: "2026-07-24", type: "run", title: "🥾 Offsite Velké Karlovice — hiking", duration: "2 túry · ~9 km",
+      desc: "✅ Firemný offsite vo Velkých Karloviciach — dva výstupy: krátka 2,17 km (24 min, 28 m D+) + poriadna túra 6,79 km (1:22, 251 m D+, HR avg 110 / max 151, TE 1.1 Some Benefit, 508 kcal). Nohy po pretekoch dobre pretiahnuté v teréne, hlava vypnutá. Ideálne zakončenie regeneračného týždňa.",
+      zones: [], exercises: [] }
 ];
 
 function daysUntil(target) {
@@ -1641,7 +1655,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA ✅',18:'Block 3 — Regenerácia + offsite 🥾'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
