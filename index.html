@@ -1603,7 +1603,178 @@ const PLAN = [
         { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s/nohu", weight: "DENNE — hlavný fix" },
         { ...EXERCISES.hamstring_forward_fold, sets: "2-3×30s", weight: "aj cez deň v offici" },
         { ...EXERCISES.wrist_mobility, sets: "1-2 kolá", weight: "jemne, cez bolesť nie" }
-      ] }
+      ] },
+
+    // ============================================================
+    // === BLOCK 3: Ještěd (19.9.) — SILNÝ FINISHER ===============
+    // Fokus: climbing endurance + VO2max + výbušnosť + sila
+    // Denne: hamstring stretch (12 cm fix) + shoulder-safe gym
+    // ============================================================
+
+    // W18 tail — dojazd regenu
+    { date: "2026-07-25", type: "bike", title: "Ľahký spin + štart hamstring protokolu", duration: "40-50 min",
+      desc: "Návrat na koľaj po offsite. Z1-Z2 pretočiť nohy (voliteľné, ak vládzeš). HLAVNÉ dnes: naštartovať denný hamstring stretch (supine s popruhom + forward fold) a jedlo späť na recomp — protein anchors, minimum alka.",
+      zones: ["z1", "z2"],
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s/nohu", weight: "DENNE" },
+        { ...EXERCISES.hamstring_forward_fold, sets: "2-3×30s", weight: "" }
+      ] },
+    { date: "2026-07-26", type: "rest", title: "REST / rodina + hamstring", duration: "—",
+      desc: "Voľno. Rodina, oddych. Hamstring stretch aj tak (denne!). Priprav hlavu na Block 3 — 8 týždňov do Ještědu.",
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s/nohu", weight: "DENNE" }
+      ] },
+
+    // W19 (27.7–2.8) — RESET / Base re-entry
+    { date: "2026-07-27", type: "rest", title: "REST + mobilita/hamstring", duration: "20 min",
+      desc: "Reset týždeň. Žiadna intenzita. Mobilita + denný hamstring. Nutrition reset naostro (po alko týždni): raňajky včas, protein v každom jedle, sacharidy okolo tréningu.",
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" },
+        { ...EXERCISES.hamstring_forward_fold, sets: "2-3×30s", weight: "" }
+      ] },
+    { date: "2026-07-28", type: "bike", title: "Z2 easy + 4× rozstrely", duration: "60-75 min",
+      desc: "Base re-entry. Z2 pohodovo 60-75 min, na konci 4×15s ľahké rozstrely (nie plný šprint) — zobudiť nohy. Kadencia 85+.",
+      zones: ["z2"],
+      bikeNote: "Ešte nie VO2max — telo sa vracia. Cieľ tento týždeň: objem v Z2, nie páľba." },
+    { date: "2026-07-29", type: "strength", title: "🏋️ Gym A — lower + core (shoulder-safe, návrat)", duration: "45 min",
+      desc: "Prvý gym po pauze — ľahko, technika. Lower body + core. Goblet drep, RDL / trap-bar deadlift, split squat, hip thrust, Pallof press, forearm plank. Hamstring stretch po tréningu.",
+      bikeNote: "⚠️ SHOULDER-SAFE: žiadne overhead press, kliky na dlaniach, dipy. Neutrálne zápästie (činky/trap bar). Cez bolesť ramena/zápästia nikdy. Tento týždeň 60-70% váh, budujeme späť." },
+    { date: "2026-07-30", type: "bike", title: "Z2 + kadencia", duration: "60 min",
+      desc: "Z2 pohodovo, fokus na plynulú kadenciu 85-95. Uvoľnené nohy po gyme.",
+      zones: ["z2"] },
+    { date: "2026-07-31", type: "run", title: "Mobilita + voliteľný beh Z2", duration: "30 min",
+      desc: "Hamstring + mobilita. Ak sa cítiš, ľahký beh Z2 30 min (0-1× týždenne, low impact na rameno). Inak len mobilita.",
+      zones: ["z2"],
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" }
+      ] },
+    { date: "2026-08-01", type: "bike", title: "Long ride Z2 — rebuild base", duration: "~2:00 / ~50 km",
+      desc: "Prvý dlhší po pretekoch. Čisto Z2, ~50 km, mierne kopce. Nutrition trénuj (60-70 g/h). Bez tlaku na tempo.",
+      zones: ["z2"] },
+    { date: "2026-08-02", type: "rest", title: "Recovery spin / rodina", duration: "—",
+      desc: "Ľahká vyjazdka Z1 alebo voľno s rodinou. Hamstring. Zhodnoť týždeň: jedlo, alko, spánok — späť na koľaji?",
+      zones: ["z1"] },
+
+    // W20 (3.8–9.8) — Base + intenzita intro
+    { date: "2026-08-03", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + denný hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-08-04", type: "bike", title: "VO2max intro — 4×3 min Z5", duration: "60 min",
+      desc: "Prvý VO2max blok. WU 15 min → 4×3 min Z5 (r 3 min ľahko) → CD. Kadencia vysoká. Ideálne do kopca / na trenažéri.",
+      zones: ["z2", "z5"],
+      bikeNote: "Z5 = 'tréning smie páliť'. Ale pretek ideš Z2 finisher — toto je motor, nie preteky. Ak nohy mŕtve, sprav len 3 opakovania." },
+    { date: "2026-08-05", type: "bike", title: "Z2 + 6× šprinty", duration: "60 min",
+      desc: "Z2 easy + 6×10s MAX šprinty (r 3-4 min úplný oddych). Výbušnosť pre Ještěd steny.",
+      zones: ["z2"] },
+    { date: "2026-08-06", type: "bike", title: "Sweet spot — 2×12 min Z3", duration: "60-70 min",
+      desc: "Kopcová vytrvalosť. WU → 2×12 min sweet spot (horný Z3, ~88-93% FTP) → CD. Ideálne dlhšie stúpanie.",
+      zones: ["z2", "z3"] },
+    { date: "2026-08-07", type: "strength", title: "🏋️ Gym A — lower + core", duration: "45-50 min",
+      desc: "Lower + core, shoulder-safe. Progres váh oproti minulému týždňu. Drep, RDL/trap-bar, split squat, hip thrust, Pallof, forearm plank. Hamstring po.",
+      bikeNote: "⚠️ Shoulder-safe (bez overhead/klikov/dipov, neutrálne zápästie)." },
+    { date: "2026-08-08", type: "bike", title: "Long ride — kopce", duration: "~2:30 / ~65 km",
+      desc: "Z2 s kopcami, ~65 km. Progres objemu. Nutrition generálka (70-80 g/h). Kadencia v kopcoch 80+.",
+      zones: ["z2", "z3"] },
+    { date: "2026-08-09", type: "rest", title: "Recovery / beh Z2", duration: "—",
+      desc: "Recovery spin Z1 alebo ľahký beh Z2 30-40 min. Hamstring + rodina.",
+      zones: ["z1"] },
+
+    // W21 (10.8–16.8) — Build 1 (VO2max)
+    { date: "2026-08-10", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-08-11", type: "bike", title: "VO2max — 5×3 min Z5", duration: "65 min",
+      desc: "WU → 5×3 min Z5 (r 3 min) → CD. Progres na 5 opakovaní. Do kopca ideálne.",
+      zones: ["z2", "z5"], bikeNote: "Kľúčový motor-session bloku. Drž výkon rovnaký naprieč intervalmi." },
+    { date: "2026-08-12", type: "bike", title: "Z2 + 8× šprinty", duration: "75 min",
+      desc: "Z2 + 8×12s MAX šprinty (plný oddych medzi). Objem + výbušnosť.",
+      zones: ["z2"] },
+    { date: "2026-08-13", type: "bike", title: "Kopcová vytrvalosť — 3×8 min Z3-Z4", duration: "70 min",
+      desc: "Dlhšie stúpanie: 3×8 min Z3-Z4 (r 4 min). Simulácia sústredeného výjazdu. Kadencia 75-85.",
+      zones: ["z3", "z4"] },
+    { date: "2026-08-14", type: "strength", title: "🏋️ Gym B — lower (power shift)", duration: "45-50 min",
+      desc: "Posun k výbušnosti: rýchlejší koncentrik. Drep, RDL, výskoky/step-up, hip thrust, core. Shoulder-safe. Hamstring po.",
+      bikeNote: "⚠️ Shoulder-safe. Power = rýchlo hore, kontrolovane dole." },
+    { date: "2026-08-15", type: "bike", title: "Long ride — kopce (progres)", duration: "~3:00 / ~75 km",
+      desc: "Z2 s výraznejšími kopcami, ~75 km. Nutrition protokol. Posledná tretina mierne pritlač (sweet spot v kopci).",
+      zones: ["z2", "z3"] },
+    { date: "2026-08-16", type: "rest", title: "Recovery / rodina", duration: "—", desc: "Ľahko/voľno. Hamstring.", zones: ["z1"] },
+
+    // W22 (17.8–23.8) — Build 2
+    { date: "2026-08-17", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-08-18", type: "bike", title: "VO2max — 5×3 min + 30/30 finish", duration: "70 min",
+      desc: "5×3 min Z5 (r 3 min) + na záver 6×30/30s. Tvrdý deň — najostrejší VO2max zatiaľ.",
+      zones: ["z2", "z5"], bikeNote: "Ak sú nohy prázdne z long ride, vynechaj 30/30. Kvalita > kvantita." },
+    { date: "2026-08-19", type: "bike", title: "Z2 + 8× šprinty", duration: "75 min", desc: "Z2 + 8×15s MAX. Výbušnosť.", zones: ["z2"] },
+    { date: "2026-08-20", type: "bike", title: "Sweet spot — 3×12 min Z3", duration: "75 min",
+      desc: "3×12 min sweet spot (r 5 min). Kopcová vytrvalosť. Ideálne dlhé stúpanie.", zones: ["z2", "z3"] },
+    { date: "2026-08-21", type: "strength", title: "🏋️ Gym B — power + core", duration: "45 min",
+      desc: "Power lower + core, shoulder-safe. Udrž silu, rýchly koncentrik. Hamstring po.",
+      bikeNote: "⚠️ Shoulder-safe." },
+    { date: "2026-08-22", type: "bike", title: "Long ride — Ještěd SIM (dlhé kopce)", duration: "~3:30 / ~85 km",
+      desc: "Najdlhšia zatiaľ. ~85 km s dlhými kopcami — simulácia profilu Ještědu. Plná nutrition generálka. Sústredený výjazd v strede jazdy.",
+      zones: ["z2", "z3", "z4"] },
+    { date: "2026-08-23", type: "rest", title: "Recovery / beh", duration: "—", desc: "Recovery spin Z1 alebo beh Z2. Hamstring + rodina.", zones: ["z1"] },
+
+    // W23 (24.8–30.8) — Peak 1
+    { date: "2026-08-24", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-08-25", type: "bike", title: "VO2max — 6×3 min Z5", duration: "75 min",
+      desc: "Peak objem VO2max: 6×3 min Z5 (r 3 min). Vysoká kadencia, do kopca.", zones: ["z2", "z5"],
+      bikeNote: "Vrchol motora. Ak držíš výkon do 6. intervalu, forma rastie pekne." },
+    { date: "2026-08-26", type: "bike", title: "Z2 + 10× šprinty", duration: "75 min", desc: "Z2 + 10×15s MAX (plný oddych). Max výbušnosť.", zones: ["z2"] },
+    { date: "2026-08-27", type: "bike", title: "Climbing endurance — 2×15 min Z3-Z4", duration: "80 min",
+      desc: "2×15 min sústredený výjazd Z3-Z4 (r 6 min). Dlhé stúpanie ideálne. Ještěd = jeden dlhý climb.", zones: ["z3", "z4"] },
+    { date: "2026-08-28", type: "strength", title: "🏋️ Gym — maintenance (power)", duration: "40 min",
+      desc: "Udržiavací power blok — menší objem, drž silu. Shoulder-safe. Hamstring po.",
+      bikeNote: "⚠️ Shoulder-safe. V peak fáze gym neprepal — priorita je bike." },
+    { date: "2026-08-29", type: "bike", title: "Long ride — najviac stúpania", duration: "~3:30+ / ~90 km",
+      desc: "Najnáročnejší long — ~90 km, maximum D+. Nutrition naostro. Toto je posledná veľká objemová jazda pred taperom.",
+      zones: ["z2", "z3", "z4"] },
+    { date: "2026-08-30", type: "rest", title: "Recovery / rodina", duration: "—", desc: "Ľahko/voľno. Hamstring.", zones: ["z1"] },
+
+    // W24 (31.8–6.9) — Peak 2 / Ještěd sim
+    { date: "2026-08-31", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-09-01", type: "bike", title: "VO2max — 5×4 min Z5 (dlhšie)", duration: "75 min",
+      desc: "Dlhšie VO2max intervaly: 5×4 min Z5 (r 4 min). Posun k dlhšej climbing kapacite.", zones: ["z2", "z5"] },
+    { date: "2026-09-02", type: "bike", title: "Z2 + šprinty", duration: "70 min", desc: "Z2 + 8×15s MAX. Svieže nohy.", zones: ["z2"] },
+    { date: "2026-09-03", type: "bike", title: "JEŠTĚD CLIMB SIM — dlhý výjazd", duration: "80 min",
+      desc: "Kľúčová sim: dlhý sústredený výstup Z3-Z4 (napr. 1×25-30 min v kopci ustáleným tempom). Presne to, čo ťa čaká na Ještěde. Kadencia 75-85, jedz počas.",
+      zones: ["z3", "z4"], bikeNote: "Nauč sa 'race pace' na dlhom stúpaní — udržateľné, nie zaškrtené." },
+    { date: "2026-09-04", type: "strength", title: "🏋️ Gym — light maintenance", duration: "35 min",
+      desc: "Ľahký udržiavací gym. Shoulder-safe. Hamstring po. Nič ťažké — blížime sa k taperu.",
+      bikeNote: "⚠️ Shoulder-safe." },
+    { date: "2026-09-05", type: "bike", title: "Long ride — sústredené stúpanie", duration: "~3:00 / ~75 km",
+      desc: "Z2 s koncentrovaným stúpaním. Objem začína klesať. Nutrition v pohode.", zones: ["z2", "z3"] },
+    { date: "2026-09-06", type: "rest", title: "Recovery / rodina", duration: "—", desc: "Ľahko/voľno. Hamstring.", zones: ["z1"] },
+
+    // W25 (7.9–13.9) — Pre-Taper
+    { date: "2026-09-07", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-09-08", type: "bike", title: "VO2max — 4×3 min (ostré, menej objemu)", duration: "60 min",
+      desc: "Udrž ostrosť, zníž objem: 4×3 min Z5 (r 3 min). Svieže nohy dôležitejšie než únava.", zones: ["z2", "z5"] },
+    { date: "2026-09-09", type: "bike", title: "Z2 + 6× šprinty", duration: "60 min", desc: "Z2 easy + 6×12s. Krátko, sviežo.", zones: ["z2"] },
+    { date: "2026-09-10", type: "bike", title: "Sweet spot — 2×12 min Z3", duration: "60 min",
+      desc: "2×12 min sweet spot (r 5 min). Posledná kvalitná kopcová práca pred taperom.", zones: ["z2", "z3"] },
+    { date: "2026-09-11", type: "run", title: "Mobilita / ľahký gym + hamstring", duration: "30 min",
+      desc: "Ľahká mobilita alebo veľmi ľahký gym (technika). Hamstring. Nič únavné.",
+      exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-09-12", type: "bike", title: "Long ride Z2 — posledný dlhší", duration: "~2:30 / ~60 km",
+      desc: "Posledná dlhšia jazda pred pretekom. Čisto Z2, kopce mierne. Otestuj race nutrition + výstroj (kolesá/plášte na Ještěd).",
+      zones: ["z2"] },
+    { date: "2026-09-13", type: "rest", title: "Recovery spin", duration: "—", desc: "Ľahká vyjazdka Z1. Hamstring. Uvoľnene do race week.", zones: ["z1"] },
+
+    // W26 (14.9–20.9) — Taper → JEŠTĚD
+    { date: "2026-09-14", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Race week. Menej je viac. Hamstring + regenerácia. Žiadny gym.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
+    { date: "2026-09-15", type: "bike", title: "Openers — 3×3 min Z4", duration: "50 min",
+      desc: "WU → 3×3 min Z4 (r 3 min) → CD. Udrž systém ostrý, ale svieži. Nič dlhé.", zones: ["z2", "z4"] },
+    { date: "2026-09-16", type: "bike", title: "Z1-Z2 easy", duration: "45 min", desc: "Pohodová vyjazdka, pretočiť nohy. Nič viac.", zones: ["z1", "z2"] },
+    { date: "2026-09-17", type: "bike", title: "Easy spin + 2-3 rozstrely", duration: "40 min",
+      desc: "Ľahko + 2-3 krátke rozstrely (aktivácia). Skontroluj bike (plášte, tlaky, brzdy, radenie).", zones: ["z1", "z2"] },
+    { date: "2026-09-18", type: "rest", title: "REST + carb load + cesta", duration: "—",
+      desc: "Deň pred Ještědom. Cesta / logistika. Carb load (viď nutrition template). Hamstring ľahko. Priprav výstroj, štartovné číslo, výživu na jazdu. Skorý spánok.",
+      exercises: [ { ...EXERCISES.hamstring_forward_fold, sets: "2×30s", weight: "ľahko" } ] },
+    { date: "2026-09-19", type: "race", title: "🏁 JEŠTĚD — HLAVNÝ CIEĽ!", duration: "závod",
+      desc: "🏁 HLAVNÝ PRETEK SEZÓNY! Ještěd — climb-heavy. Všetko z Block 3 (VO2max motor + climbing endurance + výbušnosť + sila) sem smerovalo. Pacing: dlhé stúpanie ideš udržateľným race pace (nie zaškrtene z rozbehu), jedz od začiatku (70-80 g/h), elektrolyty, kadencia 75-85 v kopci. Uži si to — toto je odmena za celý blok.",
+      exercises: [],
+      bikeNote: "Race plán: kontrolovaný štart, nenechaj sa strhnúť. Na dlhom climbe drž svoj výkon, netlač do červenej v prvej tretine. Výživa disciplinovane. Verím čislam z tréningu." },
+    { date: "2026-09-20", type: "rest", title: "After Ještěd + regenerácia", duration: "voľné",
+      desc: "Po hlavnom cieli sezóny. Ľahká vyjazdka Z1 ak vládzeš, inak plná regenerácia. Zaslúžená oslava — ale tentokrát s mierou 😉. Reflexia sezóny.",
+      zones: ["z1"] }
 ];
 
 function daysUntil(target) {
@@ -1672,7 +1843,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA ✅',18:'Block 3 — Regenerácia + offsite 🥾'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA ✅',18:'Block 3 — Regen + offsite 🥾',19:'Block 3 — Reset + Base re-entry 🔄',20:'Block 3 — Base + intenzita intro',21:'Block 3 — Build 1 (VO2max)',22:'Block 3 — Build 2',23:'Block 3 — Peak 1',24:'Block 3 — Peak 2 (Ještěd sim)',25:'Block 3 — Pre-Taper',26:'Block 3 — Taper → JEŠTĚD 🏁'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
