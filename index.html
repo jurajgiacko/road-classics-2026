@@ -978,6 +978,16 @@ const EXERCISES = {
         video: "https://www.youtube.com/watch?v=D4-jQu5GfBg",
         note: "Jemne, cez deň. Naťahuj flexory aj extenzory + prayer stretch. NIKDY cez bolesť (tvoj limiter)"
     },
+    hamstring_supine: {
+        name: "Supine hamstring stretch (s popruhom)",
+        video: "https://www.youtube.com/watch?v=Il1L75v6gq0",
+        note: "Ľah na chrbte, popruh/uterák okolo chodidla, koleno ROVNÉ, ťahaj nohu k sebe. Druhé koleno pokrčené (chráni driek). Drž 30-60s, 2-3× na stranu. Tvoj #1 fix na skrátené hamstringy (12 cm k zemi)"
+    },
+    hamstring_forward_fold: {
+        name: "Predklon / forward fold (hamstringy)",
+        video: "https://www.youtube.com/watch?v=R62z9ZAIVLU",
+        note: "Hinge z bedra, chrbát rovný, kolená smieš mierne pokrčiť. Cítiť ťah v strede stehna, nie v drieku. Drž 30s, 2-3×. Ideálne aj cez deň v offici"
+    },
     legs_up_wall: {
         name: "Legs Up the Wall",
         video: "https://www.youtube.com/watch?v=Eu3HEv5OtQk",
@@ -1567,26 +1577,33 @@ const PLAN = [
       zones: ["z4", "z5"], exercises: [],
       bikeNote: "HR max 182 = išiel si naplno. Pekná zábava a dobrá aktivácia CNS pred pretekom. Pozor bolo nespáliť nohy — 6 minút flat-out to nespravilo, ideálne." },
     { date: "2026-07-18", type: "race", title: "🏁 ✅ VYSOČINA — DOKONČENÉ! Silný finisher", duration: "62,79 km · 1 080 m D+ · 2:51:55",
-      desc: "🏁 ZÁVOD ZA NAMI — a vôbec nie ako 'len finisher'! 62,79 km / 1 080 m D+ za 2:51:55, avg 21,9 km/h, max 65,5 km/h. HR avg 159 / max 179, TE 5.0 (Overreaching), 24,5°C. Dojazd hlboko pod limitom (3h45) s rezervou takmer hodinu. Po ~4 týždňoch off-bike a jednom rebuild bloku toto je nadštandard — a výživa/pacing z generálky (10.7.) sedeli. Presne to, čo mal Vysočina naučiť pred Ještědom (19.9.).",
+      desc: "🏁 ZÁVOD ZA NAMI — a vôbec nie ako 'len finisher'! 62,79 km / 1 080 m D+ za 2:51:55, avg 21,9 km/h, max 65,5 km/h. HR avg 159 / max 179, TE 5.0 (Overreaching), 24,5°C. Dojazd hlboko pod limitom (3h45) s rezervou takmer hodinu. Po ~4 týždňoch off-bike a jednom rebuild bloku toto je nadštandard — a výživa/pacing z generálky (10.7.) sedeli. Presne to, čo mal Vysočina naučiť pred Ještědom (19.9.). 🍺 Večer afterparty — pár pív + fľaša vína. Zaslúžená oslava, regen tým ale dostala zásah.",
       exercises: [],
       bikeNote: "TE 5.0 = išiel si to naozaj tvrdo (Threshold/High Aerobic), nie Z2 pohodu ako plán hovoril — a zvládol si to bez problémov. Skvelá správa pre formu. Teraz ale POCTIVÁ regenerácia: telo dostalo veľkú dávku, ďalší týždeň ber ľahko (rodina, hiking, žiadne hrotenie)." },
     { date: "2026-07-19", type: "bike", title: "✅ Rodinné vyjazdky s deťmi (Nové Město) — aktívna regen", duration: "2 jazdy · ~17,6 km",
       desc: "✅ Nedeľa po pretekoch = aktívna regenerácia s deťmi v areáli Vysočina Areny. Dve pohodové vyjazdky 's detmi': 8,03 km (1:18, avg 6,1 km/h, TE Recovery) + 9,59 km (1:34, avg 6,1 km/h, TE Recovery). Plus detský závod (2,14 km) — Sarah/Sophie na trati! Nohy pretočené, žiadny tlak, čistá regen a rodinný čas.",
       zones: ["z1"], exercises: [] },
 
-    // W18 — Regeneračný / offsite týždeň po Vysočine
-    { date: "2026-07-20", type: "rest", title: "REST / cesta", duration: "—",
-      desc: "Deň po pretekovom víkende — plná regenerácia. Strečing, doplnenie tekutín/glykogénu, oddych.", exercises: [] },
+    // W18 — Offsite Velké Karlovice + regen (realita: dosť alkoholu)
+    { date: "2026-07-20", type: "run", title: "🥾 Offsite Velké Karlovice — deň 1", duration: "túra 2,17 km",
+      desc: "Firemný offsite (Ne–St). Cez deň meetingy, večer krátka túra 2,17 km (24 min, 28 m D+). 🍺 Večer ukončený pivom. Regen v teréne áno, ale alko dnu.",
+      zones: [], exercises: [] },
     { date: "2026-07-21", type: "bike", title: "✅ Praha — pohodová jazda s deťmi", duration: "7,10 km · 1:35",
       desc: "✅ Rekreačná vyjazdka s deťmi v Prahe: 7,10 km, 1:35, avg 4,5 km/h (veľa zastávok), 96 m D+, TE Recovery, 29,6°C. Aktívna regen, žiadna intenzita.",
       zones: ["z1"], exercises: [] },
-    { date: "2026-07-22", type: "rest", title: "REST", duration: "—", desc: "Regeneračný týždeň po Vysočine. Oddych.", exercises: [] },
+    { date: "2026-07-22", type: "run", title: "🥾 Offsite Velké Karlovice — deň 3 (koniec)", duration: "túra 6,79 km",
+      desc: "Posledný deň offsite. Cez deň meetingy, večer poriadna túra 6,79 km (1:22, 251 m D+, HR avg 110 / max 151, TE 1.1, 508 kcal). 🍺 Zasa ukončené pivom. Sumár offsite: pekné túry, ale alko každý večer — recomp/regen tým dostala poriadny zásah.",
+      zones: [], exercises: [] },
     { date: "2026-07-23", type: "bike", title: "✅ Bratislava — jazda s deťmi", duration: "11,00 km · 1:17",
       desc: "✅ Pohodová jazda s deťmi v Bratislave: 11,00 km, 1:17:56, avg 8,5 km/h, max 39,8 km/h, 49 m D+, TE Recovery, 26,3°C. Ľahké nohy, aktívna regen.",
       zones: ["z1"], exercises: [] },
-    { date: "2026-07-24", type: "run", title: "🥾 Offsite Velké Karlovice — hiking", duration: "2 túry · ~9 km",
-      desc: "✅ Firemný offsite vo Velkých Karloviciach — dva výstupy: krátka 2,17 km (24 min, 28 m D+) + poriadna túra 6,79 km (1:22, 251 m D+, HR avg 110 / max 151, TE 1.1 Some Benefit, 508 kcal). Nohy po pretekoch dobre pretiahnuté v teréne, hlava vypnutá. Ideálne zakončenie regeneračného týždňa.",
-      zones: [], exercises: [] }
+    { date: "2026-07-24", type: "rest", title: "🩺 Fyzio — zápästie + veľký hamstring nález", duration: "—",
+      desc: "Fyzio session. FOKUS: stuhnuté pravé zápästie + celá pravá strana (chronický limiter — pokračujeme). NÁLEZ: veľmi skrátené hamstringy — v predklone mi chýbalo ~12 cm k dotyku zeme. To je výrazné obmedzenie (vplýva na sed na bicykli, panvu, drieky aj knee/IT band, ktorý ma trápil v Grécku). ORDINÁCIA: denne strečovať hamstringy. Realita týždňa: regen po Vysočine bola ďaleko od ideálu — afterparty + alko každý večer na offsite.",
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s/nohu", weight: "DENNE — hlavný fix" },
+        { ...EXERCISES.hamstring_forward_fold, sets: "2-3×30s", weight: "aj cez deň v offici" },
+        { ...EXERCISES.wrist_mobility, sets: "1-2 kolá", weight: "jemne, cez bolesť nie" }
+      ] }
 ];
 
 function daysUntil(target) {
