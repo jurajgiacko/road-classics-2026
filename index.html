@@ -1664,21 +1664,46 @@ const PLAN = [
       desc: "Ľahká vyjazdka Z1 alebo voľno s rodinou. Hamstring. Zhodnoť týždeň: jedlo, alko, spánok — späť na koľaji?",
       zones: ["z1"] },
 
-    // W20 (3.8–9.8) — Base + intenzita intro
-    { date: "2026-08-03", type: "rest", title: "REST + hamstring", duration: "15 min", desc: "Regenerácia + denný hamstring.", exercises: [ { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" } ] },
-    { date: "2026-08-04", type: "bike", title: "VO2max intro — 4×3 min Z5", duration: "60 min",
-      desc: "Prvý VO2max blok. WU 15 min → 4×3 min Z5 (r 3 min ľahko) → CD. Kadencia vysoká. Ideálne do kopca / na trenažéri.",
-      zones: ["z2", "z5"],
-      bikeNote: "Z5 = 'tréning smie páliť'. Ale pretek ideš Z2 finisher — toto je motor, nie preteky. Ak nohy mŕtve, sprav len 3 opakovania." },
-    { date: "2026-08-05", type: "bike", title: "Sweet spot — 2×12 min Z3", duration: "60-70 min",
-      desc: "Kopcová vytrvalosť. WU (+3×10s openers šprinty — 2. šprint deň) → 2×12 min sweet spot (horný Z3, ~88-93% FTP) → CD. Ideálne dlhšie stúpanie.",
-      zones: ["z2", "z3"] },
-    { date: "2026-08-06", type: "bike", title: "Z2 easy + 6× šprinty (primer)", duration: "60 min",
-      desc: "Ľahký Z2 + 6×10s MAX šprinty (r 3-4 min úplný oddych). Výbušnosť + svieže nohy pred piatkovým long ridom.",
-      zones: ["z2"] },
-    { date: "2026-08-07", type: "bike", title: "Long ride — kopce (PIATOK)", duration: "~2:30 / ~65 km",
-      desc: "Z2 s kopcami, ~65 km. Progres objemu. Nutrition generálka (70-80 g/h). Kadencia v kopcoch 80+.",
-      zones: ["z2", "z3"] },
+    // W20 (3.8–9.8) — 🟠 OB SVETOVÝ POHÁR Český Krumlov (Po-Pi, BEZ BIKU) → beh + band/bodyweight + mobilita
+    { date: "2026-08-03", type: "rest", title: "✈️ Prílet Krumlov + mobilita/hamstring", duration: "20 min",
+      desc: "Cestovný deň (OB svetový pohár, Po-Pi, bez biku). Po ceste rozhýbať: hamstring protokol + hip flexor (dlhé sedenie v aute). Prechádzka po meste sa počíta. 💊 Health stack ber so sebou (kreatín, Mg, Omega-3, D3+K2, NAC).",
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s/nohu", weight: "DENNE" },
+        { ...EXERCISES.hamstring_forward_fold, sets: "2-3×30s", weight: "neutrálny chrbát" },
+        { ...EXERCISES.hip_flexor, sets: "30s/nohu", weight: "po sedení v aute" }
+      ] },
+    { date: "2026-08-04", type: "run", title: "🏃 Beh Z2 easy 30-40 min + mobilita", duration: "30-40 min",
+      desc: "Aeróbna údržba (náhrada za bike). Ľahký Z2 beh, mäkký povrch ak sa dá. ⚠️ Pozor koleno (IT band história) + skrátené hamstringy — ŽIADNE šprinty/tempo, len konverzačné tempo. Ak koleno/hamstring pichne → chôdza. Ak bežíš OB pretek, ten sa počíta — nepridávaj beh navyše. 💊 Enervit: voda + Electrolytes; po behu whey/jedlo.",
+      zones: ["z2"],
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE (po behu)" }
+      ] },
+    { date: "2026-08-05", type: "strength", title: "💪 Band + bodyweight (hotel, shoulder-safe)", duration: "30-40 min",
+      desc: "Náhrada gymu — dlhý loop band + váha tela na izbe. Lower + core + shoulder-safe upper. 2-3 kolá. Kontrola cez rameno/zápästie. 💊 Po: whey 40 g + Mg večer.",
+      exercises: [
+        { ...EXERCISES.bw_squat, sets: "3×15", weight: "tempo, hlboko" },
+        { ...EXERCISES.split_squat, sets: "3×10/nohu", weight: "bodyweight" },
+        { ...EXERCISES.glute_bridge, sets: "3×12/nohu", weight: "aktivácia glutey" },
+        { ...EXERCISES.lateral_band_walk, sets: "3×10 krokov/strana", weight: "loop band" },
+        { ...EXERCISES.clamshell, sets: "3×15/strana", weight: "loop band" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "loop band — rameno prehab" },
+        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "core" },
+        { ...EXERCISES.side_plank, sets: "3×30s/strana", weight: "predlaktie" }
+      ],
+      bikeNote: "⚠️ Shoulder-safe: band_pull namiesto tlakov, planky na predlaktí. Vezmi si dlhý loop band + tenisák/loptičku na rolovanie." },
+    { date: "2026-08-06", type: "run", title: "🏃 Beh Z2 40-50 min (aeróbna údržba)", duration: "40-50 min",
+      desc: "Trochu dlhší Z2 beh — udrž aeróbnu bázu počas bike-pauzy. Konverzačné tempo, mäkký povrch. ⚠️ Koleno + hamstring watch. Ak OB terén/pretek, ten je tréning — netlač navyše. 💊 Enervit: voda + Electrolytes; dlhší beh 1 gél po 45 min.",
+      zones: ["z2"],
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" }
+      ] },
+    { date: "2026-08-07", type: "run", title: "🏃 Ľahký shakeout / cesta späť + mobilita", duration: "20-30 min",
+      desc: "Cestovný deň späť. Ak čas: ľahký shakeout beh 20-30 min alebo len prechádzka + mobilita. Nič náročné. Hamstring + hip flexor po sedení v aute.",
+      zones: ["z1"],
+      exercises: [
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" },
+        { ...EXERCISES.hip_flexor, sets: "30s/nohu", weight: "po aute" }
+      ] },
     { date: "2026-08-08", type: "strength", title: "🏋️ Gym A — lower + core", duration: "45-50 min",
       desc: "Build 1 max sila — PROGRES váh oproti návratovému týždňu (teraz ~75-85%, 1-2 reps v rezerve). Rozcvička + glute aktivácia. Hamstring po. (Po piatkovom long ride — nohy unavené, drž rozumné váhy.)",
       exercises: [
@@ -1891,7 +1916,7 @@ function renderDays(weekNum) {
     const container = document.getElementById('training-days');
     const days = PLAN.filter(d => getWeekNum(d.date) === weekNum);
 
-    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA ✅',18:'Block 3 — Regen + offsite 🥾',19:'Block 3 — Reset + Base re-entry 🔄',20:'Block 3 — Base + intenzita intro',21:'Block 3 — Build 1 (VO2max)',22:'Block 3 — Build 2',23:'Block 3 — Peak 1',24:'Block 3 — Peak 2 (Ještěd sim)',25:'Block 3 — Pre-Taper',26:'Block 3 — Taper → JEŠTĚD 🏁'};
+    const phaseLabels = {1:'Phase I — Re-Acclimation',2:'Phase I — Re-Acclimation',3:'Phase I — Re-Acclimation (servis)',4:'Phase II — Build (FIBO week)',5:'Phase II — Build (Workshop Zlín + RC Camp)',6:'Phase II — Peak Build (Pálava SIM)',7:'Phase III — Taper',8:'Phase III — Race Week → PÁLAVA ✅',9:'Block 2 — Recovery',10:'Block 2 — Build 1 🏋️ GYM START',11:'Block 2 — Build 1',12:'Block 2 — Travel + Grécko 🇬🇷',13:'Block 2 — Grécko (beh + more) 🏖️',14:'Block 2 — Grécko → Návrat 🇬🇷',15:'Block 2 — Peak 1',16:'Block 2 — Pre-Taper',17:'Block 2 — Race Week → VYSOČINA ✅',18:'Block 3 — Regen + offsite 🥾',19:'Block 3 — Reset + Base re-entry 🔄',20:'Block 3 — OB svetový pohár Krumlov 🟠 (beh, bez biku)',21:'Block 3 — Build 1 (VO2max)',22:'Block 3 — Build 2',23:'Block 3 — Peak 1',24:'Block 3 — Peak 2 (Ještěd sim)',25:'Block 3 — Pre-Taper',26:'Block 3 — Taper → JEŠTĚD 🏁'};
     const phase = phaseLabels[weekNum] || '';
 
     let html = `<div class="phase-label">${phase} · Týždeň ${weekNum}</div>`;
