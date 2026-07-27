@@ -1680,8 +1680,17 @@ const PLAN = [
       desc: "Z2 s kopcami, ~65 km. Progres objemu. Nutrition generálka (70-80 g/h). Kadencia v kopcoch 80+.",
       zones: ["z2", "z3"] },
     { date: "2026-08-08", type: "strength", title: "🏋️ Gym A — lower + core", duration: "45-50 min",
-      desc: "Lower + core, shoulder-safe. Progres váh oproti minulému týždňu. Drep, RDL/trap-bar, split squat, hip thrust, Pallof, forearm plank. Hamstring po. (Po piatkovom long ride — nohy unavené, drž rozumné váhy.)",
-      bikeNote: "⚠️ Shoulder-safe (bez overhead/klikov/dipov, neutrálne zápästie)." },
+      desc: "Build 1 max sila — PROGRES váh oproti návratovému týždňu (teraz ~75-85%, 1-2 reps v rezerve). Rozcvička + glute aktivácia. Hamstring po. (Po piatkovom long ride — nohy unavené, drž rozumné váhy.)",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "4×6-8", weight: "progres váhy" },
+        { ...EXERCISES.kb_rdl, sets: "3×8", weight: "pomalý eccentric — hamstringy" },
+        { ...EXERCISES.split_squat, sets: "3×8/nohu", weight: "unilateral sila" },
+        { ...EXERCISES.hip_thrust, sets: "3×10-12", weight: "squeeze — glutey" },
+        { ...EXERCISES.pallof, sets: "3×10/strana", weight: "anti-rotácia" },
+        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "driek prilepený" },
+        { ...EXERCISES.plank, sets: "3×40-60s", weight: "predlaktia" }
+      ],
+      bikeNote: "⚠️ Shoulder-safe (bez overhead/klikov/dipov, neutrálne zápästie). 💊 Po tréningu: whey 40 g + kreatín (ak nie ráno) + Mg večer. Pred: 1 káva OK." },
     { date: "2026-08-09", type: "rest", title: "Recovery / beh Z2", duration: "—",
       desc: "Recovery spin Z1 alebo ľahký beh Z2 30-40 min. Hamstring + rodina.",
       zones: ["z1"] },
@@ -1701,8 +1710,16 @@ const PLAN = [
       desc: "Z2 s výraznejšími kopcami, ~75 km. Nutrition protokol. Posledná tretina mierne pritlač (sweet spot v kopci).",
       zones: ["z2", "z3"] },
     { date: "2026-08-15", type: "strength", title: "🏋️ Gym B — lower (power shift)", duration: "45-50 min",
-      desc: "Posun k výbušnosti: rýchlejší koncentrik. Drep, RDL, výskoky/step-up, hip thrust, core. Shoulder-safe. Hamstring po. (Po piatkovom long ride.)",
-      bikeNote: "⚠️ Shoulder-safe. Power = rýchlo hore, kontrolovane dole." },
+      desc: "Konverzia sily na POWER — stredná váha, RÝCHLY koncentrik (výbušne hore), kontrolovane dole. Menej reps, plná kvalita pohybu. Hamstring po. (Po piatkovom long ride.)",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "4×5", weight: "výbušne hore, stredná váha" },
+        { ...EXERCISES.kb_rdl, sets: "3×6-8", weight: "sila hamstringov" },
+        { ...EXERCISES.kb_step_up, sets: "3×8/nohu", weight: "výbušne — simuluje stúpanie" },
+        { ...EXERCISES.hip_thrust, sets: "3×8", weight: "výbušný squeeze" },
+        { ...EXERCISES.pallof, sets: "3×10/strana", weight: "anti-rotácia" },
+        { ...EXERCISES.side_plank, sets: "3×30s/strana", weight: "predlaktie" }
+      ],
+      bikeNote: "⚠️ Shoulder-safe. Power = rýchlo hore, kontrolovane dole. 💊 Pred: káva OK. Po: whey 40 g + Mg večer." },
     { date: "2026-08-16", type: "rest", title: "Recovery / rodina", duration: "—", desc: "Ľahko/voľno. Hamstring.", zones: ["z1"] },
 
     // W22 (17.8–23.8) — Build 2
@@ -1717,8 +1734,16 @@ const PLAN = [
       desc: "Najdlhšia zatiaľ. ~85 km s dlhými kopcami — simulácia profilu Ještědu. Plná nutrition generálka. Sústredený výjazd v strede jazdy.",
       zones: ["z2", "z3", "z4"] },
     { date: "2026-08-22", type: "strength", title: "🏋️ Gym B — power + core", duration: "45 min",
-      desc: "Power lower + core, shoulder-safe. Udrž silu, rýchly koncentrik. Hamstring po. (Po Ještěd SIM — drž rozumné váhy.)",
-      bikeNote: "⚠️ Shoulder-safe." },
+      desc: "Power lower + core. Udrž silu, rýchly koncentrik, nízke reps. Hamstring po. (Po Ještěd SIM — nohy unavené, drž rozumné váhy, priorita je kvalita nie objem.)",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "4×5", weight: "výbušne hore" },
+        { ...EXERCISES.split_squat, sets: "3×6/nohu", weight: "výbušne, unilateral" },
+        { ...EXERCISES.kb_step_up, sets: "3×8/nohu", weight: "výbušne" },
+        { ...EXERCISES.hip_thrust, sets: "3×8", weight: "squeeze" },
+        { ...EXERCISES.pallof, sets: "3×10/strana", weight: "anti-rotácia" },
+        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "core" }
+      ],
+      bikeNote: "⚠️ Shoulder-safe. 💊 Po: whey 40 g + Mg večer. Pred long ride víkendom drž nohy použiteľné." },
     { date: "2026-08-23", type: "rest", title: "Recovery / beh", duration: "—", desc: "Recovery spin Z1 alebo beh Z2. Hamstring + rodina.", zones: ["z1"] },
 
     // W23 (24.8–30.8) — Peak 1
@@ -1733,8 +1758,15 @@ const PLAN = [
       desc: "Najnáročnejší long — ~90 km, maximum D+. Nutrition naostro. Toto je posledná veľká objemová jazda pred taperom.",
       zones: ["z2", "z3", "z4"] },
     { date: "2026-08-29", type: "strength", title: "🏋️ Gym — maintenance (power)", duration: "40 min",
-      desc: "Udržiavací power blok — menší objem, drž silu. Shoulder-safe. Hamstring po. (Po najdlhšom long ride — ľahko.)",
-      bikeNote: "⚠️ Shoulder-safe. V peak fáze gym neprepal — priorita je bike." },
+      desc: "Udržiavací power blok — MENŠÍ objem, drž silu (nie budovať). Rýchly koncentrik, nízke reps. Hamstring po. (Po najdlhšom long ride — ľahko, nič do zlyhania.)",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "3×5", weight: "svieže, výbušne" },
+        { ...EXERCISES.kb_rdl, sets: "3×6", weight: "hamstringy" },
+        { ...EXERCISES.hip_thrust, sets: "3×8", weight: "squeeze" },
+        { ...EXERCISES.pallof, sets: "2×10/strana", weight: "core" },
+        { ...EXERCISES.plank, sets: "2×45s", weight: "predlaktia" }
+      ],
+      bikeNote: "⚠️ Shoulder-safe. V peak fáze gym NEPREPAL — priorita je bike. 💊 Po: whey 40 g + Mg." },
     { date: "2026-08-30", type: "rest", title: "Recovery / rodina", duration: "—", desc: "Ľahko/voľno. Hamstring.", zones: ["z1"] },
 
     // W24 (31.8–6.9) — Peak 2 / Ještěd sim
@@ -1748,8 +1780,15 @@ const PLAN = [
     { date: "2026-09-04", type: "bike", title: "Long ride — sústredené stúpanie (PIATOK)", duration: "~3:00 / ~75 km",
       desc: "Z2 s koncentrovaným stúpaním. Objem začína klesať. Nutrition v pohode.", zones: ["z2", "z3"] },
     { date: "2026-09-05", type: "strength", title: "🏋️ Gym — light maintenance", duration: "35 min",
-      desc: "Ľahký udržiavací gym. Shoulder-safe. Hamstring po. Nič ťažké — blížime sa k taperu.",
-      bikeNote: "⚠️ Shoulder-safe." },
+      desc: "Ľahký udržiavací gym — LEN podnet, nič ťažké (blížime sa k taperu). Technika, aktivácia. Hamstring po. (Prvá gym po bike fite 2.9. — nová pozícia, pozoruj koleno.)",
+      exercises: [
+        { ...EXERCISES.kb_goblet_squat, sets: "2-3×6", weight: "ľahko" },
+        { ...EXERCISES.hip_thrust, sets: "2×10", weight: "aktivácia glutey" },
+        { ...EXERCISES.glute_bridge, sets: "2×12/nohu", weight: "aktivácia" },
+        { ...EXERCISES.pallof, sets: "2×10/strana", weight: "core" },
+        { ...EXERCISES.dead_bug, sets: "2×10/strana", weight: "core" }
+      ],
+      bikeNote: "⚠️ Shoulder-safe. Nič do únavy — race sa blíži. 💊 Po: whey + Mg." },
     { date: "2026-09-06", type: "rest", title: "Recovery / rodina", duration: "—", desc: "Ľahko/voľno. Hamstring.", zones: ["z1"] },
 
     // W25 (7.9–13.9) — Pre-Taper
