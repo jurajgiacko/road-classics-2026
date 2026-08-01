@@ -873,6 +873,16 @@ const EXERCISES = {
         video: "https://www.youtube.com/watch?v=wkD8rjkodUI",
         note: "S kettlebellom alebo medicimbalom"
     },
+    suitcase_carry: {
+        name: "Suitcase carry (kufríková chôdza)",
+        video: "https://www.youtube.com/watch?v=tNHdx7pmrGI",
+        note: "Záťaž na jednej strane — brutálny anti-lateral core, drž trup vzpriamený, neuklápaj sa"
+    },
+    reverse_crunch: {
+        name: "Obrátené sklápačky",
+        video: "https://www.youtube.com/watch?v=hyv14e2QDq0",
+        note: "Kolená k hrudi, dolné brucho, kontrolované spúšťanie nôh"
+    },
     split_squat: {
         name: "Rozdelené drepy (Split Squat)",
         video: "https://www.youtube.com/watch?v=2C-uNgKwPLE",
@@ -1651,18 +1661,20 @@ const PLAN = [
       desc: "✅ Prague Road Cycling — 51,59 km, 2:21:42, 21,8 km/h, 351 m D+, HR avg 140 / max 178, ~1218 kcal, 27,4 °C (max 32). 🎯 ČISTÁ Z2 (avg 140) na 2h20 v horúčave = super base + pacing disciplína. TE 3.3. Pocitovo dlhšie = HORÚČAVA + podhydratovanie. Fuel: toast+arašid.maslo+ryž.chlebík+ľadové espresso (bez Pre Sport, došiel), počas sodíková tyčinka C2:1 + sodíkový gél + jelly 30g (~38 g/h). Po: Magic Cherry + R2 Recovery.",
       zones: ["z2"],
       bikeNote: "⚠️ HYDRATÁCIA lekcia: len 1,4 L (0,7 Isotonic + 0,7 Electro) za 2h20 v 27-32 °C = málo. V horúčave cieľ ~0,75-1 L/h = ~2-2,3 L → 3 fľaše + refill. Podhydratovanie = vyššia HR/pocitovo ťažšie. Fueling na Z2 OK." },
-    { date: "2026-08-01", type: "strength", title: "🏋️ Gym A — lower + core (shoulder-safe, návrat) [presun z 29.7.]", duration: "45-50 min",
-      desc: "Prvý gym Block 3 (presunutý zo stredy — ZOO horúčava). Ľahko, TECHNIKA, 60-70% váh. Lower body + core, shoulder-safe. Rozcvička 5-10 min (bike/rotoped + glute aktivácia). Medzi sériami 90-120s pauza. Hamstring stretch po. 💊 Pred: 1 káva OK · Po: whey 40 g + Mg večer.",
+    { date: "2026-08-01", type: "strength", title: "✅ Gym A — lower + core (shoulder-safe, návrat) [presun z 29.7.]", duration: "45-50 min",
+      desc: "✅ DONE — prvý gym Block 3 po ~9 týž. pauze (posl. nohy 3.6.). Technika first, návratové váhy. Lower + core, shoulder-safe. Solídny návrat, žiadny problém s ramenom/zápästím. 💊 Po: whey 50 g + Mg večer.",
       exercises: [
-        { ...EXERCISES.kb_goblet_squat, sets: "3×8-10", weight: "1×16 kg (posl. 18 kg) — hlboko, technika" },
-        { ...EXERCISES.kb_rdl, sets: "3×8-10", weight: "1×20-24 kg alebo 2×14 kg — POMALÝ eccentric, cítiť hamstringy" },
-        { ...EXERCISES.split_squat, sets: "2-3×8/nohu", weight: "bodyweight alebo 2×6-8 kg (posl. 2×10 = DOMS)" },
-        { ...EXERCISES.hip_thrust, sets: "3×10-12", weight: "20-30 kg (posl. 20 kg) — squeeze hore, chráni driek/koleno" },
-        { ...EXERCISES.pallof, sets: "3×10/strana", weight: "guma stredný odpor — anti-rotačný core" },
-        { ...EXERCISES.dead_bug, sets: "2-3×10/strana", weight: "bodyweight — driek prilepený k zemi" },
-        { ...EXERCISES.plank, sets: "3×30-45s", weight: "predlaktia (NIE dlane)" }
+        { ...EXERCISES.kb_goblet_squat, sets: "3×10", weight: "17,5 kg ✅" },
+        { ...EXERCISES.kb_rdl, sets: "3×8", weight: "22 kg kettlebell ✅ (pomalý eccentric)" },
+        { ...EXERCISES.split_squat, sets: "2×8/strana", weight: "vlastná váha ✅" },
+        { ...EXERCISES.hip_thrust, sets: "3×10", weight: "20 kg olymp. tyč ✅" },
+        { ...EXERCISES.suitcase_carry, sets: "chôdza", weight: "22 kg na 1 strane ✅ (výmena za Pallof — po fitku)" },
+        { ...EXERCISES.dead_bug, sets: "2×10/strana", weight: "vlastná váha ✅" },
+        { ...EXERCISES.hanging_leg_raise, sets: "3×6", weight: "vlastná váha ✅" },
+        { ...EXERCISES.reverse_crunch, sets: "superséria 3×10", weight: "obrátené sklápačky + pokladanie nôh, vlastná váha ✅" },
+        { ...EXERCISES.russian_twist, sets: "superséria 3×20", weight: "side-to-side + russian twist, 6 kg ✅" }
       ],
-      bikeNote: "⚠️ SHOULDER-SAFE: žiadne overhead press, kliky na dlaniach, dipy, planky na dlaniach. Neutrálne zápästie (činky/KB/trap bar). Cez bolesť ramena/zápästia nikdy. 📊 REFERENCIA (posl. nohy 3.6., ~9 týž. pauza): goblet 18 kg · KB DL 2×14 · hip thrust 20 kg → potom BW · split squat 2×10 kg (extra DOMS) · deadlift 50 kg. DNES = návrat 60-70%, 2-3 reps v rezerve, technika first. RDL s citom (skrátené hamstringy 12 cm + citlivý driek). Ak boľavý driek/glutei/kyčel → uber hip thrust/RDL rozsah." },
+      bikeNote: "⚠️ SHOULDER-SAFE dodržané. 📊 ODJAZDENÉ 1.8. (návrat po 9 týž.): goblet 17,5 kg · RDL 22 kg KB · split squat BW · hip thrust 20 kg tyč · suitcase carry 22 kg (namiesto Pallof). Silný core blok na záver (leg raise + reverse crunch superséria + russian twist 6 kg). NABUDÚCE (progresia +): goblet → 20 kg, RDL → 24 kg, split squat → pridať 2×6-8 kg, hip thrust → 25-30 kg. RDL stále s citom (hamstringy 12 cm)." },
     { date: "2026-08-02", type: "rest", title: "Recovery spin / rodina", duration: "—",
       desc: "Ľahká vyjazdka Z1 alebo voľno s rodinou. Hamstring. Zhodnoť týždeň: jedlo, alko, spánok — späť na koľaji?",
       zones: ["z1"] },
