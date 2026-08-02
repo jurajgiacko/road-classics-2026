@@ -1691,26 +1691,34 @@ const PLAN = [
       desc: "Aeróbna údržba (náhrada za bike). Ľahký Z2 beh, mäkký povrch (okolie Krumlova = pekný terén). ⚠️ Pozor koleno (IT band história) + skrátené hamstringy — ŽIADNE šprinty/tempo, len konverzačné tempo. Ak koleno/hamstring pichne → chôdza. Mobilita + hamstring aj tak DENNE. 💊 Enervit: voda + Electrolytes; po behu whey/jedlo.",
       zones: ["z2"],
       exercises: [
-        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE (po behu)" }
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE (po behu)" },
+        { ...EXERCISES.doorway_pec_stretch, sets: "2×30s", weight: "POSTÚRA — otvor hrudník" },
+        { ...EXERCISES.band_pull, sets: "2×20", weight: "loop band — mini posture pull (uvoľni tuhý chrbát)" },
+        { ...EXERCISES.face_pull, sets: "2×15", weight: "loop band — zadné delty" }
       ] },
-    { date: "2026-08-05", type: "strength", title: "💪 Band + bodyweight (hotel, shoulder-safe)", duration: "30-40 min",
-      desc: "Náhrada gymu — dlhý loop band + váha tela na izbe. Lower + core + shoulder-safe upper. 2-3 kolá. Kontrola cez rameno/zápästie. 💊 Po: whey 40 g + Mg večer.",
+    { date: "2026-08-05", type: "strength", title: "💪 Full-body + POSTÚRA (hotel: 8 kg KB + band, shoulder-safe)", duration: "40-45 min",
+      desc: "Náhrada gymu — 8 kg kettlebell + dlhý loop band + váha tela na izbe. FOKUS POSTÚRA: tuhý chrbát z cestovania/sedenia = slabý horný chrbát + stiahnutý hrudník. Fix = posilniť ťahové/posturálne svaly (stredný/dolný trapéz, rhomboidy, zadné delty), nie len naťahovať. 2-3 kolá. 💊 Po: whey 40 g + Mg večer.",
       exercises: [
-        { ...EXERCISES.bw_squat, sets: "3×15", weight: "tempo, hlboko" },
-        { ...EXERCISES.split_squat, sets: "3×10/nohu", weight: "bodyweight" },
-        { ...EXERCISES.glute_bridge, sets: "3×12/nohu", weight: "aktivácia glutey" },
-        { ...EXERCISES.lateral_band_walk, sets: "3×10 krokov/strana", weight: "loop band" },
-        { ...EXERCISES.clamshell, sets: "3×15/strana", weight: "loop band" },
-        { ...EXERCISES.band_pull, sets: "3×15", weight: "loop band — rameno prehab" },
-        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "core" },
-        { ...EXERCISES.side_plank, sets: "3×30s/strana", weight: "predlaktie" }
+        { ...EXERCISES.doorway_pec_stretch, sets: "2×30s", weight: "rozcvička — otvor stiahnutý hrudník" },
+        { ...EXERCISES.thoracic_extension, sets: "2×10", weight: "rozcvička — hrudná chrbtica" },
+        { ...EXERCISES.kb_goblet_squat, sets: "3×12", weight: "8 kg — tempo, hlboko" },
+        { ...EXERCISES.kb_rdl, sets: "3×12", weight: "8 kg — posterior chain, pomalý eccentric" },
+        { ...EXERCISES.db_row, sets: "3×10/ruka", weight: "8 kg KB — ⭐ HLAVNÝ posture cvik (stredný chrbát)" },
+        { ...EXERCISES.face_pull, sets: "3×15", weight: "loop band — ⭐ zadné delty/postúra" },
+        { ...EXERCISES.band_pull, sets: "3×15", weight: "loop band — pull-apart, rhomboidy" },
+        { ...EXERCISES.prone_y_t_w, sets: "2×8 každé", weight: "vlastná váha — dolný/stredný trapéz" },
+        { ...EXERCISES.wall_angels, sets: "3×10", weight: "chrbát o stenu — postúra/hrudník" },
+        { ...EXERCISES.suitcase_carry, sets: "3×30s/strana", weight: "8 kg — anti-lateral core" },
+        { ...EXERCISES.dead_bug, sets: "3×10/strana", weight: "core, driek k zemi" }
       ],
-      bikeNote: "⚠️ Shoulder-safe: band_pull namiesto tlakov, planky na predlaktí. Vezmi si dlhý loop band + tenisák/loptičku na rolovanie." },
+      bikeNote: "🎯 POSTÚRA FIX: ťahové cviky (db_row, face_pull, band_pull, prone Y-T-W) narovnajú guľatý chrbát — ROB pomaly, na konci stiahni lopatky k sebe a dole (2s výdrž). ⚠️ SHOULDER-SAFE: žiadne tlaky nad hlavu/kliky na dlaniach, neutrálne zápästie, cez bolesť ramena nikdy. 8 kg = ľahké → priorita TECHNIKA + kontrakcia, nie váha. Vezmi 8 kg KB + dlhý loop band + tenisák na rolovanie. Ak necítiš horný chrbát pri row/face pull → spomaľ a mysli na stiahnutie lopatiek." },
     { date: "2026-08-06", type: "run", title: "🏃 Beh Z2 40-50 min (aeróbna údržba)", duration: "40-50 min",
       desc: "Trochu dlhší Z2 beh — udrž aeróbnu bázu počas bike-pauzy. Konverzačné tempo, mäkký povrch. ⚠️ Koleno + hamstring watch, žiadne tempo. Mobilita denne. 💊 Enervit: voda + Electrolytes; dlhší beh 1 gél po 45 min.",
       zones: ["z2"],
       exercises: [
-        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" }
+        { ...EXERCISES.hamstring_supine, sets: "2-3×30-60s", weight: "DENNE" },
+        { ...EXERCISES.band_pull, sets: "2×20", weight: "loop band — mini posture pull" },
+        { ...EXERCISES.face_pull, sets: "2×15", weight: "loop band — zadné delty" }
       ] },
     { date: "2026-08-07", type: "run", title: "🏃 Ľahký shakeout / cesta späť + mobilita", duration: "20-30 min",
       desc: "Cestovný deň späť. Ak čas: ľahký shakeout beh 20-30 min alebo len prechádzka + mobilita. Nič náročné. Hamstring + hip flexor po sedení v aute.",
