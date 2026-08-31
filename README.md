@@ -41,6 +41,7 @@ Projekt = **interaktivny web** (tracker treningu, vyzivy, cvikov + GPX tras) nap
 - **Pedale:** Shimano PD-EH500 (SPD/flat combo)
 - **Topanky:** Shimano SH-RX801 Wide EU43
 - **Computer:** Garmin Edge 840 + HRM 600 + Varia RearVue 820
+- **Svetlo:** Ravemen FR1500 (1 500 lm, integrovany out-front drziak pod Garmin, USB-C, powerbanka, IPX6) — kupene 22.8.2026
 - **Wheelset (Faza 2):** ICAN G27 carbon + Continental GP 5000 AS TR 35mm (road) / stock DT Swiss + Schwalbe G-One R 40mm (gravel)
 - **Sedlo:** PPS 716-726 mm
 
