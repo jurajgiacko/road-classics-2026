@@ -23,7 +23,7 @@ Projekt = **interaktivny web** (tracker treningu, vyzivy, cvikov + GPX tras) nap
 |---|---|---|---|---|---|
 | 1 | Palava | 16.5.2026 | 123 km | 1 592 m | FINISHER 5:50:42 |
 | 2 | Vysocina | 18.7.2026 | 102 km | 1 750 m | — |
-| 3 | Jested | 19.9.2026 | 106 km | 2 200 m | — |
+| 3 | Jested | 19.9.2026 | 92,66 km | 2 245 m | **FINISHER 5:44:25** |
 
 ## Second brain — naviazane zapisy (zdroj pravdy)
 
